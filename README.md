@@ -1,16 +1,22 @@
-# Portfolio Matheus Migliorini — V9.1
+# Portfolio Matheus Migliorini — V9.2
 
-Correção rápida da V9.
+Correção dos sprites dos porquinhos.
 
-## Corrigido
-- Hamtaro e Totoro voltam a aparecer.
-- Mantidos: tamanho menor, movimentação pela tela inteira, sono, brincadeira entre eles e perseguição do cursor.
+O pequeno traço/pixel que aparecia ao lado ou abaixo dos personagens não era outro quadro da animação: eram fragmentos soltos que vieram na própria imagem gerada.
 
-## Motivo do bug
-A V9 reorganizou corretamente as folhas de sprite em uma grade 4×4, mas o CSS/JS ainda tratava cada quadro como se tivesse 320 px na tela.
-Como os personagens são exibidos com cerca de 60 px, o navegador mostrava apenas a área transparente do quadro.
+Nesta versão, cada um dos 16 quadros de Hamtaro e Totoro foi limpo para manter apenas o personagem principal.
 
-Agora a animação usa posicionamento percentual sobre a grade 4×4, que acompanha corretamente o tamanho visual de cada porquinho.
+Não foi alterado o comportamento da V9.1:
+- tamanho menor;
+- passeio pela tela inteira;
+- perseguição do mouse;
+- sono;
+- brincadeira entre Hamtaro e Totoro.
 
-## Commit sugerido
-`Fix pet sprite rendering`
+## Para atualizar
+Você pode substituir somente:
+- `assets/hamtaro-sprites.png`
+- `assets/totoro-sprites.png`
+
+Commit sugerido:
+`Clean pet sprite artifacts`
