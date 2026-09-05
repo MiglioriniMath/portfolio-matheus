@@ -1,9 +1,12 @@
-# Portfolio Matheus Migliorini — V5
+# Portfolio Matheus Migliorini — V6
 
-V5 mantém Home, Work e Notes e simplifica **Photos**.
+V6 mantém Home, Work, Notes e o link externo de Photos e adiciona uma página **About** completa.
 
-## Mudança
-- O item `Photos ↗` do menu abre diretamente o arquivo de fotos no Avely:
-  https://avely.me/math
-- A página `photos.html` também contém um link simples para o Avely.
-- A galeria própria fica para uma etapa futura.
+## About
+- apresentação pessoal
+- foto integrada
+- blocos de Base, Trabalho, Interesses e Agora
+- contato simples no final
+- mesma linguagem editorial do restante do site
+
+As copys continuam provisórias e podem ser adaptadas depois para a voz do Matheus.
