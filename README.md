@@ -1,22 +1,20 @@
-# Portfolio Matheus Migliorini — V9.2
+# Portfolio Matheus Migliorini — V9.3
 
-Correção dos sprites dos porquinhos.
+Atualização de links e contatos reais.
 
-O pequeno traço/pixel que aparecia ao lado ou abaixo dos personagens não era outro quadro da animação: eram fragmentos soltos que vieram na própria imagem gerada.
+## Contatos
+- Email: matheusmigliorini22@gmail.com
+- Instagram: @migliorinimath
+- LinkedIn: https://www.linkedin.com/in/matheus-migliorini-776207158/
+- WhatsApp: +55 15 99187-8897
 
-Nesta versão, cada um dos 16 quadros de Hamtaro e Totoro foi limpo para manter apenas o personagem principal.
+## Ajustes
+- links reais na Home;
+- links reais em About;
+- Email / LinkedIn / WhatsApp no CV;
+- “Arquivo” da Home agora abre Notes;
+- projetos da Home agora direcionam para Work;
+- removidos links `#` sem destino relevante.
 
-Não foi alterado o comportamento da V9.1:
-- tamanho menor;
-- passeio pela tela inteira;
-- perseguição do mouse;
-- sono;
-- brincadeira entre Hamtaro e Totoro.
-
-## Para atualizar
-Você pode substituir somente:
-- `assets/hamtaro-sprites.png`
-- `assets/totoro-sprites.png`
-
-Commit sugerido:
-`Clean pet sprite artifacts`
+## Commit sugerido
+`Add real contact links`
