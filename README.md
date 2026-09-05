@@ -1,33 +1,25 @@
-# Portfolio Matheus Migliorini — V9.5
+# Portfolio Matheus Migliorini — V9.6 Mobile
 
-Refino de interação e personalidade.
+Primeira revisão completa de responsividade.
+
+## Mobile
+- header compacto sem hamburger;
+- menu continua totalmente visível e pode deslizar horizontalmente em telas muito estreitas;
+- tipografia e espaçamentos recalibrados;
+- Home vira uma composição editorial de uma coluna em celulares;
+- trabalhos viram uma lista limpa com divisórias pontilhadas;
+- Work, Notes, About e CV foram adaptados para leitura vertical;
+- suporte a safe area de iPhone;
+- evita qualquer scroll horizontal acidental;
+- links e contatos permanecem reais.
+
+## Hamtaro e Totoro
+Continuam na experiência desktop. Em touch/mobile ficam ocultos por enquanto,
+porque não existe cursor para a interação e isso preserva legibilidade e bateria.
 
 ## Cursor
-- novo cursor menor;
-- geometria pixelada mais elegante;
-- carvão escuro com detalhe de grafite;
-- visual mais próximo da referência enviada.
-
-## Menu
-Hover inspirado no comportamento visual do macOS:
-- item sob o cursor cresce levemente;
-- recebe fundo discreto;
-- os demais itens perdem um pouco de destaque;
-- transição suave, sem ficar com cara de efeito exagerado.
-
-## Hamtaro
-- mais agitado;
-- anda mais rápido;
-- fica menos tempo parado;
-- quase não dorme;
-- quando a seta chega muito perto, costuma fugir um pouco;
-- às vezes decide seguir o Totoro.
-
-## Totoro
-- mais calmo;
-- anda mais devagar;
-- dorme com bastante frequência;
-- quando o cursor chega perto, acorda e sempre corre atrás dele.
+A V9.6 usa a silhueta EXATA do cursor enviada pelo Matheus, apenas recortada
+e reduzida para 22 px, sem redesenhar a forma.
 
 ## Commit sugerido
-`Refine cursor menu and pet personalities`
+`Add mobile responsive layout`
