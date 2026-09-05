@@ -111,16 +111,40 @@
 
     const pets = [hamtaro, totoro];
     let active = false;
-    let raf = null;
     let last = performance.now();
 
+    function pageSize() {
+      const body = document.body;
+      const html = document.documentElement;
+
+      return {
+        width: Math.max(
+          html.clientWidth,
+          body ? body.scrollWidth : 0,
+          html.scrollWidth
+        ),
+        height: Math.max(
+          html.clientHeight,
+          body ? body.scrollHeight : 0,
+          html.scrollHeight
+        ),
+      };
+    }
+
+    function syncLayerHeight() {
+      const size = pageSize();
+      layer.style.height = `${size.height}px`;
+    }
+
     function mobileBounds(pet) {
+      const size = pageSize();
       const half = pet.size * .52;
+
       return {
         left: 18 + half,
-        right: window.innerWidth - 18 - half,
-        top: 68 + half,
-        bottom: window.innerHeight - 18 - half,
+        right: size.width - 18 - half,
+        top: 72 + half,
+        bottom: size.height - 22 - half,
       };
     }
 
@@ -130,15 +154,22 @@
       pet.y = clamp(pet.y, b.top, b.bottom);
     }
 
+    /*
+      Initial seated pair lives at the actual end of the document.
+      It will not follow the viewport while the person scrolls.
+    */
     function seatPets() {
-      const bottom = window.innerHeight - 42;
-      const right = window.innerWidth - 34;
+      syncLayerHeight();
+      const size = pageSize();
+
+      const right = size.width - 34;
+      const bottom = size.height - 47;
 
       totoro.x = right;
       totoro.y = bottom;
       totoro.direction = "down";
 
-      hamtaro.x = right - 48;
+      hamtaro.x = right - 47;
       hamtaro.y = bottom + 1;
       hamtaro.direction = "down";
 
@@ -152,8 +183,19 @@
 
     function chooseMobileTarget(pet) {
       const b = mobileBounds(pet);
+
       pet.targetX = randomBetween(b.left, b.right);
-      pet.targetY = randomBetween(b.top, b.bottom);
+
+      /*
+        Keep most roaming around the lower 75% of the page.
+        They still explore the site, but won't constantly cover the header.
+      */
+      const roamingTop = Math.max(
+        b.top,
+        b.top + (b.bottom - b.top) * .25
+      );
+
+      pet.targetY = randomBetween(roamingTop, b.bottom);
       pet.state = "wander";
     }
 
@@ -170,6 +212,7 @@
 
     function activatePets() {
       if (active) return;
+
       active = true;
       layer.classList.remove("mobile-pets-idle");
       layer.classList.add("mobile-pets-active");
@@ -184,19 +227,19 @@
       totoro.targetY = Math.max(90, totoro.y - randomBetween(45, 110));
 
       last = performance.now();
-      raf = requestAnimationFrame(tick);
+      requestAnimationFrame(tick);
     }
 
     /*
-      Double-tap on either animal wakes both up.
-      We use pointerup instead of dblclick because iOS/Android differ
-      in how they synthesize double-clicks from touch.
+      Two quick taps on either pig wake both of them.
+      Pointer Events work more consistently than dblclick on touch devices.
     */
     let lastTapAt = 0;
     let lastTapTarget = null;
 
     function onPetTap(event) {
       event.preventDefault();
+
       const now = performance.now();
       const sameTarget = lastTapTarget === event.currentTarget;
 
@@ -268,7 +311,6 @@
         return;
       }
 
-      /* idle */
       setVisualState(pet, "");
       setFrame(pet, pet.direction, 0);
 
@@ -320,16 +362,27 @@
       avoidOverlap();
 
       pets.forEach(render);
-      raf = requestAnimationFrame(tick);
+      requestAnimationFrame(tick);
     }
 
-    window.addEventListener("resize", () => {
+    function refreshMobileStage() {
+      syncLayerHeight();
+
       if (!active) {
         seatPets();
       } else {
         pets.forEach(clampPet);
+        pets.forEach(render);
       }
-    }, { passive: true });
+    }
+
+    window.addEventListener("resize", refreshMobileStage, { passive: true });
+    window.addEventListener("load", refreshMobileStage, { once: true });
+
+    if ("ResizeObserver" in window) {
+      const observer = new ResizeObserver(refreshMobileStage);
+      observer.observe(document.body);
+    }
 
     seatPets();
     return;
