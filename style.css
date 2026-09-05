@@ -1446,3 +1446,59 @@ svg {
     font-size: 12.5px;
   }
 }
+
+
+/* =========================================
+   V9.7 — Mobile pets
+   ========================================= */
+
+@media (max-width: 700px) {
+  /* Override the earlier mobile rule that hid the pets. */
+  .pet-layer {
+    display: block !important;
+    position: fixed;
+    inset: 0;
+    z-index: 18;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .pixel-pet {
+    display: block;
+    pointer-events: auto;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Smaller than desktop so they feel like a little easter egg. */
+  .pixel-pet.hamtaro {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pixel-pet.totoro {
+    width: 52px;
+    height: 52px;
+  }
+
+  /*
+    Initial state: both "sitting" together in the bottom-right corner.
+    We use the front-facing idle sprite for the seated look.
+  */
+  .pet-layer.mobile-pets-idle .pixel-pet {
+    transition:
+      left .35s cubic-bezier(.2,.8,.2,1),
+      top .35s cubic-bezier(.2,.8,.2,1),
+      transform .22s ease;
+  }
+
+  .pet-layer.mobile-pets-idle .pixel-pet:active {
+    transform: translate(-50%, -50%) scale(.94);
+  }
+
+  .pet-layer.mobile-pets-active .pixel-pet {
+    pointer-events: none;
+  }
+}

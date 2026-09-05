@@ -1,25 +1,25 @@
-# Portfolio Matheus Migliorini — V9.6 Mobile
-
-Primeira revisão completa de responsividade.
+# Portfolio Matheus Migliorini — V9.7 Mobile Pets
 
 ## Mobile
-- header compacto sem hamburger;
-- menu continua totalmente visível e pode deslizar horizontalmente em telas muito estreitas;
-- tipografia e espaçamentos recalibrados;
-- Home vira uma composição editorial de uma coluna em celulares;
-- trabalhos viram uma lista limpa com divisórias pontilhadas;
-- Work, Notes, About e CV foram adaptados para leitura vertical;
-- suporte a safe area de iPhone;
-- evita qualquer scroll horizontal acidental;
-- links e contatos permanecem reais.
+Hamtaro e Totoro agora aparecem novamente no celular.
 
-## Hamtaro e Totoro
-Continuam na experiência desktop. Em touch/mobile ficam ocultos por enquanto,
-porque não existe cursor para a interação e isso preserva legibilidade e bateria.
+Estado inicial:
+- ficam juntos no canto inferior direito;
+- usam o sprite frontal/parado, como se estivessem sentados;
+- continuam discretos e pequenos.
 
-## Cursor
-A V9.6 usa a silhueta EXATA do cursor enviada pelo Matheus, apenas recortada
-e reduzida para 22 px, sem redesenhar a forma.
+Interação:
+- dê dois toques rápidos em Hamtaro OU Totoro;
+- os dois "acordam" e passam a caminhar pela tela;
+- Hamtaro continua mais agitado e às vezes procura Totoro;
+- Totoro é mais lento e dorme com mais frequência.
+
+## Desktop
+O comportamento da V9.5 foi mantido:
+- Hamtaro foge um pouco da seta;
+- às vezes segue Totoro;
+- Totoro corre atrás da seta;
+- personalidades e sono continuam funcionando.
 
 ## Commit sugerido
-`Add mobile responsive layout`
+`Add mobile pet easter egg`

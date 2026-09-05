@@ -2,8 +2,342 @@
 (() => {
   const layer = document.getElementById("pet-layer");
   if (!layer) return;
-  if (window.matchMedia("(max-width: 700px)").matches) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const isMobile = window.matchMedia("(max-width: 700px)").matches;
+
+  const directionRow = { down: 0, left: 1, right: 2, up: 3 };
+
+  function setFrame(pet, direction, column) {
+    const row = directionRow[direction];
+    const x = column * 33.333333;
+    const y = row * 33.333333;
+    pet.el.style.backgroundPosition = `${x}% ${y}%`;
+  }
+
+  function randomBetween(min, max) {
+    return min + Math.random() * Math.max(0, max - min);
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function faceFromVector(dx, dy) {
+    if (Math.abs(dx) > Math.abs(dy)) {
+      return dx >= 0 ? "right" : "left";
+    }
+    return dy >= 0 ? "down" : "up";
+  }
+
+  function createPet(options) {
+    const el = document.createElement("div");
+    el.className = `pixel-pet ${options.className}`;
+    layer.appendChild(el);
+
+    const pet = {
+      el,
+      name: options.name,
+      size: options.size,
+      x: options.x || 0,
+      y: options.y || 0,
+      targetX: 0,
+      targetY: 0,
+      direction: options.direction || "down",
+      state: "idle",
+      nextStateAt: performance.now() + randomBetween(500, 1200),
+      nextAnimAt: 0,
+      walkColumn: 1,
+      wanderSpeed: options.wanderSpeed || 24,
+      actionSpeed: options.actionSpeed || 80,
+      partner: null,
+      actionUntil: 0,
+    };
+
+    setFrame(pet, pet.direction, 0);
+    return pet;
+  }
+
+  function render(pet) {
+    pet.el.style.left = `${pet.x}px`;
+    pet.el.style.top = `${pet.y}px`;
+  }
+
+  function moveToward(pet, tx, ty, speed, dt) {
+    const dx = tx - pet.x;
+    const dy = ty - pet.y;
+    const dist = Math.hypot(dx, dy);
+
+    if (dist < .01) return dist;
+
+    pet.direction = faceFromVector(dx, dy);
+    const step = Math.min(dist, speed * dt);
+    pet.x += (dx / dist) * step;
+    pet.y += (dy / dist) * step;
+    return dist;
+  }
+
+  function setVisualState(pet, name) {
+    pet.el.classList.remove("is-walking", "is-running", "is-sleeping");
+    if (name) pet.el.classList.add(name);
+  }
+
+  /* =========================================================
+     MOBILE MODE
+     ========================================================= */
+  if (isMobile) {
+    layer.classList.add("mobile-pets-idle");
+
+    const hamtaro = createPet({
+      name: "Hamtaro",
+      className: "hamtaro",
+      size: 48,
+      direction: "down",
+      wanderSpeed: 26,
+      actionSpeed: 62,
+    });
+
+    const totoro = createPet({
+      name: "Totoro",
+      className: "totoro",
+      size: 52,
+      direction: "down",
+      wanderSpeed: 18,
+      actionSpeed: 48,
+    });
+
+    hamtaro.partner = totoro;
+    totoro.partner = hamtaro;
+
+    const pets = [hamtaro, totoro];
+    let active = false;
+    let raf = null;
+    let last = performance.now();
+
+    function mobileBounds(pet) {
+      const half = pet.size * .52;
+      return {
+        left: 18 + half,
+        right: window.innerWidth - 18 - half,
+        top: 68 + half,
+        bottom: window.innerHeight - 18 - half,
+      };
+    }
+
+    function clampPet(pet) {
+      const b = mobileBounds(pet);
+      pet.x = clamp(pet.x, b.left, b.right);
+      pet.y = clamp(pet.y, b.top, b.bottom);
+    }
+
+    function seatPets() {
+      const bottom = window.innerHeight - 42;
+      const right = window.innerWidth - 34;
+
+      totoro.x = right;
+      totoro.y = bottom;
+      totoro.direction = "down";
+
+      hamtaro.x = right - 48;
+      hamtaro.y = bottom + 1;
+      hamtaro.direction = "down";
+
+      setVisualState(hamtaro, "");
+      setVisualState(totoro, "");
+      setFrame(hamtaro, "down", 0);
+      setFrame(totoro, "down", 0);
+
+      pets.forEach(render);
+    }
+
+    function chooseMobileTarget(pet) {
+      const b = mobileBounds(pet);
+      pet.targetX = randomBetween(b.left, b.right);
+      pet.targetY = randomBetween(b.top, b.bottom);
+      pet.state = "wander";
+    }
+
+    function startMobileSleep(pet, now) {
+      pet.state = "sleep";
+      pet.nextStateAt = now + (
+        pet.name === "Totoro"
+          ? randomBetween(4200, 7800)
+          : randomBetween(1200, 2400)
+      );
+      setVisualState(pet, "is-sleeping");
+      setFrame(pet, pet.direction, 0);
+    }
+
+    function activatePets() {
+      if (active) return;
+      active = true;
+      layer.classList.remove("mobile-pets-idle");
+      layer.classList.add("mobile-pets-active");
+
+      hamtaro.state = "wander";
+      totoro.state = "wander";
+
+      hamtaro.targetX = Math.max(40, hamtaro.x - randomBetween(80, 150));
+      hamtaro.targetY = Math.max(90, hamtaro.y - randomBetween(70, 150));
+
+      totoro.targetX = Math.max(40, totoro.x - randomBetween(60, 120));
+      totoro.targetY = Math.max(90, totoro.y - randomBetween(45, 110));
+
+      last = performance.now();
+      raf = requestAnimationFrame(tick);
+    }
+
+    /*
+      Double-tap on either animal wakes both up.
+      We use pointerup instead of dblclick because iOS/Android differ
+      in how they synthesize double-clicks from touch.
+    */
+    let lastTapAt = 0;
+    let lastTapTarget = null;
+
+    function onPetTap(event) {
+      event.preventDefault();
+      const now = performance.now();
+      const sameTarget = lastTapTarget === event.currentTarget;
+
+      if (sameTarget && now - lastTapAt <= 420) {
+        lastTapAt = 0;
+        lastTapTarget = null;
+        activatePets();
+      } else {
+        lastTapAt = now;
+        lastTapTarget = event.currentTarget;
+      }
+    }
+
+    hamtaro.el.addEventListener("pointerup", onPetTap);
+    totoro.el.addEventListener("pointerup", onPetTap);
+
+    function updateMobilePet(pet, now, dt) {
+      if (pet.state === "sleep") {
+        setVisualState(pet, "is-sleeping");
+        setFrame(pet, pet.direction, 0);
+
+        if (now >= pet.nextStateAt) {
+          pet.state = "idle";
+          pet.nextStateAt = now + (
+            pet.name === "Totoro"
+              ? randomBetween(700, 1800)
+              : randomBetween(180, 550)
+          );
+        }
+        return;
+      }
+
+      if (pet.state === "wander") {
+        setVisualState(pet, "is-walking");
+
+        const dist = moveToward(
+          pet,
+          pet.targetX,
+          pet.targetY,
+          pet.wanderSpeed,
+          dt
+        );
+
+        if (now >= pet.nextAnimAt) {
+          pet.walkColumn = pet.walkColumn === 1 ? 2 : 1;
+          setFrame(pet, pet.direction, pet.walkColumn);
+          pet.nextAnimAt = now + (
+            pet.name === "Hamtaro" ? 185 : 270
+          );
+        }
+
+        if (dist < 7) {
+          const sleepChance =
+            pet.name === "Totoro" ? .55 : .08;
+
+          if (Math.random() < sleepChance) {
+            startMobileSleep(pet, now);
+          } else {
+            pet.state = "idle";
+            pet.nextStateAt = now + (
+              pet.name === "Totoro"
+                ? randomBetween(900, 2200)
+                : randomBetween(180, 650)
+            );
+          }
+        }
+
+        clampPet(pet);
+        return;
+      }
+
+      /* idle */
+      setVisualState(pet, "");
+      setFrame(pet, pet.direction, 0);
+
+      if (now >= pet.nextStateAt) {
+        if (
+          pet.name === "Hamtaro" &&
+          Math.random() < .28 &&
+          pet.partner
+        ) {
+          pet.targetX = pet.partner.x + randomBetween(-28, 28);
+          pet.targetY = pet.partner.y + randomBetween(-28, 28);
+          pet.state = "wander";
+        } else if (
+          pet.name === "Totoro" &&
+          Math.random() < .42
+        ) {
+          startMobileSleep(pet, now);
+        } else {
+          chooseMobileTarget(pet);
+        }
+      }
+    }
+
+    function avoidOverlap() {
+      const dx = totoro.x - hamtaro.x;
+      const dy = totoro.y - hamtaro.y;
+      const d = Math.hypot(dx, dy);
+      const minD = 40;
+
+      if (d > 0 && d < minD) {
+        const push = (minD - d) * .4;
+        hamtaro.x -= (dx / d) * push;
+        hamtaro.y -= (dy / d) * push;
+        totoro.x += (dx / d) * push;
+        totoro.y += (dy / d) * push;
+        clampPet(hamtaro);
+        clampPet(totoro);
+      }
+    }
+
+    function tick(now) {
+      if (!active) return;
+
+      const dt = Math.min(.04, (now - last) / 1000);
+      last = now;
+
+      updateMobilePet(hamtaro, now, dt);
+      updateMobilePet(totoro, now, dt);
+      avoidOverlap();
+
+      pets.forEach(render);
+      raf = requestAnimationFrame(tick);
+    }
+
+    window.addEventListener("resize", () => {
+      if (!active) {
+        seatPets();
+      } else {
+        pets.forEach(clampPet);
+      }
+    }, { passive: true });
+
+    seatPets();
+    return;
+  }
+
+  /* =========================================================
+     DESKTOP MODE — current V9.5 personality behavior
+     ========================================================= */
 
   const mouse = {
     x: -9999,
@@ -23,15 +357,7 @@
     mouse.active = false;
   });
 
-  function randomBetween(min, max) {
-    return min + Math.random() * Math.max(0, max - min);
-  }
-
-  function clamp(value, min, max) {
-    return Math.max(min, Math.min(max, value));
-  }
-
-  function boundsFor(pet) {
+  function desktopBounds(pet) {
     const margin = 26;
     const half = pet.size * .5;
     return {
@@ -42,112 +368,21 @@
     };
   }
 
-  const directionRow = { down: 0, left: 1, right: 2, up: 3 };
-
-  function setFrame(pet, direction, column) {
-    const row = directionRow[direction];
-    const x = column * 33.333333;
-    const y = row * 33.333333;
-    pet.el.style.backgroundPosition = `${x}% ${y}%`;
-  }
-
-  function faceFromVector(dx, dy) {
-    if (Math.abs(dx) > Math.abs(dy)) {
-      return dx >= 0 ? "right" : "left";
-    }
-    return dy >= 0 ? "down" : "up";
-  }
-
-  function clampIntoBounds(pet) {
-    const b = boundsFor(pet);
+  function clampDesktop(pet) {
+    const b = desktopBounds(pet);
     pet.x = clamp(pet.x, b.left, b.right);
     pet.y = clamp(pet.y, b.top, b.bottom);
   }
 
-  function moveToward(pet, tx, ty, speed, dt) {
-    const dx = tx - pet.x;
-    const dy = ty - pet.y;
-    const dist = Math.hypot(dx, dy);
-
-    if (dist < .01) return dist;
-
-    pet.direction = faceFromVector(dx, dy);
-    const step = Math.min(dist, speed * dt);
-    pet.x += (dx / dist) * step;
-    pet.y += (dy / dist) * step;
-    return dist;
-  }
-
-  function createPet(options) {
-    const el = document.createElement("div");
-    el.className = `pixel-pet ${options.className}`;
-    layer.appendChild(el);
-
-    const pet = {
-      el,
-      name: options.name,
-      size: options.size,
-      x: window.innerWidth * options.startX,
-      y: window.innerHeight * options.startY,
-      targetX: 0,
-      targetY: 0,
-      direction: options.direction,
-      state: "idle",
-      wanderSpeed: options.wanderSpeed,
-      actionSpeed: options.actionSpeed,
-      nextStateAt: performance.now() + randomBetween(450, 1100),
-      nextAnimAt: 0,
-      walkColumn: 1,
-      partner: null,
-      actionUntil: 0,
-    };
-
-    clampIntoBounds(pet);
-    setFrame(pet, pet.direction, 0);
-    return pet;
-  }
-
-  const hamtaro = createPet({
-    name: "Hamtaro",
-    className: "hamtaro",
-    size: 58,
-    startX: .24,
-    startY: .68,
-    direction: "right",
-    wanderSpeed: 40,
-    actionSpeed: 92,
-  });
-
-  const totoro = createPet({
-    name: "Totoro",
-    className: "totoro",
-    size: 64,
-    startX: .76,
-    startY: .76,
-    direction: "left",
-    wanderSpeed: 18,
-    actionSpeed: 80,
-  });
-
-  hamtaro.partner = totoro;
-  totoro.partner = hamtaro;
-
-  const pets = [hamtaro, totoro];
-
-  function setVisualState(pet, name) {
-    pet.el.classList.remove("is-walking", "is-running", "is-sleeping");
-    if (name) pet.el.classList.add(name);
-  }
-
-  function chooseWanderTarget(pet) {
-    const b = boundsFor(pet);
+  function chooseDesktopTarget(pet) {
+    const b = desktopBounds(pet);
     pet.targetX = randomBetween(b.left, b.right);
     pet.targetY = randomBetween(b.top, b.bottom);
     pet.state = "wander";
     pet.nextAnimAt = 0;
   }
 
-  function startSleep(pet, now) {
+  function startDesktopSleep(pet, now) {
     pet.state = "sleep";
     pet.nextStateAt = now + (
       pet.name === "Totoro"
@@ -157,6 +392,33 @@
     setFrame(pet, pet.direction, 0);
     setVisualState(pet, "is-sleeping");
   }
+
+  const hamtaro = createPet({
+    name: "Hamtaro",
+    className: "hamtaro",
+    size: 58,
+    x: window.innerWidth * .24,
+    y: window.innerHeight * .68,
+    direction: "right",
+    wanderSpeed: 40,
+    actionSpeed: 92,
+  });
+
+  const totoro = createPet({
+    name: "Totoro",
+    className: "totoro",
+    size: 64,
+    x: window.innerWidth * .76,
+    y: window.innerHeight * .76,
+    direction: "left",
+    wanderSpeed: 18,
+    actionSpeed: 80,
+  });
+
+  hamtaro.partner = totoro;
+  totoro.partner = hamtaro;
+
+  const pets = [hamtaro, totoro];
 
   function startHamtaroFollow(now) {
     hamtaro.state = "follow-totoro";
@@ -174,7 +436,6 @@
       ? Math.hypot(mouse.x - hamtaro.x, mouse.y - hamtaro.y)
       : Infinity;
 
-    // Hamtaro é agitado e um pouco arisco: se a seta chega perto, ele dá uma escapada.
     if (
       mouseDistance < 115 &&
       hamtaro.state !== "flee-mouse" &&
@@ -211,11 +472,10 @@
         hamtaro.nextStateAt = now + randomBetween(180, 520);
       }
 
-      clampIntoBounds(hamtaro);
+      clampDesktop(hamtaro);
       return;
     }
 
-    // Às vezes Hamtaro resolve acompanhar o Totoro.
     if (hamtaro.state === "follow-totoro") {
       setVisualState(hamtaro, "is-walking");
 
@@ -247,7 +507,7 @@
         hamtaro.nextStateAt = now + randomBetween(250, 650);
       }
 
-      clampIntoBounds(hamtaro);
+      clampDesktop(hamtaro);
       return;
     }
 
@@ -283,11 +543,10 @@
         hamtaro.nextStateAt = now + randomBetween(160, 520);
       }
 
-      clampIntoBounds(hamtaro);
+      clampDesktop(hamtaro);
       return;
     }
 
-    // Idle curto: Hamtaro dificilmente fica parado por muito tempo.
     setVisualState(hamtaro, "");
     setFrame(hamtaro, hamtaro.direction, 0);
 
@@ -295,11 +554,11 @@
       const roll = Math.random();
 
       if (roll < .04) {
-        startSleep(hamtaro, now);
+        startDesktopSleep(hamtaro, now);
       } else if (roll < .30) {
         startHamtaroFollow(now);
       } else {
-        chooseWanderTarget(hamtaro);
+        chooseDesktopTarget(hamtaro);
       }
     }
   }
@@ -310,7 +569,6 @@
       ? Math.hypot(mouse.x - totoro.x, mouse.y - totoro.y)
       : Infinity;
 
-    // Totoro é mais sonolento, mas quando a seta chega perto ele SEMPRE acorda e vai atrás.
     const shouldChase =
       mouseDistance < 170 ||
       (totoro.state === "chase-mouse" && mouseDistance < 235);
@@ -340,7 +598,7 @@
         totoro.nextStateAt = now + randomBetween(500, 1100);
       }
 
-      clampIntoBounds(totoro);
+      clampDesktop(totoro);
       return;
     }
 
@@ -373,31 +631,30 @@
 
       if (dist < 7) {
         if (Math.random() < .52) {
-          startSleep(totoro, now);
+          startDesktopSleep(totoro, now);
         } else {
           totoro.state = "idle";
           totoro.nextStateAt = now + randomBetween(900, 2100);
         }
       }
 
-      clampIntoBounds(totoro);
+      clampDesktop(totoro);
       return;
     }
 
-    // Totoro permanece parado por mais tempo e dorme com frequência.
     setVisualState(totoro, "");
     setFrame(totoro, totoro.direction, 0);
 
     if (now >= totoro.nextStateAt) {
       if (Math.random() < .48) {
-        startSleep(totoro, now);
+        startDesktopSleep(totoro, now);
       } else {
-        chooseWanderTarget(totoro);
+        chooseDesktopTarget(totoro);
       }
     }
   }
 
-  function avoidOverlap() {
+  function avoidDesktopOverlap() {
     const dx = totoro.x - hamtaro.x;
     const dy = totoro.y - hamtaro.y;
     const d = Math.hypot(dx, dy);
@@ -410,34 +667,29 @@
       totoro.x += (dx / d) * push;
       totoro.y += (dy / d) * push;
 
-      clampIntoBounds(hamtaro);
-      clampIntoBounds(totoro);
+      clampDesktop(hamtaro);
+      clampDesktop(totoro);
     }
-  }
-
-  function render(pet) {
-    pet.el.style.left = `${pet.x}px`;
-    pet.el.style.top = `${pet.y}px`;
   }
 
   let last = performance.now();
 
-  function tick(now) {
+  function desktopTick(now) {
     const dt = Math.min(.04, (now - last) / 1000);
     last = now;
 
     updateHamtaro(now, dt);
     updateTotoro(now, dt);
-    avoidOverlap();
+    avoidDesktopOverlap();
 
     pets.forEach(render);
-    requestAnimationFrame(tick);
+    requestAnimationFrame(desktopTick);
   }
 
   window.addEventListener("resize", () => {
-    pets.forEach(clampIntoBounds);
+    pets.forEach(clampDesktop);
   }, { passive: true });
 
   pets.forEach(render);
-  requestAnimationFrame(tick);
+  requestAnimationFrame(desktopTick);
 })();
