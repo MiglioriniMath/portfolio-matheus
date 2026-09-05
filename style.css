@@ -77,12 +77,10 @@ a:focus-visible {
   color: #44443f;
 }
 
-.nav a,
 .socials a {
   transition: opacity .15s ease;
 }
 
-.nav a:hover,
 .socials a:hover,
 .work-item:hover strong {
   opacity: .52;
@@ -943,13 +941,42 @@ h1 {
 }
 
 
-/* Custom cursor */
+/* Subtle Mac-like menu hover */
+.nav a {
+  display: inline-block;
+  position: relative;
+  padding: 6px 7px;
+  margin: -6px -7px;
+  border-radius: 8px;
+  transform-origin: 50% 60%;
+  transition:
+    transform .20s cubic-bezier(.2,.8,.2,1),
+    background-color .20s ease,
+    opacity .20s ease,
+    color .20s ease;
+}
+
+.nav a:hover {
+  opacity: 1;
+  transform: translateY(-1px) scale(1.09);
+  background: rgba(25, 25, 23, .055);
+  color: #171715;
+}
+
+@supports selector(.nav:has(a:hover)) {
+  .nav:has(a:hover) a:not(:hover) {
+    opacity: .58;
+    transform: scale(.97);
+  }
+}
+
+/* cursor compacto, pixelado e discreto */
 @media (pointer: fine) {
   html,
   body,
   a,
   button,
   [role="button"] {
-    cursor: url("assets/cursor-arrow.png") 4 3, auto;
+    cursor: url("assets/cursor-arrow.png") 2 1, auto;
   }
 }

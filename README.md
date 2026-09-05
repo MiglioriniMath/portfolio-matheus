@@ -1,17 +1,33 @@
-# Portfolio Matheus Migliorini — V9.4
+# Portfolio Matheus Migliorini — V9.5
 
-Adiciona um cursor personalizado inspirado na referência enviada:
-- seta preta clássica;
-- contorno branco;
-- sombra discreta;
-- levemente maior que o cursor padrão;
-- aplicado apenas em dispositivos com mouse/trackpad.
+Refino de interação e personalidade.
 
-Os porquinhos continuam reagindo ao cursor normalmente, porque a alteração é apenas visual.
+## Cursor
+- novo cursor menor;
+- geometria pixelada mais elegante;
+- carvão escuro com detalhe de grafite;
+- visual mais próximo da referência enviada.
 
-## Arquivos novos/alterados
-- `assets/cursor-arrow.png`
-- `style.css`
+## Menu
+Hover inspirado no comportamento visual do macOS:
+- item sob o cursor cresce levemente;
+- recebe fundo discreto;
+- os demais itens perdem um pouco de destaque;
+- transição suave, sem ficar com cara de efeito exagerado.
+
+## Hamtaro
+- mais agitado;
+- anda mais rápido;
+- fica menos tempo parado;
+- quase não dorme;
+- quando a seta chega muito perto, costuma fugir um pouco;
+- às vezes decide seguir o Totoro.
+
+## Totoro
+- mais calmo;
+- anda mais devagar;
+- dorme com bastante frequência;
+- quando o cursor chega perto, acorda e sempre corre atrás dele.
 
 ## Commit sugerido
-`Add custom cursor`
+`Refine cursor menu and pet personalities`
