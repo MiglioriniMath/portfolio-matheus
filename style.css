@@ -833,50 +833,100 @@ h1 {
 }
 
 
+
 /* Hamtaro + Totoro interactive pixel pets */
+.home-page {
+  position: relative;
+}
+
+.home-page .shell,
+.home-page .site-header,
+.home-page .footer {
+  position: relative;
+  z-index: 2;
+}
+
 .pet-layer {
   position: fixed;
   inset: 0;
-  z-index: 30;
+  z-index: 1;
   pointer-events: none;
   overflow: hidden;
 }
 
 .pixel-pet {
   position: fixed;
-  width: 88px;
-  height: 88px;
   left: 0;
   top: 0;
   background-repeat: no-repeat;
-  background-size: 400% 400%;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   transform: translate(-50%, -50%);
-  transform-origin: 50% 70%;
-  will-change: left, top, background-position, transform;
-  filter: drop-shadow(0 2px 0 rgba(0,0,0,.08));
+  transform-origin: 50% 65%;
+  will-change: left, top, background-position, transform, opacity;
+  filter: drop-shadow(0 2px 0 rgba(0,0,0,.06));
+  opacity: 0.97;
 }
 
 .pixel-pet.hamtaro {
-  width: 84px;
-  height: 84px;
+  width: 58px;
+  height: 58px;
   background-image: url("assets/hamtaro-sprites.png");
+  background-size: 1280px 1280px;
 }
 
 .pixel-pet.totoro {
-  width: 92px;
-  height: 92px;
+  width: 64px;
+  height: 64px;
   background-image: url("assets/totoro-sprites.png");
+  background-size: 1280px 1280px;
+}
+
+.pixel-pet.is-walking {
+  animation: pet-hop .45s steps(2, end) infinite;
 }
 
 .pixel-pet.is-running {
-  animation: pet-hop .28s steps(2, end) infinite;
+  animation: pet-hop-fast .24s steps(2, end) infinite;
+}
+
+.pixel-pet.is-sleeping {
+  animation: pet-sleep 1.8s ease-in-out infinite;
+  opacity: 0.94;
+}
+
+.pixel-pet.is-sleeping::after {
+  content: "z z";
+  position: absolute;
+  top: -10px;
+  left: 65%;
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(41, 41, 41, 0.65);
+  white-space: nowrap;
+  animation: pet-zzz 1.5s ease-in-out infinite;
 }
 
 @keyframes pet-hop {
   0%, 100% { margin-top: 0; }
   50% { margin-top: -2px; }
+}
+
+@keyframes pet-hop-fast {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -3px; }
+}
+
+@keyframes pet-sleep {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(0.985); }
+}
+
+@keyframes pet-zzz {
+  0% { transform: translateY(0); opacity: 0; }
+  25% { opacity: .75; }
+  100% { transform: translateY(-9px); opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -885,7 +935,7 @@ h1 {
   }
 }
 
-/* Por enquanto a interação dos porquinhos fica só no desktop. */
+/* por enquanto deixamos os porquinhos apenas no desktop */
 @media (max-width: 700px) {
   .pet-layer {
     display: none;
