@@ -831,3 +831,63 @@ h1 {
     gap: 18px;
   }
 }
+
+
+/* Hamtaro + Totoro interactive pixel pets */
+.pet-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pixel-pet {
+  position: fixed;
+  width: 88px;
+  height: 88px;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: 400% 400%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 70%;
+  will-change: left, top, background-position, transform;
+  filter: drop-shadow(0 2px 0 rgba(0,0,0,.08));
+}
+
+.pixel-pet.hamtaro {
+  width: 84px;
+  height: 84px;
+  background-image: url("assets/hamtaro-sprites.png");
+}
+
+.pixel-pet.totoro {
+  width: 92px;
+  height: 92px;
+  background-image: url("assets/totoro-sprites.png");
+}
+
+.pixel-pet.is-running {
+  animation: pet-hop .28s steps(2, end) infinite;
+}
+
+@keyframes pet-hop {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-layer {
+    display: none;
+  }
+}
+
+/* Por enquanto a interação dos porquinhos fica só no desktop. */
+@media (max-width: 700px) {
+  .pet-layer {
+    display: none;
+  }
+}
