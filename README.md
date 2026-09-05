@@ -1,19 +1,17 @@
-# Portfolio Matheus Migliorini — V11 Performance
+# Portfolio Matheus Migliorini — V11.1 Hero Polish
 
-Foco: velocidade + Home em uma única visualização.
+Primeira rodada de refinamento visual da V11.
 
-- Home sem scroll em desktop e mobile;
-- layout recalibrado para caber em um viewport;
-- avatar AVIF (~34 KB) + WebP (~68 KB), mantendo PNG apenas como fallback;
-- sprites dos porquinhos reduzidos de ~1,2 MB para ~100 KB no total;
-- Hamtaro e Totoro iniciam sentados juntos no canto inferior direito;
-- após ~3,2 segundos, começam a se mover automaticamente;
-- dois toques no mobile ainda acordam os dois mais cedo;
-- animação limitada a ~30 FPS;
-- animação pausa quando a aba fica em segundo plano;
-- removidos blurs pesados da maioria dos cards;
-- cache longo para assets versionados; HTML continua sem cache;
-- botões refinados para um visual macOS mais limpo;
-- copy da Home encurtada para ficar mais editorial e leve.
+## Alterações
+- cards de foto e nome menores e mais proporcionais;
+- fotografia redimensionada pela altura do próprio card, sem estourar o campo;
+- removidos da Home: “Sorocaba, SP”, “Ideias / Pessoas / Histórias / Em movimento” e “Desde sempre explorando o extraordinário no cotidiano”;
+- card do nome virou uma composição de uma única coluna, mais limpa;
+- assinatura manuscrita e popup “Ideias” foram preservados;
+- fundo redesenhado em tons de branco/cinza muito claro com aparência de blur;
+- o blur do fundo é feito com gradientes CSS estáticos, evitando um filtro pesado de tela inteira;
+- modo de uma única visualização e performance da V11 preservados;
+- Hamtaro e Totoro preservados.
 
-Commit sugerido: `Optimize performance and fit home to one viewport`
+## Commit sugerido
+`Refine hero proportions and soft background`
