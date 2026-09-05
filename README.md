@@ -1,20 +1,17 @@
-# Portfolio Matheus Migliorini — V9.3
+# Portfolio Matheus Migliorini — V9.4
 
-Atualização de links e contatos reais.
+Adiciona um cursor personalizado inspirado na referência enviada:
+- seta preta clássica;
+- contorno branco;
+- sombra discreta;
+- levemente maior que o cursor padrão;
+- aplicado apenas em dispositivos com mouse/trackpad.
 
-## Contatos
-- Email: matheusmigliorini22@gmail.com
-- Instagram: @migliorinimath
-- LinkedIn: https://www.linkedin.com/in/matheus-migliorini-776207158/
-- WhatsApp: +55 15 99187-8897
+Os porquinhos continuam reagindo ao cursor normalmente, porque a alteração é apenas visual.
 
-## Ajustes
-- links reais na Home;
-- links reais em About;
-- Email / LinkedIn / WhatsApp no CV;
-- “Arquivo” da Home agora abre Notes;
-- projetos da Home agora direcionam para Work;
-- removidos links `#` sem destino relevante.
+## Arquivos novos/alterados
+- `assets/cursor-arrow.png`
+- `style.css`
 
 ## Commit sugerido
-`Add real contact links`
+`Add custom cursor`

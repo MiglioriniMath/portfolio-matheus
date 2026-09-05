@@ -941,3 +941,15 @@ h1 {
     display: none;
   }
 }
+
+
+/* Custom cursor */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: url("assets/cursor-arrow.png") 4 3, auto;
+  }
+}
