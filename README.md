@@ -1,39 +1,30 @@
-# Portfolio Matheus Migliorini — V11.5
-
-## Cabeçalho
-- remove a assinatura temporária `Math`;
-- o espaço esquerdo fica visualmente vazio por enquanto;
-- navegação centralizada;
-- `Fale comigo` continua abrindo o WhatsApp.
-
-## Nomes
-- Work → Trabalhos
-- Notes → Anotações
-- Photos → Álbum
-- About → Sobre Mim
-- CV permanece CV
-
-Os títulos/metadados das páginas também foram atualizados.
-
-## Performance das interações
-- hover dos botões caiu para ~105–165 ms;
-- removidas animações de `box-shadow` e `filter` dos botões comuns;
-- menos camadas promovidas para GPU;
-- removido blur pesado de todos os cards;
-- apenas o header mantém um blur leve no desktop.
+# Portfolio Matheus Migliorini — V11.6 Ambient Gradient
 
 ## Fundo
-O mockup enviado foi usado apenas como referência visual.
-O novo fundo usa grandes gradientes branco/cinza-azulados já suaves,
-sem aplicar um filtro blur de tela cheia. Isso mantém a aparência desfocada
-com custo de renderização muito menor.
+Implementação de um ambient gradient inspirado em macOS:
+- base predominantemente branca/off-white;
+- grandes manchas difusas em azul acinzentado;
+- manchas quentes em bege muito suave;
+- cores concentradas nas bordas e atrás dos cards;
+- sem degradê linear visível;
+- somente duas camadas ambientais com blur;
+- baixa opacidade e saturação reduzida.
 
-## Mantido
-- foto da V11.4;
-- rabisco artesanal;
-- hover do `Math`, agora mais rápido;
-- Hamtaro e Totoro;
-- SEO, sitemap, Open Graph e links reais.
+## Glassmorphism
+- branco translúcido;
+- backdrop blur discreto;
+- borda branca fina;
+- sombra extremamente leve;
+- blur aplicado só nas superfícies principais;
+- elementos internos não duplicam o efeito.
+
+## Performance
+- somente duas camadas grandes recebem blur;
+- botões e elementos pequenos não usam backdrop-filter;
+- no mobile o blur é reduzido;
+- cards mobile usam transparência sem blur;
+- animações continuam curtas e baseadas em transform;
+- Hamtaro e Totoro permanecem intactos.
 
 ## Commit sugerido
-`Refine navigation background and interaction performance`
+`Add performance-friendly macOS ambient gradient`

@@ -1,0 +1,4791 @@
+:root {
+  --bg: #f8f8f5;
+  --text: #191919;
+  --muted: #777772;
+  --soft: #a7a7a1;
+  --line: #cfcfca;
+  --max: 760px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--text);
+  outline-offset: 4px;
+}
+
+.shell {
+  width: min(calc(100% - 48px), var(--max));
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 30px 0 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand,
+.nav {
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #44443f;
+}
+
+.socials a {
+  transition: opacity .15s ease;
+}
+
+.socials a:hover,
+.work-item:hover strong {
+  opacity: .52;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  margin-top: 54px;
+}
+
+.portrait-wrap {
+  align-self: end;
+  height: 142px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portrait {
+  display: block;
+  width: 108px;
+  height: auto;
+  transform: translateY(11px);
+  filter: grayscale(1);
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: clamp(27px, 4vw, 36px);
+  line-height: .98;
+  letter-spacing: -.045em;
+  font-weight: 650;
+}
+
+.bio {
+  max-width: 570px;
+}
+
+.bio p {
+  margin-bottom: 9px;
+  font-size: 14px;
+  line-height: 1.55;
+  letter-spacing: -.01em;
+}
+
+.location {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: .02em;
+}
+
+.rule {
+  width: 100%;
+  height: 1px;
+  margin: 30px 0 24px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--line) 0,
+    var(--line) 2px,
+    transparent 2px,
+    transparent 7px
+  );
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  font-weight: 630;
+}
+
+.section-heading span {
+  color: var(--soft);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 28px;
+  row-gap: 23px;
+}
+
+.work-item {
+  min-width: 0;
+}
+
+.work-item strong,
+.work-item span {
+  display: block;
+}
+
+.work-item strong {
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 630;
+  transition: opacity .15s ease;
+}
+
+.work-item span {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+  margin-top: auto;
+}
+
+.footer-copy p {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 620;
+}
+
+.footer-copy span {
+  display: block;
+  max-width: 330px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 15px;
+  color: #3d3d39;
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 10px;
+}
+
+.anchor-target {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (min-width: 820px) and (min-height: 720px) {
+  body {
+    overflow: hidden;
+  }
+
+  .shell {
+    height: 100vh;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .shell {
+    width: min(calc(100% - 32px), var(--max));
+    padding-top: 22px;
+    padding-bottom: 24px;
+  }
+
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .nav {
+    max-width: 250px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px 14px;
+    line-height: 1.2;
+  }
+
+  .intro {
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 20px;
+    margin-top: 44px;
+    align-items: start;
+  }
+
+  .portrait-wrap {
+    height: 118px;
+  }
+
+  .portrait {
+    width: 90px;
+    transform: translateY(9px);
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+
+  .bio p {
+    font-size: 13px;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 22px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 460px) {
+  .site-header {
+    gap: 16px;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .portrait-wrap {
+    width: 88px;
+    height: 108px;
+    justify-content: flex-start;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rule {
+    margin: 26px 0 22px;
+  }
+}
+
+
+/* Internal pages */
+.internal-shell {
+  min-height: 100vh;
+}
+
+.page-intro {
+  margin-top: 76px;
+  max-width: 620px;
+}
+
+.page-kicker {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.page-intro h1 {
+  margin-bottom: 16px;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  font-weight: 620;
+}
+
+.page-lead {
+  max-width: 560px;
+  margin-bottom: 0;
+  color: #343431;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 20px;
+  gap: 26px;
+  padding: 23px 0;
+  border-bottom: 1px dotted var(--line);
+}
+
+.project-row:first-child {
+  padding-top: 4px;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 2px;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.project-main h2 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  font-weight: 630;
+}
+
+.project-main p {
+  max-width: 500px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.project-arrow {
+  color: var(--soft);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12px;
+}
+
+.coming-soon {
+  padding: 10px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.internal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: auto;
+  padding-top: 48px;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: .02em;
+}
+
+.internal-footer a:hover {
+  color: var(--text);
+}
+
+@media (min-width: 820px) and (min-height: 720px) {
+  .internal-shell {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  body:has(.internal-shell) {
+    overflow: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-intro {
+    margin-top: 54px;
+  }
+
+  .project-row {
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .project-arrow {
+    display: none;
+  }
+}
+
+
+/* Notes */
+.notes-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-row {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) 92px;
+  gap: 24px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px dotted var(--line);
+}
+
+.note-row:first-child {
+  padding-top: 4px;
+}
+
+.note-date,
+.note-type {
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+.note-type {
+  text-align: right;
+}
+
+.note-main h2 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  line-height: 1.3;
+  letter-spacing: -.018em;
+  font-weight: 630;
+}
+
+.note-main p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.note-row:hover .note-main h2 {
+  opacity: .55;
+}
+
+@media (max-width: 700px) {
+  .note-row {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .note-type {
+    display: none;
+  }
+}
+
+
+/* External photo archive */
+.external-link-block {
+  padding: 8px 0;
+}
+
+.external-big-link {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -.02em;
+  font-weight: 620;
+}
+
+.external-big-link:hover {
+  opacity: .55;
+}
+
+.external-link-block p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+}
+
+
+/* About */
+.about-hero {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 34px;
+  align-items: end;
+  margin-top: 70px;
+}
+
+.about-photo {
+  height: 154px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.about-photo img {
+  display: block;
+  width: 116px;
+  height: auto;
+  transform: translateY(10px);
+  filter: grayscale(1);
+}
+
+.about-copy h1 {
+  margin-bottom: 18px;
+  font-size: clamp(27px, 4vw, 36px);
+  line-height: 1;
+  letter-spacing: -.045em;
+  font-weight: 620;
+}
+
+.about-text {
+  max-width: 555px;
+}
+
+.about-text p {
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 44px;
+}
+
+.about-block p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.about-label {
+  margin: 0 0 6px !important;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px !important;
+  line-height: 1.4 !important;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.about-contact {
+  padding-bottom: 6px;
+}
+
+.about-contact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.about-contact-row > p {
+  max-width: 390px;
+  margin: 0;
+  color: #343431;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+@media (max-width: 700px) {
+  .about-hero {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 22px;
+    margin-top: 52px;
+    align-items: start;
+  }
+
+  .about-photo {
+    height: 122px;
+  }
+
+  .about-photo img {
+    width: 92px;
+    transform: translateY(7px);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .about-contact-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 460px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    width: 90px;
+    height: 112px;
+    justify-content: flex-start;
+  }
+}
+
+
+/* CV */
+.cv-intro {
+  max-width: 600px;
+}
+
+.cv-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+  color: #3d3d39;
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 10px;
+}
+
+.cv-links a:hover {
+  opacity: .55;
+}
+
+.cv-section {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 28px;
+}
+
+.cv-section-label h2 {
+  margin: 0;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.cv-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.cv-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 2px;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+.cv-main h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.3;
+  letter-spacing: -.02em;
+  font-weight: 630;
+}
+
+.cv-role {
+  margin-bottom: 7px !important;
+  color: #343431 !important;
+  font-size: 11px !important;
+  font-weight: 560;
+}
+
+.cv-main p {
+  max-width: 470px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.cv-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 18px;
+  color: #343431;
+  font-size: 11px;
+}
+
+.cv-focus span::after {
+  content: "·";
+  margin-left: 18px;
+  color: var(--soft);
+}
+
+.cv-focus span:last-child::after {
+  content: "";
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .cv-section {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cv-row {
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+
+
+/* Hamtaro + Totoro interactive pixel pets */
+.home-page {
+  position: relative;
+}
+
+.home-page .shell,
+.home-page .site-header,
+.home-page .footer {
+  position: relative;
+  z-index: 2;
+}
+
+.pet-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pixel-pet {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 65%;
+  will-change: left, top, background-position, transform, opacity;
+  filter: drop-shadow(0 2px 0 rgba(0,0,0,.06));
+  opacity: 0.97;
+}
+
+.pixel-pet.hamtaro {
+  width: 58px;
+  height: 58px;
+  background-image: url("assets/hamtaro-sprites-v11.webp");
+  background-size: 400% 400%;
+}
+
+.pixel-pet.totoro {
+  width: 64px;
+  height: 64px;
+  background-image: url("assets/totoro-sprites-v11.webp");
+  background-size: 400% 400%;
+}
+
+.pixel-pet.is-walking {
+  animation: pet-hop .45s steps(2, end) infinite;
+}
+
+.pixel-pet.is-running {
+  animation: pet-hop-fast .24s steps(2, end) infinite;
+}
+
+.pixel-pet.is-sleeping {
+  animation: pet-sleep 1.8s ease-in-out infinite;
+  opacity: 0.94;
+}
+
+.pixel-pet.is-sleeping::after {
+  content: "z z";
+  position: absolute;
+  top: -10px;
+  left: 65%;
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(41, 41, 41, 0.65);
+  white-space: nowrap;
+  animation: pet-zzz 1.5s ease-in-out infinite;
+}
+
+@keyframes pet-hop {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -2px; }
+}
+
+@keyframes pet-hop-fast {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -3px; }
+}
+
+@keyframes pet-sleep {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(0.985); }
+}
+
+@keyframes pet-zzz {
+  0% { transform: translateY(0); opacity: 0; }
+  25% { opacity: .75; }
+  100% { transform: translateY(-9px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-layer {
+    display: none;
+  }
+}
+
+/* por enquanto deixamos os porquinhos apenas no desktop */
+@media (max-width: 700px) {
+  .pet-layer {
+    display: none;
+  }
+}
+
+
+/* Subtle Mac-like menu hover */
+.nav a {
+  display: inline-block;
+  position: relative;
+  padding: 6px 7px;
+  margin: -6px -7px;
+  border-radius: 8px;
+  transform-origin: 50% 60%;
+  transition:
+    transform .20s cubic-bezier(.2,.8,.2,1),
+    background-color .20s ease,
+    opacity .20s ease,
+    color .20s ease;
+}
+
+.nav a:hover {
+  opacity: 1;
+  transform: translateY(-1px) scale(1.09);
+  background: rgba(25, 25, 23, .055);
+  color: #171715;
+}
+
+@supports selector(.nav:has(a:hover)) {
+  .nav:has(a:hover) a:not(:hover) {
+    opacity: .58;
+    transform: scale(.97);
+  }
+}
+
+/* cursor compacto, pixelado e discreto */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: url("assets/cursor-arrow.png") 2 1, auto;
+  }
+}
+
+
+/* =========================================
+   V9.6 — Mobile responsiveness
+   ========================================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+/* Exact compact pixel cursor reference supplied by Matheus */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: url("assets/cursor-arrow.png") 1 1, auto;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --mobile-edge: 18px;
+  }
+
+  body {
+    min-height: 100svh;
+    overflow-x: hidden;
+  }
+
+  .shell {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding:
+      max(18px, env(safe-area-inset-top))
+      max(var(--mobile-edge), env(safe-area-inset-right))
+      max(26px, env(safe-area-inset-bottom))
+      max(var(--mobile-edge), env(safe-area-inset-left));
+  }
+
+  /* Header remains deliberately simple — no hamburger needed. */
+  .site-header {
+    min-height: 30px;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand,
+  .nav {
+    font-size: 9px;
+    letter-spacing: .065em;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    padding: 9px 0;
+  }
+
+  .nav {
+    min-width: 0;
+    max-width: none;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 9px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Disable the desktop "Mac hover" behavior on touch. */
+  .nav a {
+    padding: 10px 2px;
+    margin: 0;
+    border-radius: 6px;
+    transform: none !important;
+  }
+
+  .nav a:hover {
+    background: transparent;
+    color: inherit;
+    opacity: 1;
+    transform: none !important;
+  }
+
+  @supports selector(.nav:has(a:hover)) {
+    .nav:has(a:hover) a:not(:hover) {
+      opacity: 1;
+      transform: none !important;
+    }
+  }
+
+  /* Home */
+  .intro {
+    margin-top: 42px;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 20px;
+    align-items: end;
+  }
+
+  .portrait-wrap {
+    height: 116px;
+  }
+
+  .portrait {
+    width: 92px;
+  }
+
+  h1,
+  .page-intro h1,
+  .about-copy h1 {
+    text-wrap: balance;
+  }
+
+  h1 {
+    margin-bottom: 14px;
+    font-size: clamp(27px, 8vw, 32px);
+    line-height: 1;
+  }
+
+  .bio p {
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.58;
+  }
+
+  .location {
+    margin-top: 13px;
+    font-size: 9px;
+  }
+
+  .rule {
+    margin: 28px 0 22px;
+  }
+
+  .section-heading {
+    margin-bottom: 16px;
+  }
+
+  .section-heading h2 {
+    font-size: 16px;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+  }
+
+  .work-item {
+    padding-block: 2px;
+  }
+
+  .work-item strong {
+    font-size: 12px;
+  }
+
+  .work-item span {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+
+  .footer {
+    margin-top: 46px;
+    padding-top: 2px;
+    gap: 20px;
+  }
+
+  .footer-copy span {
+    max-width: 280px;
+  }
+
+  .socials {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px 16px;
+    font-size: 10px;
+  }
+
+  /* Internal pages */
+  .internal-shell {
+    min-height: 100svh;
+  }
+
+  .page-intro {
+    margin-top: 48px;
+  }
+
+  .page-kicker {
+    margin-bottom: 9px;
+    font-size: 9px;
+  }
+
+  .page-intro h1 {
+    margin-bottom: 13px;
+    font-size: clamp(29px, 9vw, 35px);
+  }
+
+  .page-lead {
+    font-size: 13px;
+    line-height: 1.58;
+  }
+
+  /* Work */
+  .project-row {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .project-meta,
+  .note-date,
+  .note-type,
+  .cv-meta {
+    font-size: 8px;
+  }
+
+  .project-main h2 {
+    font-size: 14px;
+  }
+
+  .project-main p {
+    font-size: 11.5px;
+  }
+
+  /* Notes */
+  .note-row {
+    grid-template-columns: 62px minmax(0, 1fr);
+    gap: 14px;
+    padding: 18px 0;
+  }
+
+  .note-main h2 {
+    font-size: 13.5px;
+  }
+
+  .note-main p {
+    font-size: 10.5px;
+  }
+
+  /* About */
+  .about-hero {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 20px;
+    margin-top: 46px;
+    align-items: end;
+  }
+
+  .about-photo {
+    height: 118px;
+  }
+
+  .about-photo img {
+    width: 92px;
+  }
+
+  .about-copy h1 {
+    font-size: clamp(27px, 8vw, 33px);
+  }
+
+  .about-text p {
+    font-size: 12.5px;
+    line-height: 1.58;
+  }
+
+  .about-grid {
+    gap: 24px;
+  }
+
+  .about-contact-row {
+    gap: 16px;
+  }
+
+  /* CV */
+  .cv-links {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+
+  .cv-section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cv-row {
+    grid-template-columns: 70px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .cv-main h3 {
+    font-size: 13.5px;
+  }
+
+  .cv-main p {
+    font-size: 10.8px;
+  }
+
+  .cv-focus {
+    gap: 8px 14px;
+    font-size: 10.5px;
+  }
+
+  .cv-focus span::after {
+    margin-left: 14px;
+  }
+
+  .internal-footer {
+    margin-top: 42px;
+    padding-top: 0;
+  }
+
+  /*
+    Cursor-following pets stay desktop-only.
+    Touch has no cursor, and hiding them keeps the mobile experience calm,
+    readable, and battery-friendly.
+  */
+  .pet-layer {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --mobile-edge: 16px;
+  }
+
+  .nav {
+    gap: 8px;
+  }
+
+  /* Portrait becomes an editorial mark above the copy instead of squeezing it. */
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 34px;
+  }
+
+  .portrait-wrap {
+    width: 78px;
+    height: 96px;
+    justify-content: flex-start;
+  }
+
+  .portrait {
+    width: 80px;
+    transform: translateY(8px);
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  /* One-column work list reads much better on a phone. */
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .work-item {
+    padding: 12px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+
+  .work-item:first-child {
+    padding-top: 0;
+  }
+
+  .work-item:last-child {
+    border-bottom: 0;
+  }
+
+  .section-heading span {
+    font-size: 8px;
+  }
+
+  .footer {
+    margin-top: 38px;
+  }
+
+  .socials {
+    gap: 10px 14px;
+  }
+
+  /* Internal pages become fully editorial / single-column. */
+  .page-intro {
+    margin-top: 38px;
+  }
+
+  .project-row,
+  .note-row,
+  .cv-row {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .project-meta,
+  .cv-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px 12px;
+  }
+
+  .note-date {
+    margin-bottom: 1px;
+  }
+
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    margin-top: 38px;
+  }
+
+  .about-photo {
+    width: 78px;
+    height: 96px;
+    justify-content: flex-start;
+  }
+
+  .about-photo img {
+    width: 80px;
+    transform: translateY(7px);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-contact-row {
+    flex-direction: column;
+  }
+
+  .internal-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand,
+  .nav {
+    font-size: 8px;
+  }
+
+  .nav {
+    gap: 7px;
+  }
+
+  .bio p,
+  .page-lead {
+    font-size: 12.5px;
+  }
+}
+
+
+/* =========================================
+   V9.7 — Mobile pets
+   ========================================= */
+
+@media (max-width: 700px) {
+  /* Override the earlier mobile rule that hid the pets. */
+  .pet-layer {
+    display: block !important;
+    position: fixed;
+    inset: 0;
+    z-index: 18;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .pixel-pet {
+    display: block;
+    pointer-events: auto;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Smaller than desktop so they feel like a little easter egg. */
+  .pixel-pet.hamtaro {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pixel-pet.totoro {
+    width: 52px;
+    height: 52px;
+  }
+
+  /*
+    Initial state: both "sitting" together in the bottom-right corner.
+    We use the front-facing idle sprite for the seated look.
+  */
+  .pet-layer.mobile-pets-idle .pixel-pet {
+    transition:
+      left .35s cubic-bezier(.2,.8,.2,1),
+      top .35s cubic-bezier(.2,.8,.2,1),
+      transform .22s ease;
+  }
+
+  .pet-layer.mobile-pets-idle .pixel-pet:active {
+    transform: translate(-50%, -50%) scale(.94);
+  }
+
+  .pet-layer.mobile-pets-active .pixel-pet {
+    pointer-events: none;
+  }
+}
+
+
+/* =========================================
+   V9.8 — Mobile pets anchored to page bottom
+   ========================================= */
+
+@media (max-width: 700px) {
+  /* Reserve a small "floor" below the footer for Hamtaro + Totoro. */
+  .home-page .shell {
+    padding-bottom: max(112px, calc(env(safe-area-inset-bottom) + 96px));
+  }
+
+  /*
+    On mobile the pet layer belongs to the document, not the viewport.
+    So the pair only appears when the visitor reaches the bottom of the site.
+  */
+  .home-page .pet-layer {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .home-page .pixel-pet {
+    position: absolute;
+  }
+}
+
+
+/* =========================================
+   V9.8 — Navigation, focus and accessibility polish
+   ========================================= */
+
+.skip-link {
+  position: fixed;
+  left: 14px;
+  top: 12px;
+  z-index: 999;
+  padding: 8px 10px;
+  border: 1px solid var(--text);
+  border-radius: 7px;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 10px;
+  transform: translateY(-180%);
+  transition: transform .18s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.nav a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translateX(-50%);
+  opacity: .7;
+}
+
+@media (max-width: 700px) {
+  .nav a[aria-current="page"]::after {
+    bottom: 4px;
+  }
+}
+
+
+/* =========================================================
+   V10 — macOS editorial
+   Minimalismo editorial + linguagem suave de macOS/iOS
+   ========================================================= */
+
+:root {
+  --bg: #f3f4f2;
+  --text: #121212;
+  --muted: #74787d;
+  --soft: #a7abb0;
+  --line: rgba(30, 32, 34, .095);
+  --glass: rgba(255,255,255,.52);
+  --glass-strong: rgba(255,255,255,.68);
+  --glass-border: rgba(255,255,255,.82);
+  --max: 1160px;
+  --radius: 22px;
+  --radius-small: 16px;
+  --mac-shadow: 0 18px 45px rgba(38,44,52,.055), inset 0 1px 0 rgba(255,255,255,.72);
+}
+
+html {
+  background: #eef0ef;
+}
+
+body {
+  background:
+    radial-gradient(circle at 73% 8%, rgba(184,210,228,.34), transparent 22%),
+    radial-gradient(circle at 4% 78%, rgba(198,216,229,.26), transparent 20%),
+    radial-gradient(circle at 40% 48%, rgba(255,255,255,.72), transparent 35%),
+    linear-gradient(145deg, #f7f7f5 0%, #f1f3f2 48%, #f6f5f2 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(25,25,25,.035) .6px, transparent .6px);
+  background-size: 5px 5px;
+  opacity: .12;
+  z-index: 0;
+}
+
+.shell {
+  width: min(calc(100% - 56px), var(--max));
+  padding: 30px 0 34px;
+}
+
+.home-shell {
+  min-height: auto;
+}
+
+.glass-card,
+.internal-shell .page-intro,
+.internal-shell .project-list,
+.internal-shell .notes-list,
+.internal-shell .about-hero,
+.internal-shell .about-grid,
+.internal-shell .about-contact,
+.internal-shell .cv-section,
+.internal-shell .external-link-block,
+.internal-shell .coming-soon {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--mac-shadow);
+  backdrop-filter: blur(20px) saturate(1.04);
+  -webkit-backdrop-filter: blur(20px) saturate(1.04);
+}
+
+.site-header {
+  position: relative;
+  z-index: 30;
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 9px 12px 9px 26px;
+  border: 1px solid rgba(255,255,255,.84);
+  border-radius: 999px;
+  background: rgba(255,255,255,.58);
+  box-shadow: 0 12px 35px rgba(45,52,60,.055), inset 0 1px 0 rgba(255,255,255,.9);
+  backdrop-filter: blur(24px) saturate(1.12);
+  -webkit-backdrop-filter: blur(24px) saturate(1.12);
+}
+
+.brand,
+.nav {
+  text-transform: none;
+  letter-spacing: -.01em;
+}
+
+.brand {
+  justify-self: start;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 780;
+}
+
+.nav {
+  justify-self: center;
+  gap: 30px;
+  color: #575c62;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 520;
+}
+
+.nav a {
+  padding: 10px 5px;
+  margin: -10px -5px;
+  border-radius: 9px;
+}
+
+.nav a:hover {
+  background: rgba(255,255,255,.7);
+  transform: translateY(-1px) scale(1.045);
+}
+
+.nav a[aria-current="page"]::after {
+  bottom: 3px;
+}
+
+.talk-button {
+  justify-self: end;
+  min-height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 18px 0 20px;
+  border: 1px solid rgba(255,255,255,.95);
+  border-radius: 999px;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 7px 20px rgba(35,42,50,.045), inset 0 1px 0 #fff;
+  font-size: 12px;
+  font-weight: 620;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.talk-button:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.94);
+}
+
+.mac-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr);
+  gap: 20px;
+  margin-top: 38px;
+}
+
+.hero-photo-card,
+.hero-copy-card {
+  position: relative;
+  min-height: 435px;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.hero-photo-card {
+  background: rgba(255,255,255,.42);
+}
+
+.hero-photo-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px 145px 14px 14px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 18px;
+  background: rgba(255,255,255,.22);
+}
+
+.photo-stage {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-portrait {
+  position: absolute;
+  left: -8px;
+  bottom: -18px;
+  width: min(82%, 365px);
+  height: auto;
+  filter: grayscale(1) contrast(1.02);
+}
+
+.handwritten-note {
+  position: absolute;
+  top: 112px;
+  right: 20px;
+  width: 150px;
+  margin: 0;
+  color: #1d1d1d;
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  font-size: 20px;
+  line-height: 1.18;
+  letter-spacing: -.04em;
+  transform: rotate(-8deg);
+}
+
+.handwritten-note::after {
+  content: "";
+  display: block;
+  width: 29px;
+  height: 1px;
+  margin: 15px 0 0 14px;
+  background: rgba(20,20,20,.75);
+  transform: rotate(-13deg);
+}
+
+.idea-popover {
+  position: absolute;
+  left: 18px;
+  bottom: 20px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 200px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255,255,255,.92);
+  border-radius: 15px;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 12px 30px rgba(34,39,45,.09), inset 0 1px 0 rgba(255,255,255,.9);
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.idea-popover:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.88);
+}
+
+.idea-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 11px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(25,25,25,.05);
+}
+
+.idea-popover strong,
+.idea-popover small {
+  display: block;
+}
+
+.idea-popover strong {
+  margin-bottom: 3px;
+  font-size: 13px;
+  font-weight: 680;
+}
+
+.idea-popover small {
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.3;
+}
+
+.scroll-cue {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 1px;
+  border: 1px solid rgba(255,255,255,.88);
+  border-radius: 50%;
+  background: rgba(255,255,255,.30);
+  font-size: 18px;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.scroll-cue small {
+  font-size: 8px;
+  color: #484b4e;
+}
+
+.scroll-cue:hover {
+  transform: translateY(2px);
+  background: rgba(255,255,255,.62);
+}
+
+.hero-copy-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 128px;
+  gap: 26px;
+  padding: 42px 36px 28px 42px;
+}
+
+.hero-copy-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hero-copy-card h1 {
+  margin: 0 0 25px;
+  font-size: clamp(46px, 5vw, 66px);
+  line-height: .84;
+  letter-spacing: -.072em;
+  font-weight: 790;
+}
+
+.hero-copy-card h1 span {
+  display: block;
+}
+
+.mac-bio {
+  max-width: 500px;
+}
+
+.mac-bio p {
+  margin-bottom: 13px;
+  color: #62676c;
+  font-size: 14px;
+  line-height: 1.42;
+  letter-spacing: -.02em;
+}
+
+.mac-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 7px;
+  color: #70757a;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 11.5px;
+}
+
+.location-pin {
+  color: #111;
+  font-size: 16px;
+}
+
+.hero-side-notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 3px 0 0 6px;
+}
+
+.hero-side-notes p {
+  margin: 0;
+  color: #a2a6aa;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 8px;
+  line-height: 1.65;
+  letter-spacing: .16em;
+}
+
+.tiny-line {
+  width: 28px;
+  height: 1px;
+  margin-top: -70px;
+  background: rgba(30,30,30,.16);
+}
+
+.recent-panel {
+  margin-top: 20px;
+  padding: 28px 34px 20px;
+  border-radius: var(--radius);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 17px;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  font-weight: 720;
+}
+
+.panel-heading > a {
+  color: #8b8f93;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 8px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.mac-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 34px;
+}
+
+.mac-work-item {
+  min-width: 0;
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(31,34,37,.09);
+}
+
+.mac-work-item:nth-last-child(-n+3) {
+  border-bottom: 0;
+}
+
+.mac-work-item strong,
+.mac-work-item small {
+  display: block;
+}
+
+.mac-work-item strong {
+  margin-bottom: 7px;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 680;
+  letter-spacing: -.02em;
+}
+
+.mac-work-item small {
+  color: #85898d;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.mac-work-item i {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(255,255,255,.42);
+  border: 1px solid rgba(255,255,255,.72);
+  color: #55595d;
+  font-style: normal;
+  font-size: 12px;
+  transition: transform .18s ease, background-color .18s ease;
+}
+
+.mac-work-item:hover i {
+  transform: translateX(2px);
+  background: rgba(255,255,255,.8);
+}
+
+.mac-footer {
+  display: grid;
+  grid-template-columns: minmax(260px, .85fr) 1.45fr;
+  align-items: center;
+  gap: 32px;
+  margin-top: 20px;
+  padding: 17px 26px;
+  border-radius: 18px;
+}
+
+.mac-footer .footer-copy {
+  padding-right: 26px;
+  border-right: 1px solid rgba(30,30,30,.09);
+}
+
+.mac-footer .footer-copy p {
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.mac-footer .footer-copy span {
+  max-width: none;
+  color: #85898d;
+  font-size: 10px;
+}
+
+.mac-socials {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 10.5px;
+}
+
+.mac-socials a {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 13px;
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 999px;
+  background: rgba(255,255,255,.43);
+  transition: background .18s ease, transform .18s ease;
+}
+
+.mac-socials a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.78);
+}
+
+.mac-socials a > span {
+  min-width: 16px;
+  text-align: center;
+  font-weight: 720;
+}
+
+.home-signoff {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 6px 0;
+  color: #969a9e;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 7.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Internal pages inherit the same visual language without becoming dashboards. */
+.internal-shell {
+  width: min(calc(100% - 56px), var(--max));
+  gap: 0;
+}
+
+.internal-shell .page-intro {
+  max-width: none;
+  margin-top: 38px;
+  padding: 42px 44px;
+  border-radius: var(--radius);
+}
+
+.internal-shell .page-intro h1 {
+  max-width: 760px;
+  margin-bottom: 16px;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: .94;
+  letter-spacing: -.06em;
+  font-weight: 760;
+}
+
+.internal-shell .page-lead {
+  max-width: 650px;
+  color: #666b70;
+  font-size: 14px;
+}
+
+.internal-shell .page-kicker {
+  color: #999da1;
+  font-size: 8px;
+  letter-spacing: .13em;
+}
+
+.internal-shell > .rule {
+  display: none;
+}
+
+.internal-shell .project-list,
+.internal-shell .notes-list,
+.internal-shell .cv-section,
+.internal-shell .about-grid,
+.internal-shell .about-contact,
+.internal-shell .external-link-block,
+.internal-shell .coming-soon {
+  margin-top: 20px;
+  padding: 12px 34px;
+  border-radius: var(--radius);
+}
+
+.internal-shell .project-row,
+.internal-shell .note-row {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(31,34,37,.09);
+}
+
+.internal-shell .project-row:last-child,
+.internal-shell .note-row:last-child {
+  border-bottom: 0;
+}
+
+.internal-shell .project-main h2,
+.internal-shell .note-main h2,
+.internal-shell .cv-main h3 {
+  font-size: 15px;
+  font-weight: 690;
+}
+
+.internal-shell .project-main p,
+.internal-shell .note-main p,
+.internal-shell .cv-main p {
+  color: #7a7f84;
+}
+
+.internal-shell .about-hero {
+  margin-top: 38px;
+  padding: 30px 36px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.internal-shell .about-photo {
+  height: 210px;
+}
+
+.internal-shell .about-photo img {
+  width: 160px;
+}
+
+.internal-shell .about-copy h1 {
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 760;
+}
+
+.internal-shell .about-grid {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.internal-shell .about-contact {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.internal-shell .cv-section {
+  grid-template-columns: 130px minmax(0, 1fr);
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.internal-shell .cv-links a,
+.internal-shell .about-contact .socials a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 13px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 999px;
+  background: rgba(255,255,255,.4);
+}
+
+.internal-footer {
+  margin-top: 20px;
+  padding: 16px 8px 2px;
+}
+
+/* Keep the pigs alive: desktop behavior stays above the glass surfaces. */
+.home-page .pet-layer {
+  z-index: 22;
+}
+
+.home-page .site-header,
+.home-page .glass-card,
+.home-page .home-signoff {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile */
+@media (max-width: 820px) {
+  .shell,
+  .internal-shell {
+    width: min(calc(100% - 28px), var(--max));
+    padding-top: 14px;
+  }
+
+  .site-header {
+    grid-template-columns: auto 1fr auto;
+    min-height: 58px;
+    gap: 12px;
+    padding: 8px 9px 8px 18px;
+  }
+
+  .brand { font-size: 16px; }
+
+  .nav {
+    justify-self: stretch;
+    justify-content: center;
+    gap: 15px;
+    font-size: 10px;
+  }
+
+  .talk-button {
+    min-width: 42px;
+    min-height: 42px;
+    padding: 0;
+    gap: 0;
+  }
+
+  .talk-button span:first-child { display: none; }
+
+  .mac-hero {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .hero-photo-card {
+    min-height: 395px;
+  }
+
+  .hero-photo-card::before {
+    inset: 12px 116px 12px 12px;
+  }
+
+  .hero-portrait {
+    width: min(76%, 340px);
+  }
+
+  .handwritten-note {
+    right: 16px;
+    top: 98px;
+    width: 128px;
+    font-size: 17px;
+  }
+
+  .hero-copy-card {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 34px 28px 30px;
+  }
+
+  .hero-side-notes { display: none; }
+
+  .hero-copy-card h1 {
+    font-size: clamp(44px, 13vw, 64px);
+  }
+
+  .mac-location { margin-top: 16px; }
+
+  .recent-panel {
+    margin-top: 14px;
+    padding: 24px 24px 16px;
+  }
+
+  .mac-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+
+  .mac-work-item:nth-last-child(-n+3) { border-bottom: 1px solid rgba(31,34,37,.09); }
+  .mac-work-item:nth-last-child(-n+2) { border-bottom: 0; }
+
+  .mac-footer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    padding: 20px;
+  }
+
+  .mac-footer .footer-copy {
+    padding: 0 0 15px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(30,30,30,.08);
+  }
+
+  .mac-socials { grid-template-columns: repeat(2, 1fr); }
+
+  .internal-shell .page-intro,
+  .internal-shell .about-hero {
+    margin-top: 16px;
+  }
+
+  .internal-shell .page-intro {
+    padding: 32px 28px;
+  }
+
+  .internal-shell .project-list,
+  .internal-shell .notes-list,
+  .internal-shell .cv-section,
+  .internal-shell .about-grid,
+  .internal-shell .about-contact,
+  .internal-shell .external-link-block,
+  .internal-shell .coming-soon {
+    margin-top: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 610px) {
+  .site-header {
+    grid-template-columns: auto auto;
+    align-items: center;
+    border-radius: 20px;
+    padding: 9px 10px 8px 16px;
+  }
+
+  .brand { grid-column: 1; grid-row: 1; }
+  .talk-button { grid-column: 2; grid-row: 1; }
+
+  .nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 7px 3px 2px;
+    overflow: visible;
+    font-size: 9.5px;
+  }
+
+  .nav a { padding: 8px 2px; margin: -8px -2px; }
+
+  .hero-photo-card { min-height: 340px; }
+  .hero-photo-card::before { inset: 10px 92px 10px 10px; }
+  .hero-portrait { left: -5px; bottom: -12px; width: min(79%, 300px); }
+  .handwritten-note { top: 80px; right: 9px; width: 107px; font-size: 15px; }
+
+  .idea-popover {
+    left: 12px;
+    bottom: 13px;
+    min-width: 172px;
+    padding: 10px 11px;
+  }
+
+  .idea-icon { width: 34px; height: 34px; }
+  .idea-popover small { font-size: 9.5px; }
+
+  .scroll-cue {
+    right: 14px;
+    bottom: 13px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .hero-copy-card { padding: 30px 23px 25px; }
+  .hero-copy-card h1 { font-size: clamp(42px, 14vw, 58px); margin-bottom: 22px; }
+  .mac-bio p { font-size: 13px; line-height: 1.48; }
+
+  .panel-heading h2 { font-size: 19px; }
+  .panel-heading > a { font-size: 7px; }
+
+  .mac-work-grid { grid-template-columns: 1fr; }
+  .mac-work-item,
+  .mac-work-item:nth-last-child(-n+3),
+  .mac-work-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(31,34,37,.09); }
+  .mac-work-item:last-child { border-bottom: 0; }
+
+  .mac-socials { grid-template-columns: 1fr 1fr; }
+  .mac-socials a { padding: 0 8px; font-size: 9.5px; }
+
+  .home-signoff {
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 4px;
+  }
+
+  .internal-shell .page-intro h1,
+  .internal-shell .about-copy h1 { font-size: clamp(34px, 11vw, 48px); }
+
+  .internal-shell .project-list,
+  .internal-shell .notes-list,
+  .internal-shell .cv-section,
+  .internal-shell .about-grid,
+  .internal-shell .about-contact,
+  .internal-shell .external-link-block,
+  .internal-shell .coming-soon { padding-left: 20px; padding-right: 20px; }
+
+  .internal-shell .cv-section { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 390px) {
+  .shell,
+  .internal-shell { width: min(calc(100% - 20px), var(--max)); }
+  .nav { font-size: 8.8px; }
+  .hero-photo-card { min-height: 315px; }
+  .handwritten-note { font-size: 14px; }
+  .idea-popover { min-width: 160px; }
+  .mac-socials { grid-template-columns: 1fr; }
+}
+
+
+/* =========================================
+   V10.1 — cache + desktop hotfix
+   ========================================= */
+@media (min-width: 821px) {
+  body.home-page {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .home-page .home-shell {
+    height: auto !important;
+    min-height: 100vh;
+  }
+}
+
+/* Hard safety constraints for the V10 hero image. */
+.hero-photo-card {
+  contain: layout paint;
+}
+
+.hero-photo-card .hero-portrait {
+  max-width: 365px !important;
+  max-height: 440px;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   V11 — Performance + single-screen home
+   ========================================================= */
+
+:root {
+  --v11-gap: clamp(7px, 1.1vh, 11px);
+}
+
+/* Cheaper surfaces: keep the macOS feeling without GPU-heavy blur everywhere. */
+.glass-card,
+.internal-shell .page-intro,
+.internal-shell .project-list,
+.internal-shell .notes-list,
+.internal-shell .about-hero,
+.internal-shell .about-grid,
+.internal-shell .about-contact,
+.internal-shell .cv-section,
+.internal-shell .external-link-block,
+.internal-shell .coming-soon,
+.idea-popover {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(255,255,255,.64);
+  box-shadow: 0 10px 30px rgba(38,44,52,.045), inset 0 1px 0 rgba(255,255,255,.84);
+  contain: layout paint;
+}
+
+.site-header {
+  backdrop-filter: blur(10px) saturate(1.04);
+  -webkit-backdrop-filter: blur(10px) saturate(1.04);
+}
+
+body {
+  background-attachment: scroll !important;
+}
+
+body::before {
+  display: none;
+}
+
+/* -------------------- HOME = one viewport -------------------- */
+html:has(body.home-page),
+body.home-page {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden !important;
+}
+
+body.home-page {
+  min-height: 100svh;
+}
+
+.home-page .home-shell {
+  width: min(calc(100% - 44px), 1180px);
+  height: 100svh !important;
+  min-height: 600px !important;
+  display: grid;
+  grid-template-rows:
+    clamp(52px, 7vh, 62px)
+    minmax(0, 1fr)
+    clamp(150px, 21.5vh, 195px)
+    clamp(50px, 7vh, 60px)
+    12px;
+  gap: var(--v11-gap);
+  padding: clamp(8px, 1.5vh, 14px) 0 7px;
+  overflow: hidden;
+}
+
+.home-page .site-header,
+.home-page .mac-hero,
+.home-page .recent-panel,
+.home-page .mac-footer,
+.home-page .home-signoff {
+  margin: 0 !important;
+  min-height: 0;
+}
+
+.home-page .site-header {
+  min-height: 0;
+  height: 100%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mac-hero {
+  height: 100%;
+  min-height: 0;
+  gap: 12px;
+}
+
+.hero-photo-card,
+.hero-copy-card {
+  min-height: 0 !important;
+  height: 100%;
+}
+
+.hero-photo-card::before {
+  inset: 10px 132px 10px 10px;
+}
+
+.photo-stage,
+.photo-stage picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.hero-photo-card .hero-portrait {
+  left: -4px;
+  bottom: -14px;
+  width: min(78%, 340px) !important;
+  max-width: 340px !important;
+  max-height: 96%;
+  object-fit: contain;
+}
+
+.handwritten-note {
+  top: 22%;
+  right: 15px;
+  width: 132px;
+  font-size: clamp(15px, 1.45vw, 19px);
+}
+
+.idea-popover {
+  left: 14px;
+  bottom: 14px;
+  min-width: 180px;
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+.idea-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+}
+
+.hero-copy-card {
+  grid-template-columns: minmax(0,1fr) 112px;
+  gap: clamp(16px, 2vw, 24px);
+  padding: clamp(22px, 3.2vh, 34px) clamp(24px, 3vw, 34px) clamp(18px, 2.4vh, 26px) clamp(27px, 3.2vw, 38px);
+}
+
+.hero-copy-card h1 {
+  margin-bottom: clamp(13px, 2vh, 20px);
+  font-size: clamp(42px, min(5.1vw, 7.2vh), 61px);
+  line-height: .84;
+}
+
+.mac-bio p {
+  margin-bottom: clamp(7px, 1.1vh, 10px);
+  font-size: clamp(11.5px, min(1.1vw, 1.75vh), 13.5px);
+  line-height: 1.42;
+}
+
+.mac-location {
+  font-size: 10.5px;
+}
+
+.hero-side-notes p {
+  font-size: 7.2px;
+}
+
+.tiny-line {
+  margin-top: -48px;
+}
+
+/* Cleaner Apple-like buttons */
+.talk-button,
+.mac-socials a,
+.mac-work-item i,
+.idea-icon {
+  border-color: rgba(255,255,255,.96);
+  background: rgba(255,255,255,.72);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 3px 11px rgba(35,42,50,.035);
+}
+
+.talk-button {
+  min-height: 40px;
+  gap: 11px;
+  padding: 0 7px 0 16px;
+}
+
+.talk-arrow {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #171819;
+  color: #fff;
+  font-size: 12px;
+  transition: transform .18s ease;
+}
+
+.talk-button:hover .talk-arrow {
+  transform: translateX(1px) rotate(-4deg);
+}
+
+.recent-panel {
+  height: 100%;
+  padding: clamp(13px, 1.8vh, 18px) 30px 9px;
+  border-radius: 19px;
+}
+
+.panel-heading {
+  margin-bottom: clamp(5px, .8vh, 9px);
+}
+
+.panel-heading h2 {
+  font-size: clamp(17px, 1.7vw, 21px);
+}
+
+.mac-work-grid {
+  height: calc(100% - 30px);
+  align-content: stretch;
+  column-gap: 30px;
+}
+
+.mac-work-item {
+  min-height: 0;
+  height: 100%;
+  padding: clamp(6px, .8vh, 10px) 0;
+}
+
+.mac-work-item strong {
+  margin-bottom: 4px;
+  font-size: clamp(11px, 1vw, 12.5px);
+}
+
+.mac-work-item small {
+  font-size: clamp(9px, .85vw, 10.5px);
+}
+
+.mac-work-item i {
+  width: 28px;
+  height: 28px;
+}
+
+.mac-footer {
+  height: 100%;
+  grid-template-columns: minmax(235px,.72fr) 1.55fr;
+  gap: 24px;
+  padding: 8px 18px;
+  border-radius: 16px;
+}
+
+.mac-footer .footer-copy {
+  padding-right: 20px;
+}
+
+.mac-footer .footer-copy p {
+  margin-bottom: 2px;
+  font-size: 11px;
+}
+
+.mac-footer .footer-copy span {
+  font-size: 9px;
+}
+
+.mac-socials {
+  gap: 8px;
+  font-size: 9.5px;
+}
+
+.mac-socials a {
+  min-height: 34px;
+  padding: 0 10px;
+}
+
+.home-signoff {
+  align-items: center;
+  height: 12px;
+  padding: 0 4px;
+  font-size: 6.5px;
+}
+
+/* -------------------- PET PERFORMANCE -------------------- */
+.home-page .pet-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100svh !important;
+  z-index: 24;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.pixel-pet {
+  position: fixed !important;
+  will-change: left, top, background-position;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.05));
+}
+
+.pixel-pet.hamtaro {
+  width: 54px;
+  height: 54px;
+  background-image: url("assets/hamtaro-sprites-v11.webp") !important;
+}
+
+.pixel-pet.totoro {
+  width: 59px;
+  height: 59px;
+  background-image: url("assets/totoro-sprites-v11.webp") !important;
+}
+
+.pixel-pet.is-walking,
+.pixel-pet.is-running {
+  animation: none !important;
+}
+
+.pet-layer.pets-seated .pixel-pet {
+  pointer-events: auto;
+}
+
+/* Internal pages can scroll, but skip painting sections until near viewport. */
+body:not(.home-page) .internal-shell > section,
+body:not(.home-page) .internal-shell > div {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 320px;
+}
+
+/* -------------------- RESPONSIVE SINGLE-VIEW HOME -------------------- */
+@media (max-width: 820px) {
+  .home-page .home-shell {
+    width: min(calc(100% - 20px), 760px);
+    min-height: 0 !important;
+    grid-template-rows:
+      52px
+      minmax(0,1fr)
+      clamp(134px, 20vh, 166px)
+      44px
+      9px;
+    gap: 7px;
+    padding: 7px 0 5px;
+  }
+
+  .home-page .site-header {
+    grid-template-columns: auto 1fr;
+    min-height: 0;
+    padding: 5px 11px 5px 15px;
+    border-radius: 18px;
+  }
+
+  .home-page .brand {
+    font-size: 14px;
+  }
+
+  .home-page .nav {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    justify-content: flex-end;
+    gap: clamp(10px, 3vw, 20px);
+    padding: 0;
+    overflow: visible;
+    font-size: clamp(8px, 2.2vw, 9.5px);
+  }
+
+  .home-page .talk-button {
+    display: none;
+  }
+
+  .home-page .mac-hero {
+    grid-template-columns: minmax(0,.76fr) minmax(0,1.24fr);
+    gap: 7px;
+  }
+
+  .home-page .hero-photo-card::before {
+    inset: 7px 29% 7px 7px;
+    border-radius: 14px;
+  }
+
+  .home-page .hero-photo-card .hero-portrait {
+    width: 91% !important;
+    max-width: 310px !important;
+    left: -18%;
+    bottom: -3%;
+  }
+
+  .home-page .handwritten-note {
+    top: 15%;
+    right: 4px;
+    width: 36%;
+    font-size: clamp(10px, 3vw, 14px);
+  }
+
+  .home-page .handwritten-note::after {
+    width: 18px;
+    margin-top: 8px;
+  }
+
+  .home-page .idea-popover {
+    left: 7px;
+    bottom: 7px;
+    min-width: 0;
+    gap: 7px;
+    padding: 6px 7px;
+    border-radius: 11px;
+  }
+
+  .home-page .idea-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .home-page .idea-popover strong {
+    margin: 0;
+    font-size: 9.5px;
+  }
+
+  .home-page .idea-popover small {
+    display: none;
+  }
+
+  .home-page .hero-copy-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: clamp(15px, 3vh, 23px) clamp(13px, 3vw, 20px) clamp(12px, 2vh, 18px);
+  }
+
+  .home-page .hero-side-notes {
+    display: none;
+  }
+
+  .home-page .hero-copy-card h1 {
+    margin-bottom: clamp(10px, 2vh, 15px);
+    font-size: clamp(28px, 8.2vw, 46px);
+    line-height: .87;
+  }
+
+  .home-page .mac-bio p {
+    margin-bottom: clamp(5px, 1vh, 8px);
+    font-size: clamp(9.5px, 2.65vw, 12px);
+    line-height: 1.4;
+  }
+
+  .home-page .mac-location {
+    gap: 4px;
+    padding-top: 2px;
+    font-size: 8.5px;
+  }
+
+  .home-page .location-pin {
+    font-size: 12px;
+  }
+
+  .home-page .recent-panel {
+    padding: 10px 15px 6px;
+    border-radius: 16px;
+  }
+
+  .home-page .panel-heading {
+    margin-bottom: 3px;
+  }
+
+  .home-page .panel-heading h2 {
+    font-size: 14px;
+  }
+
+  .home-page .panel-heading > a {
+    font-size: 6px;
+  }
+
+  .home-page .mac-work-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    height: calc(100% - 21px);
+    column-gap: 16px;
+  }
+
+  .home-page .mac-work-item,
+  .home-page .mac-work-item:nth-last-child(-n+3),
+  .home-page .mac-work-item:nth-last-child(-n+2) {
+    min-height: 0;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(31,34,37,.075);
+  }
+
+  .home-page .mac-work-item:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+
+  .home-page .mac-work-item strong {
+    margin: 0;
+    font-size: clamp(8.5px, 2.3vw, 10.5px);
+  }
+
+  .home-page .mac-work-item small {
+    display: none;
+  }
+
+  .home-page .mac-work-item i {
+    width: 22px;
+    height: 22px;
+    font-size: 9px;
+  }
+
+  .home-page .mac-footer {
+    grid-template-columns: 1fr;
+    padding: 5px 8px;
+    border-radius: 14px;
+  }
+
+  .home-page .mac-footer .footer-copy {
+    display: none;
+  }
+
+  .home-page .mac-socials {
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 5px;
+    font-size: clamp(7px, 2vw, 8.5px);
+  }
+
+  .home-page .mac-socials a {
+    min-height: 32px;
+    gap: 4px;
+    padding: 0 4px;
+  }
+
+  .home-page .mac-socials a > span {
+    min-width: 10px;
+    font-size: 8px;
+  }
+
+  .home-page .home-signoff {
+    flex-direction: row;
+    gap: 8px;
+    padding: 0 2px;
+    font-size: 5.2px;
+  }
+
+  .pixel-pet.hamtaro { width: 45px; height: 45px; }
+  .pixel-pet.totoro { width: 49px; height: 49px; }
+}
+
+@media (max-width: 430px) {
+  .home-page .nav {
+    gap: clamp(7px, 2.3vw, 11px);
+    font-size: clamp(7.2px, 2.05vw, 8.4px);
+  }
+
+  .home-page .hero-copy-card h1 {
+    font-size: clamp(25px, 8vw, 34px);
+  }
+
+  .home-page .mac-bio p {
+    font-size: clamp(8.7px, 2.55vw, 10.5px);
+  }
+
+  .home-page .handwritten-note {
+    font-size: clamp(9px, 2.7vw, 12px);
+  }
+
+  .home-page .mac-socials a {
+    font-size: 0;
+  }
+
+  .home-page .mac-socials a > span {
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 690px) and (min-width: 821px) {
+  .home-page .home-shell {
+    grid-template-rows: 50px minmax(0,1fr) 145px 46px 9px;
+    gap: 6px;
+    padding-top: 6px;
+  }
+
+  .hero-copy-card h1 { font-size: 43px; margin-bottom: 11px; }
+  .mac-bio p { font-size: 11px; margin-bottom: 6px; }
+  .handwritten-note { font-size: 14px; }
+  .mac-work-item small { display: none; }
+  .recent-panel { padding-top: 10px; }
+  .mac-socials a { min-height: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-layer { display: block !important; }
+  .pixel-pet { animation: none !important; }
+}
+
+
+/* =========================================================
+   V11.1 — Hero polish / quieter macOS composition
+   ========================================================= */
+
+/* Soft white blur-like background made with gradients only.
+   This keeps the visual softness without an expensive full-screen filter. */
+body {
+  background:
+    radial-gradient(ellipse at 14% 13%, rgba(255,255,255,.98) 0 12%, rgba(255,255,255,0) 42%),
+    radial-gradient(ellipse at 82% 9%, rgba(255,255,255,.90) 0 11%, rgba(255,255,255,0) 40%),
+    radial-gradient(ellipse at 72% 72%, rgba(249,250,250,.95) 0 14%, rgba(249,250,250,0) 45%),
+    radial-gradient(ellipse at 25% 82%, rgba(255,255,255,.88) 0 10%, rgba(255,255,255,0) 38%),
+    linear-gradient(145deg, #f1f2f0 0%, #eef0ef 48%, #f6f6f4 100%) !important;
+}
+
+body::before {
+  display: none !important;
+}
+
+.home-page .home-shell {
+  grid-template-rows:
+    clamp(52px, 7vh, 60px)
+    clamp(310px, 41vh, 380px)
+    clamp(150px, 21vh, 190px)
+    clamp(48px, 6.5vh, 56px)
+    12px;
+  align-content: start;
+}
+
+.home-page .mac-hero {
+  max-height: 380px;
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  gap: 12px;
+}
+
+/* Photo card: smaller, calmer and proportionally framed. */
+.home-page .hero-photo-card {
+  border-radius: 18px;
+}
+
+.home-page .hero-photo-card::before {
+  inset: 10px 108px 10px 10px;
+  border-radius: 15px;
+  background: rgba(255,255,255,.28);
+}
+
+.home-page .hero-photo-card .hero-portrait {
+  left: 8px;
+  bottom: -8px;
+  width: auto !important;
+  height: calc(100% - 14px);
+  max-width: 73% !important;
+  max-height: calc(100% - 14px) !important;
+  object-fit: contain;
+}
+
+.home-page .handwritten-note {
+  top: 22%;
+  right: 12px;
+  width: 104px;
+  font-size: clamp(13px, 1.25vw, 17px);
+  line-height: 1.16;
+}
+
+.home-page .idea-popover {
+  left: 12px;
+  bottom: 12px;
+  min-width: 164px;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 13px;
+  background: rgba(255,255,255,.76);
+}
+
+.home-page .idea-icon {
+  width: 31px;
+  height: 31px;
+  border-radius: 9px;
+}
+
+.home-page .idea-popover strong {
+  font-size: 11.5px;
+}
+
+.home-page .idea-popover small {
+  font-size: 9px;
+}
+
+/* Name card: remove the decorative side column and let the content breathe. */
+.home-page .hero-copy-card {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+  gap: 0;
+  padding: clamp(26px, 3.2vh, 34px) clamp(28px, 3.2vw, 38px);
+  border-radius: 18px;
+}
+
+.home-page .hero-copy-main {
+  justify-content: center;
+}
+
+.home-page .hero-copy-card h1 {
+  max-width: 620px;
+  margin-bottom: clamp(14px, 1.8vh, 19px);
+  font-size: clamp(42px, min(4.8vw, 6.7vh), 58px);
+  line-height: .86;
+}
+
+.home-page .mac-bio {
+  max-width: 500px;
+}
+
+.home-page .mac-bio p {
+  margin-bottom: 8px;
+  font-size: clamp(11px, min(1.05vw, 1.6vh), 13px);
+  line-height: 1.45;
+}
+
+/* slightly denser recent panel now that the hero is intentionally smaller */
+.home-page .recent-panel {
+  padding-top: clamp(12px, 1.5vh, 15px);
+  padding-bottom: 8px;
+}
+
+/* Maintain the compact composition on medium/mobile screens. */
+@media (max-width: 820px) {
+  .home-page .home-shell {
+    grid-template-rows:
+      52px
+      minmax(0, 1fr)
+      clamp(134px, 20vh, 160px)
+      44px
+      9px;
+  }
+
+  .home-page .mac-hero {
+    max-height: none;
+    grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+  }
+
+  .home-page .hero-photo-card::before {
+    inset: 7px 26% 7px 7px;
+  }
+
+  .home-page .hero-photo-card .hero-portrait {
+    left: 1px;
+    bottom: -4px;
+    width: auto !important;
+    height: calc(100% - 8px);
+    max-width: 78% !important;
+    max-height: calc(100% - 8px) !important;
+  }
+
+  .home-page .handwritten-note {
+    top: 17%;
+    right: 3px;
+    width: 31%;
+    font-size: clamp(9px, 2.7vw, 12px);
+  }
+
+  .home-page .idea-popover {
+    left: 7px;
+    bottom: 7px;
+    min-width: 0;
+    padding: 6px 7px;
+  }
+
+  .home-page .hero-copy-card {
+    padding: clamp(16px, 2.5vh, 22px) clamp(14px, 3vw, 20px);
+  }
+
+  .home-page .hero-copy-card h1 {
+    font-size: clamp(27px, 7.7vw, 43px);
+  }
+}
+
+@media (max-width: 430px) {
+  .home-page .mac-hero {
+    grid-template-columns: minmax(0, .68fr) minmax(0, 1.32fr);
+  }
+
+  .home-page .hero-photo-card::before {
+    inset-right: 23%;
+  }
+
+  .home-page .hero-copy-card h1 {
+    font-size: clamp(24px, 7.7vw, 32px);
+  }
+
+  .home-page .mac-bio p {
+    font-size: clamp(8.5px, 2.45vw, 10px);
+  }
+}
+
+@media (max-height: 690px) and (min-width: 821px) {
+  .home-page .home-shell {
+    grid-template-rows: 50px 300px 145px 46px 9px;
+  }
+
+  .home-page .hero-copy-card h1 {
+    font-size: 42px;
+  }
+}
+
+
+/* =========================================================
+   V11.2 — Design refinement based on Matheus' sketch
+   ========================================================= */
+
+:root {
+  --v112-max: 972px;
+  --v112-radius: 17px;
+  --v112-border: rgba(255, 255, 255, .76);
+  --v112-card: rgba(255, 255, 255, .48);
+}
+
+/* Real macOS/iOS-like blurred light background.
+   Only one lightweight blurred layer is used for performance. */
+body.mac-home {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(135deg, #f6f7f5 0%, #eff2f2 46%, #f8f8f6 100%) !important;
+}
+
+body.mac-home::before {
+  content: "";
+  position: fixed;
+  display: block !important;
+  z-index: 0;
+  inset: -14%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 23%, rgba(255,255,255,.98) 0 12%, rgba(255,255,255,0) 31%),
+    radial-gradient(circle at 79% 17%, rgba(224,232,236,.70) 0 8%, rgba(224,232,236,0) 29%),
+    radial-gradient(circle at 87% 75%, rgba(255,255,255,.94) 0 10%, rgba(255,255,255,0) 32%),
+    radial-gradient(circle at 28% 82%, rgba(235,239,239,.72) 0 8%, rgba(235,239,239,0) 29%);
+  filter: blur(38px);
+  transform: translateZ(0);
+  opacity: .96;
+}
+
+body.mac-home::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    rgba(255,255,255,.26),
+    rgba(255,255,255,0) 38%,
+    rgba(255,255,255,.18) 72%,
+    rgba(255,255,255,.38)
+  );
+}
+
+.home-page .home-shell,
+.home-page .pet-layer {
+  position: relative;
+  z-index: 1;
+}
+
+.home-page .home-shell {
+  width: min(calc(100% - 40px), var(--v112-max)) !important;
+  margin-inline: auto;
+  padding-top: 18px;
+  padding-bottom: 14px;
+  grid-template-rows: 58px 276px 238px 60px 16px !important;
+  gap: 16px !important;
+  align-content: start !important;
+}
+
+/* Header */
+.home-page .mac-header {
+  min-height: 58px;
+  padding: 7px 12px 7px 17px;
+  border: 1px solid var(--v112-border);
+  border-radius: 999px;
+  background: rgba(255,255,255,.50);
+  box-shadow:
+    0 14px 36px rgba(57,66,73,.055),
+    inset 0 1px 0 rgba(255,255,255,.92);
+  backdrop-filter: blur(17px) saturate(1.05);
+  -webkit-backdrop-filter: blur(17px) saturate(1.05);
+}
+
+.brand {
+  min-width: 86px;
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+}
+
+.brand-signature {
+  display: block;
+  width: 71px;
+  height: auto;
+  object-fit: contain;
+}
+
+.home-page .nav {
+  gap: 26px;
+}
+
+.home-page .nav a {
+  font-size: 10px;
+  letter-spacing: .01em;
+}
+
+.home-page .talk-button {
+  min-height: 42px;
+  padding: 0 18px;
+  gap: 12px;
+  border: 1px solid rgba(255,255,255,.90);
+  background: rgba(255,255,255,.60);
+  box-shadow:
+    0 8px 24px rgba(35,43,49,.045),
+    inset 0 1px 0 rgba(255,255,255,.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.home-page .talk-button:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.86);
+}
+
+/* Hero proportions based on the sketch */
+.home-page .mac-hero {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) !important;
+  gap: 14px !important;
+  margin-top: 0 !important;
+  min-height: 0;
+  max-height: none !important;
+}
+
+.home-page .hero-photo-card,
+.home-page .hero-copy-card {
+  min-height: 0 !important;
+  height: 276px;
+  border-radius: var(--v112-radius);
+  border: 1px solid var(--v112-border);
+  background: var(--v112-card);
+  box-shadow:
+    0 18px 50px rgba(54,62,69,.045),
+    inset 0 1px 0 rgba(255,255,255,.82);
+  backdrop-filter: blur(14px) saturate(1.02);
+  -webkit-backdrop-filter: blur(14px) saturate(1.02);
+}
+
+.home-page .hero-photo-card {
+  overflow: hidden;
+}
+
+.home-page .hero-photo-card::before {
+  inset: 8px !important;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.73);
+  background: rgba(255,255,255,.12);
+}
+
+.home-page .photo-stage {
+  position: absolute;
+  inset: 0;
+}
+
+.home-page .hero-photo-card .hero-portrait {
+  left: -2px !important;
+  right: auto;
+  bottom: -7px !important;
+  width: auto !important;
+  height: 268px !important;
+  max-width: 73% !important;
+  max-height: none !important;
+  object-fit: contain;
+  object-position: left bottom;
+  filter: grayscale(1) contrast(1.015);
+}
+
+.home-page .handwritten-note {
+  top: 22px !important;
+  right: 9px !important;
+  width: 98px !important;
+  font-size: 13px !important;
+  line-height: 1.12 !important;
+  transform: rotate(-7deg);
+}
+
+.home-page .handwritten-note::after {
+  width: 23px;
+  margin-top: 9px;
+}
+
+.home-page .idea-popover {
+  left: 9px !important;
+  bottom: 9px !important;
+  min-width: 126px !important;
+  gap: 8px !important;
+  padding: 8px 10px !important;
+  border-radius: 12px !important;
+  background: rgba(255,255,255,.66) !important;
+  box-shadow:
+    0 8px 24px rgba(38,43,47,.07),
+    inset 0 1px 0 rgba(255,255,255,.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.home-page .idea-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+}
+
+.home-page .idea-popover strong {
+  margin-bottom: 1px;
+  font-size: 9px !important;
+}
+
+.home-page .idea-popover small {
+  font-size: 7.4px !important;
+  line-height: 1.18;
+}
+
+/* Copy card */
+.home-page .hero-copy-card {
+  display: block !important;
+  padding: 28px 30px !important;
+}
+
+.home-page .hero-copy-main {
+  height: 100%;
+  justify-content: center;
+}
+
+.home-page .hero-copy-card h1 {
+  position: relative;
+  margin: 0 0 18px !important;
+  font-size: clamp(31px, 3.05vw, 39px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.052em;
+  font-weight: 730;
+  white-space: nowrap;
+}
+
+.name-joke {
+  position: relative;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.crossed-name {
+  position: relative;
+  display: inline-block;
+}
+
+.crossed-name::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -4px;
+  top: 52%;
+  height: 3px;
+  border-radius: 99px;
+  background: #e34a42;
+  transform: rotate(-5deg);
+}
+
+.math-correction {
+  position: absolute;
+  left: 14px;
+  top: -20px;
+  color: #e34a42;
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -.05em;
+  transform: rotate(-4deg);
+}
+
+.home-page .mac-bio {
+  max-width: 570px;
+}
+
+.home-page .mac-bio p {
+  margin: 0 0 13px !important;
+  color: #4f5559;
+  font-size: 11.2px !important;
+  line-height: 1.48 !important;
+}
+
+.home-page .mac-bio p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Recent works — closer to the hand-drawn layout */
+.home-page .recent-panel {
+  margin-top: 0 !important;
+  padding: 22px 30px 19px !important;
+  border-radius: var(--v112-radius);
+  border: 1px solid var(--v112-border);
+  background: rgba(255,255,255,.43);
+  box-shadow:
+    0 18px 50px rgba(54,62,69,.04),
+    inset 0 1px 0 rgba(255,255,255,.80);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.home-page .recent-panel::before,
+.home-page .recent-panel::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(89,95,99,.16) 0 2px,
+    transparent 2px 6px
+  );
+}
+
+.home-page .recent-panel::before {
+  margin-bottom: 18px;
+}
+
+.home-page .recent-panel::after {
+  margin-top: 13px;
+}
+
+.home-page .panel-heading {
+  margin-bottom: 10px !important;
+}
+
+.home-page .panel-heading h2 {
+  font-size: 18px !important;
+  letter-spacing: -.035em;
+}
+
+.home-page .panel-heading > a {
+  font-size: 7.5px;
+}
+
+.home-page .mac-work-grid {
+  column-gap: 34px;
+}
+
+.home-page .mac-work-item {
+  min-height: 55px !important;
+  padding: 8px 0 !important;
+  border-bottom: 0 !important;
+}
+
+.home-page .mac-work-item strong {
+  margin-bottom: 5px;
+  font-size: 10.3px !important;
+}
+
+.home-page .mac-work-item small {
+  display: block !important;
+  color: #92979a;
+  font-size: 8.7px !important;
+  line-height: 1.3;
+}
+
+.home-page .mac-work-item i {
+  display: none !important;
+}
+
+.home-page .mac-work-item:hover strong {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Footer split into two quieter macOS panels */
+.home-page .mac-footer {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.home-page .mac-footer .footer-copy,
+.home-page .mac-socials {
+  min-height: 60px;
+  border: 1px solid var(--v112-border);
+  border-radius: 15px;
+  background: rgba(255,255,255,.44);
+  box-shadow:
+    0 12px 30px rgba(54,62,69,.035),
+    inset 0 1px 0 rgba(255,255,255,.83);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.home-page .mac-footer .footer-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px !important;
+  border-right: 1px solid var(--v112-border) !important;
+}
+
+.home-page .mac-footer .footer-copy p {
+  margin: 0 0 4px;
+  font-size: 10px;
+}
+
+.home-page .mac-footer .footer-copy span {
+  font-size: 7.8px;
+}
+
+.home-page .mac-socials {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  align-items: center;
+  gap: 6px;
+  padding: 7px 9px;
+}
+
+.home-page .mac-socials a {
+  min-height: 42px;
+  padding: 0 8px;
+  border-color: rgba(255,255,255,.68);
+  background: rgba(255,255,255,.36);
+  font-size: 8.8px;
+}
+
+.home-page .home-signoff {
+  padding: 1px 4px 0;
+  font-size: 6.6px;
+}
+
+/* Internal pages also receive the real signature and Portuguese CTA. */
+.internal-shell .brand-signature {
+  width: 66px;
+}
+
+/* Prevent expensive blur from becoming a problem on touch devices. */
+@media (max-width: 700px) {
+  body.mac-home::before {
+    filter: blur(24px);
+  }
+
+  .home-page .home-shell {
+    width: min(calc(100% - 24px), 560px) !important;
+    padding-top: 12px;
+    grid-template-rows: auto !important;
+    gap: 12px !important;
+  }
+
+  .home-page .mac-header {
+    min-height: 54px;
+    padding: 6px 9px 6px 13px;
+  }
+
+  .brand {
+    min-width: 58px;
+  }
+
+  .brand-signature {
+    width: 55px;
+  }
+
+  .home-page .nav {
+    gap: 10px;
+  }
+
+  .home-page .talk-button {
+    min-height: 38px;
+    padding: 0 11px;
+  }
+
+  .home-page .talk-button span:first-child {
+    font-size: 0;
+  }
+
+  .home-page .talk-button span:first-child::after {
+    content: "Fale";
+    font-size: 9px;
+  }
+
+  .home-page .mac-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .home-page .hero-photo-card,
+  .home-page .hero-copy-card {
+    height: auto;
+    min-height: 248px !important;
+  }
+
+  .home-page .hero-photo-card {
+    height: 260px;
+  }
+
+  .home-page .hero-photo-card .hero-portrait {
+    height: 255px !important;
+  }
+
+  .home-page .hero-copy-card {
+    min-height: 225px !important;
+    padding: 24px 22px !important;
+  }
+
+  .home-page .hero-copy-card h1 {
+    white-space: normal;
+    font-size: clamp(28px, 9vw, 36px) !important;
+  }
+
+  .home-page .recent-panel {
+    padding: 18px 20px !important;
+  }
+
+  .home-page .mac-work-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  .home-page .mac-footer {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .home-page .mac-socials {
+    min-height: 58px;
+  }
+}
+
+@media (max-width: 430px) {
+  .home-page .nav a:nth-child(3) {
+    display: none;
+  }
+
+  .home-page .mac-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .recent-panel {
+    padding-bottom: 14px !important;
+  }
+
+  .home-page .mac-socials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 104px;
+  }
+}
+
+
+/* =========================================================
+   V11.3 — Correções finas após revisão visual
+   ========================================================= */
+
+/*
+  1) CORREÇÃO DO "GOKU / MATH"
+  Uma regra antiga fazia todos os spans do título virarem blocos.
+  Agora a brincadeira fica na mesma linha e o risco fica SOMENTE
+  sobre a palavra Goku.
+*/
+.home-page .hero-copy-card h1 .name-joke,
+.home-page .hero-copy-card h1 .crossed-name,
+.home-page .hero-copy-card h1 .math-correction {
+  display: inline-block !important;
+}
+
+.home-page .hero-copy-card h1 .name-joke {
+  position: relative;
+  margin-left: .08em;
+}
+
+.home-page .hero-copy-card h1 .crossed-name {
+  position: relative;
+  text-decoration-line: line-through;
+  text-decoration-color: #e34a42;
+  text-decoration-thickness: 3px;
+  text-decoration-skip-ink: none;
+}
+
+.home-page .hero-copy-card h1 .crossed-name::after {
+  content: none !important;
+}
+
+.home-page .hero-copy-card h1 .math-correction {
+  position: absolute;
+  left: 13px;
+  top: -18px;
+  color: #e34a42;
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.05em;
+  text-decoration: none;
+  transform: rotate(-5deg);
+  white-space: nowrap;
+}
+
+/*
+  2) FOTO
+  O retrato agora é dimensionado exclusivamente pela moldura:
+  maior, centralizado visualmente e sem ultrapassar o card.
+*/
+.home-page .hero-photo-card {
+  overflow: hidden;
+}
+
+.home-page .photo-stage,
+.home-page .photo-stage picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.home-page .hero-photo-card .hero-portrait {
+  position: absolute;
+  left: 8px !important;
+  right: auto !important;
+  bottom: 0 !important;
+  width: auto !important;
+  height: 286px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+  object-position: left bottom;
+  transform: none !important;
+}
+
+/*
+  3) TRABALHOS
+  Voltamos para a linguagem da versão anterior:
+  linhas discretas + botões circulares de seta.
+  O rascunho enviado serve apenas como referência de texto/proporção.
+*/
+.home-page .recent-panel {
+  padding: 22px 30px 18px !important;
+}
+
+.home-page .recent-panel::before,
+.home-page .recent-panel::after {
+  content: none !important;
+  display: none !important;
+}
+
+.home-page .panel-heading {
+  margin-bottom: 10px !important;
+}
+
+.home-page .panel-heading h2 {
+  font-size: 18px !important;
+}
+
+.home-page .mac-work-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 30px;
+}
+
+.home-page .mac-work-item {
+  min-height: 70px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid rgba(31,34,37,.085) !important;
+  text-decoration: none !important;
+}
+
+.home-page .mac-work-item:nth-last-child(-n+3) {
+  border-bottom: 0 !important;
+}
+
+.home-page .mac-work-item strong {
+  margin-bottom: 5px;
+  font-size: 10.5px !important;
+  line-height: 1.2;
+  text-decoration: none !important;
+}
+
+.home-page .mac-work-item small {
+  display: block !important;
+  color: #85898d;
+  font-size: 8.8px !important;
+  line-height: 1.35;
+}
+
+.home-page .mac-work-item i {
+  width: 29px;
+  height: 29px;
+  display: grid !important;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 50%;
+  background: rgba(255,255,255,.42);
+  color: #55595d;
+  font-style: normal;
+  font-size: 11px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.86);
+  transition: transform .18s ease, background-color .18s ease;
+}
+
+.home-page .mac-work-item:hover strong {
+  text-decoration: none !important;
+}
+
+.home-page .mac-work-item:hover i {
+  transform: translateX(2px);
+  background: rgba(255,255,255,.82);
+}
+
+/* Mantém a composição inteira dentro de uma tela comum de notebook. */
+@media (min-width: 701px) {
+  .home-page .home-shell {
+    grid-template-rows: 58px 276px 218px 60px 16px !important;
+    gap: 14px !important;
+  }
+}
+
+/* Ajustes proporcionais para telas menores. */
+@media (max-width: 700px) {
+  .home-page .hero-photo-card .hero-portrait {
+    left: 50% !important;
+    bottom: 0 !important;
+    height: 272px !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .home-page .hero-copy-card h1 .math-correction {
+    top: -16px;
+    font-size: 18px;
+  }
+
+  .home-page .mac-work-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  .home-page .mac-work-item:nth-last-child(-n+3) {
+    border-bottom: 1px solid rgba(31,34,37,.085) !important;
+  }
+
+  .home-page .mac-work-item:nth-last-child(-n+2) {
+    border-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .home-page .mac-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .mac-work-item,
+  .home-page .mac-work-item:nth-last-child(-n+3),
+  .home-page .mac-work-item:nth-last-child(-n+2) {
+    border-bottom: 1px solid rgba(31,34,37,.085) !important;
+  }
+
+  .home-page .mac-work-item:last-child {
+    border-bottom: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   V11.4 — Photo fill + hand-drawn strike + Puppertino-inspired polish
+   ========================================================= */
+
+/* ---------- macOS/iOS surface system ----------
+   Bordas leves, sombras curtas e blur seletivo.
+   Mantemos o framework fora do bundle para preservar performance.
+*/
+:root {
+  --ios-border: rgba(198, 198, 200, .50);
+  --ios-border-light: rgba(255, 255, 255, .78);
+  --ios-surface: rgba(255, 255, 255, .54);
+  --ios-surface-hover: rgba(255, 255, 255, .82);
+  --ios-shadow-1: 0 .5px 1px .5px rgba(0, 0, 0, .055);
+  --ios-shadow-2: 0 2px 10px rgba(0, 0, 0, .075);
+  --ios-ease: cubic-bezier(.16, 1, .3, 1);
+}
+
+/* O fundo continua branco, mas com manchas desfocadas mais perceptíveis. */
+body.mac-home::before {
+  background:
+    radial-gradient(circle at 10% 18%, rgba(255,255,255,.99) 0 10%, rgba(255,255,255,0) 29%),
+    radial-gradient(circle at 78% 12%, rgba(214,225,231,.78) 0 8%, rgba(214,225,231,0) 31%),
+    radial-gradient(circle at 95% 55%, rgba(235,239,241,.82) 0 10%, rgba(235,239,241,0) 34%),
+    radial-gradient(circle at 30% 88%, rgba(229,234,234,.72) 0 8%, rgba(229,234,234,0) 31%),
+    radial-gradient(circle at 62% 74%, rgba(255,255,255,.96) 0 11%, rgba(255,255,255,0) 33%);
+  filter: blur(44px);
+}
+
+/* Header / cards: vidro discreto, sem sombras exageradas. */
+.home-page .mac-header,
+.home-page .hero-photo-card,
+.home-page .hero-copy-card,
+.home-page .recent-panel,
+.home-page .mac-footer .footer-copy,
+.home-page .mac-socials {
+  border-color: var(--ios-border-light) !important;
+  background: var(--ios-surface) !important;
+  box-shadow: var(--ios-shadow-1), inset 0 1px 0 rgba(255,255,255,.84) !important;
+}
+
+.home-page .mac-header {
+  -webkit-backdrop-filter: saturate(155%) blur(18px);
+  backdrop-filter: saturate(155%) blur(18px);
+}
+
+/* ---------- FOTO ----------
+   A imagem já foi pré-cortada na proporção do card.
+   Portanto não existe mais "foto pequena dentro de um retângulo".
+*/
+.home-page .hero-photo-card {
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.home-page .hero-photo-card::before {
+  z-index: 2;
+  pointer-events: none;
+  background: transparent !important;
+  border-color: rgba(255,255,255,.72) !important;
+}
+
+.home-page .photo-stage,
+.home-page .photo-stage picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.home-page .hero-photo-card .hero-portrait {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: none !important;
+  filter: grayscale(1) contrast(1.015) !important;
+}
+
+.home-page .handwritten-note {
+  display: none !important;
+}
+
+/* Popup passa a flutuar sobre a foto sem alterar o crop. */
+.home-page .idea-popover {
+  z-index: 4;
+  border: 1px solid rgba(255,255,255,.74) !important;
+  background: rgba(248,248,248,.72) !important;
+  box-shadow: var(--ios-shadow-2) !important;
+  -webkit-backdrop-filter: saturate(150%) blur(16px);
+  backdrop-filter: saturate(150%) blur(16px);
+}
+
+/* ---------- GOKU / MATH ---------- */
+.home-page .hero-copy-card h1 .crossed-name {
+  position: relative;
+  display: inline-block !important;
+  text-decoration: none !important;
+  isolation: isolate;
+}
+
+.home-page .hero-copy-card h1 .crossed-name::after {
+  content: none !important;
+}
+
+.home-page .goku-scribble {
+  position: absolute;
+  z-index: 3;
+  left: -8%;
+  top: 51%;
+  width: 116%;
+  height: 18px;
+  object-fit: fill;
+  pointer-events: none;
+  transform: translateY(-50%) rotate(-2.5deg);
+  transform-origin: center;
+  filter: saturate(1.08);
+}
+
+/* Math fica realmente "por cima", como uma correção escrita à mão. */
+.home-page .hero-copy-card h1 .math-correction {
+  z-index: 5;
+  left: 10px;
+  top: -18px;
+  display: inline-block !important;
+  cursor: default;
+  transform: translate3d(0,0,0) rotate(-5deg);
+  transform-origin: 50% 70%;
+  transition:
+    transform 420ms var(--ios-ease),
+    filter 420ms var(--ios-ease),
+    text-shadow 420ms var(--ios-ease);
+  will-change: transform;
+}
+
+/* Efeito Apple-like: um lift curto, limpo e com "spring" visual. */
+@media (hover: hover) and (pointer: fine) {
+  .home-page .name-joke:hover .math-correction,
+  .home-page .math-correction:hover,
+  .home-page .math-correction:focus-visible {
+    transform: translate3d(0,-4px,0) scale(1.20) rotate(-2deg);
+    filter: drop-shadow(0 8px 9px rgba(0,0,0,.16));
+    text-shadow: 0 1px 0 rgba(255,255,255,.65);
+  }
+
+  /* A assinatura do header ganha o mesmo vocabulário, mas mais discreto. */
+  .brand-signature {
+    transition:
+      transform 360ms var(--ios-ease),
+      filter 360ms var(--ios-ease);
+    transform-origin: center;
+  }
+
+  .brand:hover .brand-signature {
+    transform: translateY(-2px) scale(1.08) rotate(-1deg);
+    filter: drop-shadow(0 5px 7px rgba(0,0,0,.10));
+  }
+}
+
+/* ---------- BOTÃO FALE COMIGO ----------
+   Inspirado no botão branco/contornado do Puppertino:
+   borda 1px, sombra curta e estado pressionado.
+*/
+.home-page .talk-button {
+  border: 1px solid rgba(202,202,202,.52) !important;
+  background: rgba(255,255,255,.74) !important;
+  box-shadow:
+    0 1px .5px rgba(0,0,0,.05),
+    0 .25px .5px rgba(0,0,0,.12),
+    inset 0 1px 0 rgba(255,255,255,.86) !important;
+  transition:
+    transform 250ms var(--ios-ease),
+    box-shadow 250ms var(--ios-ease),
+    background-color 250ms var(--ios-ease);
+}
+
+.home-page .talk-button:hover {
+  background: rgba(255,255,255,.94) !important;
+  box-shadow: var(--ios-shadow-2), inset 0 1px 0 rgba(255,255,255,.92) !important;
+  transform: translateY(-1px);
+}
+
+.home-page .talk-button:active {
+  transform: translateY(0) scale(.97);
+  box-shadow: var(--ios-shadow-1) !important;
+}
+
+/* Nav: estado leve, próximo de segmented/scope controls. */
+.home-page .nav a {
+  border: 1px solid transparent;
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    transform 220ms var(--ios-ease),
+    opacity 220ms ease;
+}
+
+.home-page .nav a:hover {
+  border-color: rgba(202,202,202,.30);
+  background: rgba(255,255,255,.46);
+  transform: translateY(-1px);
+}
+
+/* Botões circulares dos trabalhos também ganham sensação de pressionar. */
+.home-page .mac-work-item i {
+  border-color: rgba(202,202,202,.34) !important;
+  background: rgba(255,255,255,.62) !important;
+  box-shadow: var(--ios-shadow-1), inset 0 1px 0 rgba(255,255,255,.82) !important;
+  transition:
+    transform 260ms var(--ios-ease),
+    box-shadow 260ms var(--ios-ease),
+    background-color 260ms var(--ios-ease);
+}
+
+.home-page .mac-work-item:hover i {
+  transform: translateX(2px) scale(1.07);
+  background: rgba(255,255,255,.94) !important;
+  box-shadow: var(--ios-shadow-2) !important;
+}
+
+/* Foco inspirado no azul de acessibilidade do framework, sem poluir mouse/touch. */
+.home-page a:focus-visible,
+.home-page .math-correction:focus-visible {
+  outline: 2px solid rgba(100,186,255,.90);
+  outline-offset: 3px;
+}
+
+/* Em telas pequenas, a foto continua preenchendo o card. */
+@media (max-width: 700px) {
+  .home-page .hero-photo-card .hero-portrait {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .home-page .goku-scribble {
+    height: 16px;
+  }
+
+  .home-page .hero-copy-card h1 .math-correction {
+    left: 8px;
+    top: -16px;
+  }
+
+  /* blur menor no mobile = melhor performance */
+  .home-page .mac-header {
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    backdrop-filter: saturate(140%) blur(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .math-correction,
+  .brand-signature,
+  .home-page .talk-button,
+  .home-page .mac-work-item i {
+    transition: none !important;
+  }
+}
+
+
+/* =========================================================
+   V11.5 — navigation, background and interaction performance
+   ========================================================= */
+
+:root {
+  --motion-fast: 105ms;
+  --motion-ui: 135ms;
+  --motion-ease: cubic-bezier(.22,.78,.25,1);
+}
+
+/* ---------------------------------------------------------
+   HEADER WITHOUT LOGO
+   Keeps the nav visually centered while the left slot stays empty.
+   --------------------------------------------------------- */
+.home-page .mac-header,
+.internal-shell .site-header {
+  display: grid !important;
+  grid-template-columns: minmax(108px, 1fr) auto minmax(108px, 1fr);
+  align-items: center;
+  column-gap: 18px;
+}
+
+.header-spacer {
+  display: block;
+  min-width: 108px;
+  height: 1px;
+  justify-self: start;
+}
+
+.home-page .mac-header .nav,
+.internal-shell .site-header .nav {
+  justify-self: center;
+}
+
+.home-page .mac-header .talk-button,
+.internal-shell .site-header .talk-button {
+  justify-self: end;
+}
+
+/* ---------------------------------------------------------
+   BACKGROUND
+   The reference looks blurred because it uses very soft, large
+   white/cool-grey masses. We reproduce that directly with gradients
+   instead of a full-screen CSS blur filter. Visually soft, much cheaper.
+   --------------------------------------------------------- */
+body.mac-home {
+  background:
+    radial-gradient(ellipse 54% 44% at 84% 6%,
+      rgba(213,222,228,.70) 0%,
+      rgba(228,234,238,.43) 27%,
+      rgba(245,247,247,.10) 58%,
+      rgba(245,247,247,0) 76%),
+    radial-gradient(ellipse 48% 42% at 7% 22%,
+      rgba(255,255,255,.98) 0%,
+      rgba(255,255,255,.76) 36%,
+      rgba(255,255,255,0) 74%),
+    radial-gradient(ellipse 48% 44% at 93% 67%,
+      rgba(224,231,235,.52) 0%,
+      rgba(241,244,245,.28) 39%,
+      rgba(255,255,255,0) 76%),
+    radial-gradient(ellipse 52% 42% at 23% 94%,
+      rgba(231,236,237,.50) 0%,
+      rgba(249,249,247,.20) 45%,
+      rgba(249,249,247,0) 78%),
+    linear-gradient(135deg, #f8f8f5 0%, #f4f6f5 48%, #faf9f6 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Disable the old expensive full-screen blurred pseudo-layer. */
+body.mac-home::before {
+  display: none !important;
+  filter: none !important;
+}
+
+body.mac-home::after {
+  opacity: .42;
+  background:
+    linear-gradient(118deg,
+      rgba(255,255,255,.34),
+      rgba(255,255,255,0) 34%,
+      rgba(255,255,255,.12) 68%,
+      rgba(255,255,255,.28)) !important;
+}
+
+/* The background carries the blur effect; cards no longer need costly
+   backdrop blur on every surface. */
+.home-page .hero-photo-card,
+.home-page .hero-copy-card,
+.home-page .recent-panel,
+.home-page .mac-footer .footer-copy,
+.home-page .mac-socials,
+.internal-shell .page-intro,
+.internal-shell .project-list,
+.internal-shell .notes-list,
+.internal-shell .about-hero,
+.internal-shell .about-grid,
+.internal-shell .about-contact,
+.internal-shell .cv-section,
+.internal-shell .external-link-block,
+.internal-shell .coming-soon {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Header retains only a tiny amount of glass; this is a single surface. */
+.home-page .mac-header,
+.internal-shell .site-header {
+  -webkit-backdrop-filter: blur(6px) saturate(1.05) !important;
+  backdrop-filter: blur(6px) saturate(1.05) !important;
+}
+
+/* ---------------------------------------------------------
+   FASTER UI
+   Avoid animating box-shadow/filter, which causes extra paint work.
+   Move/scale only via transform, keeping feedback almost immediate.
+   --------------------------------------------------------- */
+.home-page .nav a,
+.internal-shell .nav a,
+.home-page .talk-button,
+.internal-shell .talk-button,
+.home-page .mac-work-item,
+.home-page .mac-work-item i,
+.home-page .mac-socials a,
+.internal-shell .socials a,
+.home-page .idea-popover {
+  transition-property: transform, background-color, border-color, opacity !important;
+  transition-duration: var(--motion-fast) !important;
+  transition-timing-function: var(--motion-ease) !important;
+}
+
+/* Do not pre-promote every button to its own GPU layer. */
+.home-page .nav a,
+.internal-shell .nav a,
+.home-page .talk-button,
+.internal-shell .talk-button,
+.home-page .mac-work-item,
+.home-page .mac-socials a,
+.internal-shell .socials a {
+  will-change: auto !important;
+}
+
+.home-page .nav a:hover,
+.internal-shell .nav a:hover {
+  transform: translate3d(0,-1px,0) !important;
+}
+
+.home-page .talk-button:hover,
+.internal-shell .talk-button:hover {
+  transform: translate3d(0,-1px,0) scale(1.01) !important;
+}
+
+.home-page .talk-button:active,
+.internal-shell .talk-button:active {
+  transform: scale(.975) !important;
+}
+
+.home-page .mac-work-item:hover {
+  transform: translate3d(0,-1px,0);
+}
+
+.home-page .mac-work-item:hover i {
+  transform: translate3d(2px,0,0) scale(1.035) !important;
+}
+
+.home-page .mac-socials a:hover,
+.internal-shell .socials a:hover {
+  transform: translate3d(0,-1px,0);
+}
+
+/* Kill the older slow "dim all siblings" animation. */
+@supports selector(.nav:has(a:hover)) {
+  .home-page .nav:has(a:hover) a:not(:hover),
+  .internal-shell .nav:has(a:hover) a:not(:hover) {
+    opacity: .72 !important;
+    transform: none !important;
+    transition-duration: var(--motion-fast) !important;
+  }
+}
+
+/* Math keeps its Apple-like lift but reacts faster. */
+.home-page .hero-copy-card h1 .math-correction {
+  transition:
+    transform 165ms var(--motion-ease),
+    filter 165ms var(--motion-ease) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-page .name-joke:hover .math-correction,
+  .home-page .math-correction:hover,
+  .home-page .math-correction:focus-visible {
+    transform: translate3d(0,-3px,0) scale(1.14) rotate(-2deg) !important;
+    filter: drop-shadow(0 5px 6px rgba(0,0,0,.12)) !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   The empty logo slot is unnecessary on small screens.
+   --------------------------------------------------------- */
+@media (max-width: 720px) {
+  .home-page .mac-header,
+  .internal-shell .site-header {
+    grid-template-columns: 1fr auto;
+    column-gap: 10px;
+  }
+
+  .header-spacer {
+    display: none;
+  }
+
+  .home-page .mac-header .nav,
+  .internal-shell .site-header .nav {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .home-page .mac-header .talk-button,
+  .internal-shell .site-header .talk-button {
+    grid-column: 2;
+  }
+
+  body.mac-home {
+    background-attachment: scroll !important;
+  }
+
+  .home-page .mac-header,
+  .internal-shell .site-header {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .nav a,
+  .internal-shell .nav a,
+  .home-page .talk-button,
+  .internal-shell .talk-button,
+  .home-page .mac-work-item,
+  .home-page .mac-work-item i,
+  .home-page .mac-socials a,
+  .internal-shell .socials a,
+  .home-page .idea-popover,
+  .home-page .math-correction {
+    transition: none !important;
+  }
+}
+
+
+/* =========================================================
+   V11.6 — Apple/macOS ambient gradient + discreet glass
+   Performance-oriented implementation
+   ========================================================= */
+
+:root {
+  --ambient-bg: #f7f7f4;
+  --ambient-blue: rgba(204, 216, 224, .38);
+  --ambient-blue-soft: rgba(224, 231, 235, .24);
+  --ambient-beige: rgba(228, 218, 205, .28);
+  --ambient-beige-soft: rgba(239, 232, 223, .20);
+  --glass-bg: rgba(255, 255, 255, .50);
+  --glass-bg-strong: rgba(255, 255, 255, .60);
+  --glass-border: rgba(255, 255, 255, .74);
+  --glass-shadow:
+    0 1px 1px rgba(19, 23, 27, .025),
+    0 10px 32px rgba(52, 59, 64, .035);
+}
+
+body.mac-home {
+  position: relative;
+  isolation: isolate;
+  background: var(--ambient-bg) !important;
+  background-image: none !important;
+  background-attachment: scroll !important;
+}
+
+body.mac-home::before {
+  content: "";
+  display: block !important;
+  position: fixed;
+  z-index: -2;
+  inset: -14%;
+  pointer-events: none;
+  opacity: .92;
+  background:
+    radial-gradient(
+      ellipse 46% 34% at 82% 10%,
+      var(--ambient-blue) 0%,
+      rgba(204,216,224,.18) 34%,
+      rgba(204,216,224,0) 72%
+    ),
+    radial-gradient(
+      ellipse 38% 30% at 94% 54%,
+      var(--ambient-blue-soft) 0%,
+      rgba(224,231,235,.10) 38%,
+      rgba(224,231,235,0) 76%
+    ),
+    radial-gradient(
+      ellipse 42% 34% at 22% 40%,
+      rgba(255,255,255,.72) 0%,
+      rgba(255,255,255,.28) 42%,
+      rgba(255,255,255,0) 78%
+    );
+  filter: blur(58px);
+  transform: translate3d(0,0,0);
+  contain: paint;
+}
+
+body.mac-home::after {
+  content: "";
+  display: block !important;
+  position: fixed;
+  z-index: -1;
+  inset: -16%;
+  pointer-events: none;
+  opacity: .86;
+  background:
+    radial-gradient(
+      ellipse 42% 30% at 8% 76%,
+      var(--ambient-beige) 0%,
+      rgba(228,218,205,.12) 38%,
+      rgba(228,218,205,0) 74%
+    ),
+    radial-gradient(
+      ellipse 36% 26% at 88% 88%,
+      var(--ambient-beige-soft) 0%,
+      rgba(239,232,223,.09) 42%,
+      rgba(239,232,223,0) 76%
+    ),
+    radial-gradient(
+      ellipse 34% 28% at 8% 8%,
+      rgba(255,255,255,.88) 0%,
+      rgba(255,255,255,.24) 46%,
+      rgba(255,255,255,0) 80%
+    );
+  filter: blur(64px);
+  transform: translate3d(0,0,0);
+  contain: paint;
+}
+
+.home-page .mac-header,
+.home-page .hero-photo-card,
+.home-page .hero-copy-card,
+.home-page .recent-panel,
+.home-page .mac-footer .footer-copy,
+.home-page .mac-socials {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(112%) !important;
+  backdrop-filter: blur(10px) saturate(112%) !important;
+}
+
+.home-page .mac-header {
+  background: var(--glass-bg-strong) !important;
+  box-shadow:
+    0 1px 1px rgba(24,28,31,.025),
+    0 10px 28px rgba(49,56,61,.040) !important;
+}
+
+.home-page .talk-button,
+.home-page .idea-popover,
+.home-page .mac-work-item i,
+.home-page .mac-socials a {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: rgba(255,255,255,.64) !important;
+  border-color: rgba(255,255,255,.72) !important;
+  box-shadow:
+    0 .5px 1px rgba(0,0,0,.035),
+    inset 0 1px 0 rgba(255,255,255,.86) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-page .talk-button:hover,
+  .home-page .idea-popover:hover,
+  .home-page .mac-socials a:hover {
+    background: rgba(255,255,255,.86) !important;
+    transform: translate3d(0,-1px,0);
+  }
+
+  .home-page .mac-work-item:hover i {
+    background: rgba(255,255,255,.92) !important;
+  }
+}
+
+body:not(.mac-home) {
+  background:
+    radial-gradient(
+      ellipse 46% 32% at 88% 8%,
+      rgba(209,220,227,.26) 0%,
+      rgba(209,220,227,.08) 40%,
+      rgba(209,220,227,0) 72%
+    ),
+    radial-gradient(
+      ellipse 42% 30% at 10% 86%,
+      rgba(231,221,209,.22) 0%,
+      rgba(231,221,209,.07) 42%,
+      rgba(231,221,209,0) 74%
+    ),
+    #f7f7f4 !important;
+}
+
+.internal-shell .site-header,
+.internal-shell .page-intro,
+.internal-shell .project-list,
+.internal-shell .notes-list,
+.internal-shell .about-hero,
+.internal-shell .about-grid,
+.internal-shell .about-contact,
+.internal-shell .cv-section,
+.internal-shell .external-link-block,
+.internal-shell .coming-soon {
+  background: rgba(255,255,255,.50) !important;
+  border-color: rgba(255,255,255,.72) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+
+.internal-shell .site-header {
+  -webkit-backdrop-filter: blur(8px) saturate(110%) !important;
+  backdrop-filter: blur(8px) saturate(110%) !important;
+}
+
+@media (max-width: 700px) {
+  body.mac-home::before {
+    filter: blur(34px);
+    opacity: .80;
+  }
+
+  body.mac-home::after {
+    filter: blur(38px);
+    opacity: .72;
+  }
+
+  .home-page .hero-photo-card,
+  .home-page .hero-copy-card,
+  .home-page .recent-panel,
+  .home-page .mac-footer .footer-copy,
+  .home-page .mac-socials {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: rgba(255,255,255,.58) !important;
+  }
+
+  .home-page .mac-header {
+    -webkit-backdrop-filter: blur(6px) !important;
+    backdrop-filter: blur(6px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.mac-home::before,
+  body.mac-home::after {
+    filter: blur(28px);
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .home-page .mac-header,
+  .home-page .hero-photo-card,
+  .home-page .hero-copy-card,
+  .home-page .recent-panel,
+  .home-page .mac-footer .footer-copy,
+  .home-page .mac-socials,
+  .internal-shell .site-header {
+    background: rgba(255,255,255,.82) !important;
+  }
+}
