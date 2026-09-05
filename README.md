@@ -1,54 +1,19 @@
-# Portfolio Matheus Migliorini — V10 macOS Editorial
+# Portfolio Matheus Migliorini — V10.1
 
-Esta versão migra a identidade visual do site para uma estética inspirada em
-macOS/iOS sem abandonar o minimalismo editorial do projeto.
+Correção da V10.
 
-## Home
-- cabeçalho centralizado em formato de cápsula;
-- ML à esquerda, navegação central e botão “Let's talk” à direita;
-- hero dividido em dois painéis;
-- foto em preto e branco com enquadramento maior;
-- anotação manuscrita “Boas histórias em todo lugar.”;
-- pequeno popup “Ideias” ligado à página Notes;
-- painel editorial com nome, apresentação, localização e microtextos;
-- Trabalhos recentes em um único card grande;
-- contatos em formato de pequenos botões/pills;
-- fundo off-white com blur e brilho extremamente sutis.
+O problema visto no print era uma mistura de versões:
+o navegador carregou o HTML novo da V10, mas continuou usando o CSS antigo em cache.
+Por isso a foto apareceu gigante e os cards/cabeçalho não receberam o novo visual.
 
-## Páginas internas
-Work, Notes, Photos, About e CV receberam a mesma linguagem:
-- cards claros;
-- bordas finas;
-- blur discreto;
-- cabeçalho em cápsula;
-- tipografia maior e mais editorial;
-- sem aparência de dashboard.
-
-## Hamtaro + Totoro
-NÃO foram removidos.
-
-Desktop:
-- mantém o comportamento e as personalidades da versão anterior.
-
-Mobile:
-- continuam sentados no canto inferior direito DO SITE;
-- só aparecem quando a pessoa chega ao fim da Home;
-- dois toques rápidos acordam os dois;
-- depois eles passam a caminhar pelo documento.
-
-Todos os sprites e `pets.js` da V9.8 foram preservados.
-
-## SEO e infraestrutura
-Mantidos:
-- sitemap.xml;
-- robots.txt;
-- canonical;
-- Open Graph;
-- favicon;
-- Apple Touch Icon;
-- 404;
-- JSON-LD;
-- domínio e links reais.
+## Correções
+- CSS renomeado para `style-v10-1.css`;
+- JavaScript dos porquinhos renomeado para `pets-v10-1.js`;
+- todas as páginas apontam para os arquivos novos;
+- `_headers` adicionado para reduzir problemas de cache nas próximas versões;
+- corrigido `overflow:hidden` herdado da versão antiga no desktop;
+- adicionada trava de segurança no tamanho da foto do hero;
+- Hamtaro e Totoro continuam preservados.
 
 ## Commit sugerido
-`Redesign portfolio with macOS editorial style`
+`Fix V10 cached assets and desktop layout`
