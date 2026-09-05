@@ -1,22 +1,20 @@
-# Portfolio Matheus Migliorini — V11.2 Design Refine
+# Portfolio Matheus Migliorini — V11.3
 
-## Mudanças desta rodada
-- assinatura real do Matheus substitui `ML` no cabeçalho;
-- `Let's talk` virou `Fale comigo`;
-- CTA agora abre o WhatsApp;
-- hero redesenhado a partir do rascunho enviado;
-- card da foto menor (300 px no desktop) e foto ajustada ao campo;
-- card do texto com proporção mais curta e equilibrada;
-- headline experimental `Oi, eu sou o Goku.` com `Math` corrigindo o nome à mão;
-- copy principal restaurada para a versão mais pessoal;
-- popup da foto virou `Anotações`;
-- `Trabalhos recentes` virou `Meus últimos trabalhos:`;
-- textos dos trabalhos ajustados conforme o rascunho;
-- fundo ganhou blur visível estilo macOS/iOS;
-- cards agora têm vidro real com blur controlado;
-- footer foi dividido visualmente em dois painéis;
-- Hamtaro e Totoro permanecem intactos;
-- assets continuam otimizados e versionados para cache.
+Correção pontual da V11.2.
+
+## Ajustado
+- corrigido o bug da linha vermelha no nome;
+- `Goku.` permanece riscado, mas o risco agora ocupa somente a palavra;
+- `Math` continua como correção manuscrita;
+- foto aumentada e encaixada dentro da própria moldura;
+- voltou o design anterior dos trabalhos:
+  - divisórias discretas;
+  - botões circulares com seta;
+  - hover sutil;
+- removidas as linhas pontilhadas adicionadas na V11.2;
+- painel de trabalhos ficou novamente mais compacto;
+- mantidos os novos textos;
+- mantidos assinatura, Fale comigo/WhatsApp, blur, performance e porquinhos.
 
 ## Commit sugerido
-`Refine hero signature copy and macOS blur`
+`Fix hero photo and restore work buttons`
