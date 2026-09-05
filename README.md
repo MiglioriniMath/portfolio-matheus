@@ -1,21 +1,19 @@
-# Portfolio Matheus Migliorini — Home V2
+# Portfolio Matheus Migliorini — V3
 
-Segunda versão da Home do site pessoal.
+Esta versão mantém a Home aprovada e adiciona a primeira página interna real: **Work**.
 
-## Mudanças desta versão
-- Nome atualizado para **Matheus Migliorini**
-- Coluna central mais estreita
-- Nome menor e menos pesado
-- Foto mais integrada ao bloco de apresentação
-- Remoção do “Olá, eu sou”
-- Texto de apresentação mais pessoal
-- Trabalhos recentes mais compactos
-- Mantido o grande espaço livre inferior para futuras interações/porquinhos
+## O que mudou
+- Menu da Home agora aponta para páginas reais.
+- `work.html` criado com layout editorial minimalista.
+- `notes.html`, `photos.html`, `about.html` e `cv.html` criados como estrutura inicial para evitar links quebrados.
+- Mesmo sistema visual e tipográfico da Home.
 
-## Arquivos
+## Arquivos principais
 - `index.html`
+- `work.html`
+- `notes.html`
+- `photos.html`
+- `about.html`
+- `cv.html`
 - `style.css`
 - `assets/avatar.png`
-
-## Como testar
-Abra `index.html` no navegador.

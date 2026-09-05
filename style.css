@@ -357,3 +357,143 @@ h1 {
     margin: 26px 0 22px;
   }
 }
+
+
+/* Internal pages */
+.internal-shell {
+  min-height: 100vh;
+}
+
+.page-intro {
+  margin-top: 76px;
+  max-width: 620px;
+}
+
+.page-kicker {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.page-intro h1 {
+  margin-bottom: 16px;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  font-weight: 620;
+}
+
+.page-lead {
+  max-width: 560px;
+  margin-bottom: 0;
+  color: #343431;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 20px;
+  gap: 26px;
+  padding: 23px 0;
+  border-bottom: 1px dotted var(--line);
+}
+
+.project-row:first-child {
+  padding-top: 4px;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 2px;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.project-main h2 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  font-weight: 630;
+}
+
+.project-main p {
+  max-width: 500px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.project-arrow {
+  color: var(--soft);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12px;
+}
+
+.coming-soon {
+  padding: 10px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.internal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: auto;
+  padding-top: 48px;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: .02em;
+}
+
+.internal-footer a:hover {
+  color: var(--text);
+}
+
+@media (min-width: 820px) and (min-height: 720px) {
+  .internal-shell {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  body:has(.internal-shell) {
+    overflow: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-intro {
+    margin-top: 54px;
+  }
+
+  .project-row {
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .project-arrow {
+    display: none;
+  }
+}
