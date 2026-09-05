@@ -1,12 +1,12 @@
-# Portfolio Matheus Migliorini — V6
+# Portfolio Matheus Migliorini — V7
 
-V6 mantém Home, Work, Notes e o link externo de Photos e adiciona uma página **About** completa.
+V7 adiciona a página **CV** com base nas informações públicas do LinkedIn.
 
-## About
-- apresentação pessoal
-- foto integrada
-- blocos de Base, Trabalho, Interesses e Agora
-- contato simples no final
-- mesma linguagem editorial do restante do site
+## Incluído
+- resumo profissional
+- experiência na Qualitas Humanus
+- formação no Centro Universitário Belas Artes de São Paulo (2020–2022)
+- áreas de foco
+- link para LinkedIn
 
-As copys continuam provisórias e podem ser adaptadas depois para a voz do Matheus.
+A página foi mantida intencionalmente enxuta porque o perfil público do LinkedIn não expõe todos os cargos, datas e detalhes sem login. Esses dados podem ser refinados depois.
