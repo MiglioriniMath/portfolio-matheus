@@ -1,23 +1,16 @@
-# Portfolio Matheus Migliorini — V9
+# Portfolio Matheus Migliorini — V9.1
 
-V9 melhora a interação dos porquinhos na Home.
+Correção rápida da V9.
 
-## O que mudou
-- corrige o "sprite duplicado" lateral reorganizando as folhas de sprite em uma grade exata;
-- diminui o tamanho visual dos porquinhos;
-- agora Hamtaro e Totoro circulam pela tela inteira;
-- os dois podem parar para dormir;
-- eles também podem brincar/correr um atrás do outro de vez em quando;
-- quando o cursor chega perto, eles correm atrás dele;
-- continua valendo só no desktop por enquanto;
-- `prefers-reduced-motion` continua respeitado.
+## Corrigido
+- Hamtaro e Totoro voltam a aparecer.
+- Mantidos: tamanho menor, movimentação pela tela inteira, sono, brincadeira entre eles e perseguição do cursor.
 
-## Arquivos importantes
-- `pets.js`
-- `style.css`
-- `index.html`
-- `assets/hamtaro-sprites.png`
-- `assets/totoro-sprites.png`
+## Motivo do bug
+A V9 reorganizou corretamente as folhas de sprite em uma grade 4×4, mas o CSS/JS ainda tratava cada quadro como se tivesse 320 px na tela.
+Como os personagens são exibidos com cerca de 60 px, o navegador mostrava apenas a área transparente do quadro.
+
+Agora a animação usa posicionamento percentual sobre a grade 4×4, que acompanha corretamente o tamanho visual de cada porquinho.
 
 ## Commit sugerido
-`Improve pet behavior and sprite rendering`
+`Fix pet sprite rendering`

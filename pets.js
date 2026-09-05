@@ -34,16 +34,13 @@
     };
   }
 
-  const tile = 320;
-  const cols = 4;
-  const rows = 4;
   const directionRow = { down: 0, left: 1, right: 2, up: 3 };
 
   function setFrame(pet, direction, column) {
     const row = directionRow[direction];
-    const x = -(column * tile);
-    const y = -(row * tile);
-    pet.el.style.backgroundPosition = `${x}px ${y}px`;
+    const x = column * 33.333333;
+    const y = row * 33.333333;
+    pet.el.style.backgroundPosition = `${x}% ${y}%`;
   }
 
   function randomBetween(min, max) {

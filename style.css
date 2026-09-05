@@ -872,14 +872,14 @@ h1 {
   width: 58px;
   height: 58px;
   background-image: url("assets/hamtaro-sprites.png");
-  background-size: 1280px 1280px;
+  background-size: 400% 400%;
 }
 
 .pixel-pet.totoro {
   width: 64px;
   height: 64px;
   background-image: url("assets/totoro-sprites.png");
-  background-size: 1280px 1280px;
+  background-size: 400% 400%;
 }
 
 .pixel-pet.is-walking {
