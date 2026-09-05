@@ -1,17 +1,22 @@
-# Portfolio Matheus Migliorini — V11.1 Hero Polish
+# Portfolio Matheus Migliorini — V11.2 Design Refine
 
-Primeira rodada de refinamento visual da V11.
-
-## Alterações
-- cards de foto e nome menores e mais proporcionais;
-- fotografia redimensionada pela altura do próprio card, sem estourar o campo;
-- removidos da Home: “Sorocaba, SP”, “Ideias / Pessoas / Histórias / Em movimento” e “Desde sempre explorando o extraordinário no cotidiano”;
-- card do nome virou uma composição de uma única coluna, mais limpa;
-- assinatura manuscrita e popup “Ideias” foram preservados;
-- fundo redesenhado em tons de branco/cinza muito claro com aparência de blur;
-- o blur do fundo é feito com gradientes CSS estáticos, evitando um filtro pesado de tela inteira;
-- modo de uma única visualização e performance da V11 preservados;
-- Hamtaro e Totoro preservados.
+## Mudanças desta rodada
+- assinatura real do Matheus substitui `ML` no cabeçalho;
+- `Let's talk` virou `Fale comigo`;
+- CTA agora abre o WhatsApp;
+- hero redesenhado a partir do rascunho enviado;
+- card da foto menor (300 px no desktop) e foto ajustada ao campo;
+- card do texto com proporção mais curta e equilibrada;
+- headline experimental `Oi, eu sou o Goku.` com `Math` corrigindo o nome à mão;
+- copy principal restaurada para a versão mais pessoal;
+- popup da foto virou `Anotações`;
+- `Trabalhos recentes` virou `Meus últimos trabalhos:`;
+- textos dos trabalhos ajustados conforme o rascunho;
+- fundo ganhou blur visível estilo macOS/iOS;
+- cards agora têm vidro real com blur controlado;
+- footer foi dividido visualmente em dois painéis;
+- Hamtaro e Totoro permanecem intactos;
+- assets continuam otimizados e versionados para cache.
 
 ## Commit sugerido
-`Refine hero proportions and soft background`
+`Refine hero signature copy and macOS blur`
