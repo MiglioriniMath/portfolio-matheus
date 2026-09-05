@@ -1,19 +1,8 @@
-# Portfolio Matheus Migliorini — V3
+# Portfolio Matheus Migliorini — V4
 
-Esta versão mantém a Home aprovada e adiciona a primeira página interna real: **Work**.
+V4 mantém Home e Work e adiciona a página **Notes** com linguagem editorial.
 
-## O que mudou
-- Menu da Home agora aponta para páginas reais.
-- `work.html` criado com layout editorial minimalista.
-- `notes.html`, `photos.html`, `about.html` e `cv.html` criados como estrutura inicial para evitar links quebrados.
-- Mesmo sistema visual e tipográfico da Home.
-
-## Arquivos principais
-- `index.html`
-- `work.html`
-- `notes.html`
-- `photos.html`
-- `about.html`
-- `cv.html`
-- `style.css`
-- `assets/avatar.png`
+## Novidade
+- `notes.html` agora é uma página real
+- lista de notas com data, título, descrição e categoria
+- estrutura pronta para futuramente ligar cada nota a uma página própria
