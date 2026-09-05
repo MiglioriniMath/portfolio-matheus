@@ -1,8 +1,9 @@
-# Portfolio Matheus Migliorini — V4
+# Portfolio Matheus Migliorini — V5
 
-V4 mantém Home e Work e adiciona a página **Notes** com linguagem editorial.
+V5 mantém Home, Work e Notes e simplifica **Photos**.
 
-## Novidade
-- `notes.html` agora é uma página real
-- lista de notas com data, título, descrição e categoria
-- estrutura pronta para futuramente ligar cada nota a uma página própria
+## Mudança
+- O item `Photos ↗` do menu abre diretamente o arquivo de fotos no Avely:
+  https://avely.me/math
+- A página `photos.html` também contém um link simples para o Avely.
+- A galeria própria fica para uma etapa futura.

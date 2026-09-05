@@ -562,3 +562,29 @@ h1 {
     display: none;
   }
 }
+
+
+/* External photo archive */
+.external-link-block {
+  padding: 8px 0;
+}
+
+.external-big-link {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -.02em;
+  font-weight: 620;
+}
+
+.external-big-link:hover {
+  opacity: .55;
+}
+
+.external-link-block p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 9px;
+}
