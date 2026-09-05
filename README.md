@@ -1,19 +1,19 @@
-# Portfolio Matheus Migliorini — V10.1
+# Portfolio Matheus Migliorini — V11 Performance
 
-Correção da V10.
+Foco: velocidade + Home em uma única visualização.
 
-O problema visto no print era uma mistura de versões:
-o navegador carregou o HTML novo da V10, mas continuou usando o CSS antigo em cache.
-Por isso a foto apareceu gigante e os cards/cabeçalho não receberam o novo visual.
+- Home sem scroll em desktop e mobile;
+- layout recalibrado para caber em um viewport;
+- avatar AVIF (~34 KB) + WebP (~68 KB), mantendo PNG apenas como fallback;
+- sprites dos porquinhos reduzidos de ~1,2 MB para ~100 KB no total;
+- Hamtaro e Totoro iniciam sentados juntos no canto inferior direito;
+- após ~3,2 segundos, começam a se mover automaticamente;
+- dois toques no mobile ainda acordam os dois mais cedo;
+- animação limitada a ~30 FPS;
+- animação pausa quando a aba fica em segundo plano;
+- removidos blurs pesados da maioria dos cards;
+- cache longo para assets versionados; HTML continua sem cache;
+- botões refinados para um visual macOS mais limpo;
+- copy da Home encurtada para ficar mais editorial e leve.
 
-## Correções
-- CSS renomeado para `style-v10-1.css`;
-- JavaScript dos porquinhos renomeado para `pets-v10-1.js`;
-- todas as páginas apontam para os arquivos novos;
-- `_headers` adicionado para reduzir problemas de cache nas próximas versões;
-- corrigido `overflow:hidden` herdado da versão antiga no desktop;
-- adicionada trava de segurança no tamanho da foto do hero;
-- Hamtaro e Totoro continuam preservados.
-
-## Commit sugerido
-`Fix V10 cached assets and desktop layout`
+Commit sugerido: `Optimize performance and fit home to one viewport`

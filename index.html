@@ -24,14 +24,15 @@
   <meta name="twitter:title" content="Matheus Migliorini — Marketing, Comunicação & Storytelling" />
   <meta name="twitter:description" content="Site pessoal de Matheus Migliorini — marketing, comunicação, fotografia, storytelling, projetos e notas." />
   <meta name="twitter:image" content="https://matheusmigliorini.com.br/assets/og-card.png" />
-  <link rel="stylesheet" href="style-v10-1.css" />
+  <link rel="preload" as="image" href="assets/avatar-v11.avif" type="image/avif" fetchpriority="high" />
+  <link rel="stylesheet" href="style-v11.css" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Matheus Migliorini",
   "url": "https://matheusmigliorini.com.br/",
-  "image": "https://matheusmigliorini.com.br/assets/avatar.png",
+  "image": "https://matheusmigliorini.com.br/assets/avatar-v11.webp",
   "sameAs": [
     "https://www.instagram.com/migliorinimath/",
     "https://www.linkedin.com/in/matheus-migliorini-776207158/"
@@ -63,14 +64,18 @@
       </nav>
 
       <a class="talk-button" href="mailto:matheusmigliorini22@gmail.com">
-        <span>Let's talk</span><span aria-hidden="true">→</span>
+        <span>Let's talk</span><span class="talk-arrow" aria-hidden="true">→</span>
       </a>
     </header>
 
     <section class="mac-hero" aria-labelledby="name">
       <article class="glass-card hero-photo-card">
         <div class="photo-stage" aria-hidden="true">
-          <img class="hero-portrait" src="assets/avatar.png" alt="" />
+          <picture>
+            <source srcset="assets/avatar-v11.avif" type="image/avif" />
+            <source srcset="assets/avatar-v11.webp" type="image/webp" />
+            <img class="hero-portrait" src="assets/avatar-v11.webp" alt="" width="700" height="933" decoding="async" fetchpriority="high" />
+          </picture>
         </div>
 
         <p class="handwritten-note">Boas histórias<br>em todo lugar.</p>
@@ -83,10 +88,6 @@
           </span>
           <span><strong>Ideias</strong><small>Notas, referências<br>e inspirações.</small></span>
         </a>
-
-        <a class="scroll-cue" href="#recent-work" aria-label="Ir para trabalhos recentes">
-          <span aria-hidden="true">↓</span><small>Scroll</small>
-        </a>
       </article>
 
       <article class="glass-card hero-copy-card">
@@ -94,9 +95,8 @@
           <h1 id="name"><span>Matheus</span><span>Migliorini</span></h1>
 
           <div class="bio mac-bio">
-            <p>Trabalho com marketing, comunicação, fotografia e storytelling.</p>
-            <p>Gosto de criar coisas, contar boas histórias e entender por que algumas ideias conseguem ficar na cabeça das pessoas.</p>
-            <p>Este é meu pequeno canto da internet — um lugar para guardar trabalhos, fotografias, textos, referências e outras coisas que encontro pelo caminho.</p>
+            <p>Trabalho entre marketing, comunicação, fotografia e storytelling.</p>
+            <p>Este é meu pequeno canto da internet — trabalhos, fotografias, textos, referências e histórias que encontro pelo caminho.</p>
           </div>
 
           <p class="location mac-location">
@@ -143,7 +143,7 @@
     <footer class="glass-card mac-footer">
       <div class="footer-copy">
         <p>Onde me encontrar</p>
-        <span>Disponível para boas conversas e projetos interessantes.</span>
+        <span>Para conversas, projetos e boas histórias.</span>
       </div>
 
       <div class="socials mac-socials">
@@ -161,6 +161,6 @@
   </main>
 
   <div id="pet-layer" class="pet-layer" aria-hidden="true"></div>
-  <script src="pets-v10-1.js"></script>
+  <script src="pets-v11.js" defer></script>
 </body>
 </html>
