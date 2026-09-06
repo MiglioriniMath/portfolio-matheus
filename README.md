@@ -1,37 +1,36 @@
-# Portfolio Matheus Migliorini — V12 Mobile + Copy
+# Portfolio Matheus Migliorini — V12.2 Mobile Polish
 
-## Copy da Home
-Bio:
-- Trabalho com marketing, comunicação, fotografia e storytelling — mas no fundo, fico tentando entender por que umas ideias grudam na cabeça e outras somem.
-- Gosto de criar coisas a partir disso.
-- Este é o meu canto na internet: onde guardo trabalhos, fotos, textos e o que mais encontro pelo caminho.
+Ajustado a partir do print real do iPhone.
 
-Trabalhos:
-- O Contador de Histórias → A causa de provar que todos têm uma história que merece ser contada.
-- Santuário São Judas Tadeu → Trazendo um novo olhar sobre a boa nova.
-- Projetos pessoais → Ideias que não caberiam em briefing de ninguém.
-- Fotografia → Memórias boas o suficiente para guardar.
-- Arquivo → O que merece ser lembrado.
+## Cabeçalho mobile
+- todos os 5 itens aparecem: Trabalhos, Anotações, Álbum, Sobre Mim e CV;
+- removida a regra antiga que escondia Álbum;
+- navegação realmente centralizada;
+- botão Fale comigo fica oculto no mobile para não apertar o menu.
 
-A página Trabalhos também foi alinhada às novas frases.
+## Meus últimos trabalhos
+- um único trabalho visível por vez;
+- já abre assim antes mesmo do JS terminar de carregar;
+- troca automática a cada ~3,3 segundos;
+- atual sobe e próximo entra por baixo;
+- somente transform + opacity;
+- pausa em aba oculta;
+- reduced-motion desativa a animação.
 
-## Mobile
-- replica a linguagem visual desktop;
-- header compacto em pill;
-- navegação horizontal leve;
-- CTA vira `Fale` no celular;
-- hero em dois cards verticais;
-- foto preserva crop e preenchimento;
-- bio ganha leitura confortável;
-- trabalhos passam para uma coluna para suportar os novos subtítulos;
-- footer vira 2x2 nos contatos;
-- glassmorphism continua, sem backdrop blur pesado;
-- porquinhos continuam atrás dos cards;
-- nenhum JS novo, biblioteca nova ou asset pesado foi adicionado.
+## Onde me encontrar
+- o footer existente vira um popup real;
+- fica fixo/flutuando na parte inferior;
+- só aparece quando o visitante chega próximo ao fim da página;
+- contém apenas Instagram, LinkedIn e WhatsApp;
+- os três links usam SVG inline, sem biblioteca de ícones;
+- nenhum DOM de contatos foi duplicado.
 
 ## Performance
-A V12 altera apenas HTML textual + CSS.
-`pets-v11.js`, imagens otimizadas, preload e cache dos assets permanecem intactos.
+- nenhuma imagem nova;
+- nenhum framework;
+- um JS pequeno e isolado do `pets-v11.js`;
+- porquinhos permanecem intactos;
+- desktop não foi redesenhado.
 
 ## Commit sugerido
-`Improve mobile layout and refine portfolio copy`
+`Polish iPhone navigation rotating work and contact popup`
