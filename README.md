@@ -1,22 +1,29 @@
-# Portfolio Matheus Migliorini — V12.4
+# Portfolio Matheus Migliorini — V12.5 Mobile Details
+
+Todas as mudanças abaixo são exclusivamente mobile.
+
+## Porquinhos
+- Hamtaro e Totoro ficam travados no canto inferior direito;
+- ficam olhando para frente;
+- não existe mais auto-start no mobile;
+- somente toques feitos diretamente em Hamtaro ou Totoro contam;
+- após 3 toques rápidos, os dois acordam e voltam ao comportamento normal;
+- cliques/toques no restante do site não contam;
+- desktop mantém o auto-start e comportamento anterior intactos.
+
+## Cabeçalho
+- adicionado botão circular do Instagram no canto direito;
+- link: `https://www.instagram.com/migliorinimath/`;
+- um espaço simétrico à esquerda mantém a navegação realmente centralizada;
+- botão `Fale comigo` continua intacto no desktop e oculto no mobile.
+
+## Foto
+- no mobile, o botão `Anotações` passa a mostrar somente `Blog`;
+- subtítulo escondido apenas no mobile;
+- desktop permanece `Anotações` com o conteúdo anterior.
 
 ## Desktop
-INTACTO. Nenhuma alteração visual na versão PC.
-
-## Mobile
-- o carrossel de trabalhos permanece exatamente como na V12.3;
-- o popup `ONDE ME ENCONTRAR` agora aparece de forma garantida;
-- removida dependência de IntersectionObserver para o popup;
-- o dock fica no final da página, pequeno e visualmente flutuante;
-- contém somente Instagram, LinkedIn e WhatsApp;
-- o footer desktop continua oculto apenas no mobile;
-- sem overlay, sem blur pesado, sem listener de scroll.
-
-## Performance
-- nenhum framework;
-- nenhum asset novo;
-- nenhum JS extra para o popup;
-- JS mobile cuida apenas do carrossel.
+Nenhuma mudança visual proposital.
 
 ## Commit sugerido
-`Fix mobile contact dock visibility`
+`Refine mobile pets Instagram header and blog label`
