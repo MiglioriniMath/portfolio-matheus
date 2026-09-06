@@ -1,36 +1,25 @@
-# Portfolio Matheus Migliorini — V12.2 Mobile Polish
+# Portfolio Matheus Migliorini — V12.3
 
-Ajustado a partir do print real do iPhone.
+## Desktop
+Restaurado integralmente para a base V12.
+Nenhuma alteração no footer/ícones desktop.
 
-## Cabeçalho mobile
-- todos os 5 itens aparecem: Trabalhos, Anotações, Álbum, Sobre Mim e CV;
-- removida a regra antiga que escondia Álbum;
-- navegação realmente centralizada;
-- botão Fale comigo fica oculto no mobile para não apertar o menu.
-
-## Meus últimos trabalhos
-- um único trabalho visível por vez;
-- já abre assim antes mesmo do JS terminar de carregar;
-- troca automática a cada ~3,3 segundos;
-- atual sobe e próximo entra por baixo;
-- somente transform + opacity;
-- pausa em aba oculta;
-- reduced-motion desativa a animação.
-
-## Onde me encontrar
-- o footer existente vira um popup real;
-- fica fixo/flutuando na parte inferior;
-- só aparece quando o visitante chega próximo ao fim da página;
-- contém apenas Instagram, LinkedIn e WhatsApp;
-- os três links usam SVG inline, sem biblioteca de ícones;
-- nenhum DOM de contatos foi duplicado.
+## Mobile
+- menu centralizado;
+- Álbum visível novamente;
+- Meus últimos trabalhos gira 1 item por vez;
+- popup `ONDE ME ENCONTRAR` é um componente separado e pequeno;
+- popup contém somente Instagram, LinkedIn e WhatsApp;
+- popup só aparece quando a pessoa chega perto do fim da página;
+- sem overlay, sem fundo de tela inteira, sem blur pesado;
+- porquinhos permanecem intactos.
 
 ## Performance
-- nenhuma imagem nova;
 - nenhum framework;
-- um JS pequeno e isolado do `pets-v11.js`;
-- porquinhos permanecem intactos;
-- desktop não foi redesenhado.
+- nenhum asset externo;
+- SVGs inline mínimos apenas no popup mobile;
+- JS isolado e pequeno;
+- desktop não carrega comportamento visual extra.
 
 ## Commit sugerido
-`Polish iPhone navigation rotating work and contact popup`
+`Fix mobile contact popup and restore desktop footer`
