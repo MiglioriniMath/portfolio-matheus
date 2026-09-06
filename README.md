@@ -1,25 +1,22 @@
-# Portfolio Matheus Migliorini — V12.3
+# Portfolio Matheus Migliorini — V12.4
 
 ## Desktop
-Restaurado integralmente para a base V12.
-Nenhuma alteração no footer/ícones desktop.
+INTACTO. Nenhuma alteração visual na versão PC.
 
 ## Mobile
-- menu centralizado;
-- Álbum visível novamente;
-- Meus últimos trabalhos gira 1 item por vez;
-- popup `ONDE ME ENCONTRAR` é um componente separado e pequeno;
-- popup contém somente Instagram, LinkedIn e WhatsApp;
-- popup só aparece quando a pessoa chega perto do fim da página;
-- sem overlay, sem fundo de tela inteira, sem blur pesado;
-- porquinhos permanecem intactos.
+- o carrossel de trabalhos permanece exatamente como na V12.3;
+- o popup `ONDE ME ENCONTRAR` agora aparece de forma garantida;
+- removida dependência de IntersectionObserver para o popup;
+- o dock fica no final da página, pequeno e visualmente flutuante;
+- contém somente Instagram, LinkedIn e WhatsApp;
+- o footer desktop continua oculto apenas no mobile;
+- sem overlay, sem blur pesado, sem listener de scroll.
 
 ## Performance
 - nenhum framework;
-- nenhum asset externo;
-- SVGs inline mínimos apenas no popup mobile;
-- JS isolado e pequeno;
-- desktop não carrega comportamento visual extra.
+- nenhum asset novo;
+- nenhum JS extra para o popup;
+- JS mobile cuida apenas do carrossel.
 
 ## Commit sugerido
-`Fix mobile contact popup and restore desktop footer`
+`Fix mobile contact dock visibility`
