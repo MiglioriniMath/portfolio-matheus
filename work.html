@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="Portfólio em vídeo de Matheus Migliorini — marketing, comunicação, storytelling, conteúdo e projetos audiovisuais." />
   <meta name="twitter:image" content="https://matheusmigliorini.com.br/assets/og-card.png" />
   <link rel="stylesheet" href="style-v12-5.css" />
-  <link rel="stylesheet" href="portfolio-v13.css" />
+  <link rel="stylesheet" href="portfolio-v13-2.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
@@ -53,121 +53,87 @@
       <p class="page-kicker">01 / Portfólio</p>
       <h1>Trabalhos em movimento.</h1>
       <p class="page-lead">
-        Uma seleção de vídeos e conteúdos que fazem parte do meu trabalho.
-        Clique em qualquer peça para assistir — o vídeo só é carregado quando você abre.
+        Uma seleção de vídeos, campanhas e experimentos visuais. Conteúdo pensado como narrativa: um recorte do que venho criando entre marketing, RH, storytelling e IA.
       </p>
     </section>
 
     <div class="rule" aria-hidden="true"></div>
 
-    <section class="portfolio-section" aria-label="Seleção de vídeos">
-      <div class="portfolio-grid">
-        <button class="portfolio-card" type="button" data-video="assets/portfolio/video-01.mp4" data-poster="assets/portfolio/poster-01.webp.png" data-title="Um breve suspiro no tempo.">
-          <span class="portfolio-media">
-            <img src="assets/portfolio/poster-01.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" />
-            <span class="portfolio-play" aria-hidden="true">▶</span>
-          </span>
-          <span class="portfolio-meta">
-            <span class="portfolio-index">01</span>
-            <strong>Um breve suspiro no tempo.</strong>
-            <small>Vídeo vertical · 9:16</small>
-          </span>
-        </button>
+    <section class="portfolio-section portfolio-showcase" aria-label="Seleção de vídeos">
+      <input class="portfolio-filter-input" type="radio" name="portfolio-filter" id="filter-all" checked />
+      <input class="portfolio-filter-input" type="radio" name="portfolio-filter" id="filter-marketing" />
+      <input class="portfolio-filter-input" type="radio" name="portfolio-filter" id="filter-storytelling" />
+      <input class="portfolio-filter-input" type="radio" name="portfolio-filter" id="filter-fotografia" />
+      <input class="portfolio-filter-input" type="radio" name="portfolio-filter" id="filter-ia" />
+      <input class="portfolio-filter-input" type="radio" name="portfolio-filter" id="filter-rh" />
 
-        <button class="portfolio-card" type="button" data-video="assets/portfolio/video-02.mp4" data-poster="assets/portfolio/poster-02.webp.png" data-title="Ao meu futuro amor.">
+      <div class="portfolio-filterbar" aria-label="Filtros de portfólio">
+        <label for="filter-all">Todos</label>
+        <label for="filter-marketing">Marketing</label>
+        <label for="filter-storytelling">Storytelling</label>
+        <label for="filter-fotografia">Fotografia</label>
+        <label for="filter-ia">IA</label>
+        <label for="filter-rh">RH</label>
+      </div>
+
+      <button class="portfolio-card portfolio-featured" type="button" data-category="storytelling fotografia" data-video="assets/portfolio/video-01.mp4" data-poster="assets/portfolio/poster-01.webp.png" data-title="Um breve suspiro no tempo." data-client="Projeto autoral" data-tools="CapCut · Fotografia · Storytelling" data-type="Vídeo vertical · 9:16" data-description="Uma peça autoral construída em cima de atmosfera, texto e contemplação. Um exercício de ritmo, silêncio e narrativa visual.">
+        <span class="portfolio-media">
+          <img src="assets/portfolio/poster-01.webp.png" alt="" width="360" height="640" loading="eager" decoding="async" fetchpriority="high" />
+          <span class="portfolio-play" aria-hidden="true">▶</span>
+          <span class="portfolio-watch" aria-hidden="true"><em>9:16</em><strong>▶ Assistir</strong></span>
+        </span>
+        <span class="portfolio-featured-copy">
+          <span class="portfolio-eyebrow">Vídeo em destaque</span>
+          <h2>Um breve suspiro no tempo.</h2>
+          <p>Uma peça de storytelling com clima mais cinematográfico, pensada para abrir o portfólio como uma pequena experiência visual.</p>
+          <span class="portfolio-tags" aria-hidden="true"><span>Storytelling</span><span>Fotografia</span><span>Autoral</span></span>
+          <span class="portfolio-featured-actions"><span class="portfolio-primary-action">Assistir agora</span><span class="portfolio-secondary-note">abre sem sair da página</span></span>
+        </span>
+      </button>
+
+      <div class="portfolio-grid">
+        <button class="portfolio-card" type="button" data-category="storytelling fotografia" data-video="assets/portfolio/video-02.mp4" data-poster="assets/portfolio/poster-02.webp.png" data-title="Ao meu futuro amor." data-client="Projeto autoral" data-tools="CapCut · Fotografia · Storytelling" data-type="Vídeo vertical · 9:16" data-description="Uma narrativa afetiva em formato vertical, com foco em emoção, imagem e texto como elemento principal.">
           <span class="portfolio-media">
             <img src="assets/portfolio/poster-02.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" />
             <span class="portfolio-play" aria-hidden="true">▶</span>
+            <span class="portfolio-watch" aria-hidden="true"><em>9:16</em><strong>▶ Assistir</strong></span>
           </span>
-          <span class="portfolio-meta">
-            <span class="portfolio-index">02</span>
-            <strong>Ao meu futuro amor.</strong>
-            <small>Vídeo vertical · 9:16</small>
-          </span>
+          <span class="portfolio-meta"><span class="portfolio-index">02</span><strong>Ao meu futuro amor.</strong><small>Storytelling · Autoral</small><span class="portfolio-facts"><span><b>Cliente</b>Projeto autoral</span><span><b>Ferramentas</b>CapCut · Fotografia</span></span></span>
         </button>
 
-        <button class="portfolio-card" type="button" data-video="assets/portfolio/video-03.mp4" data-poster="assets/portfolio/poster-03.webp.png" data-title="Setembro Amarelo">
-          <span class="portfolio-media">
-            <img src="assets/portfolio/poster-03.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" />
-            <span class="portfolio-play" aria-hidden="true">▶</span>
-          </span>
-          <span class="portfolio-meta">
-            <span class="portfolio-index">03</span>
-            <strong>Setembro Amarelo</strong>
-            <small>Vídeo vertical · 9:16</small>
-          </span>
+        <button class="portfolio-card" type="button" data-category="marketing rh" data-video="assets/portfolio/video-03.mp4" data-poster="assets/portfolio/poster-03.webp.png" data-title="Setembro Amarelo" data-client="Qualitas Humanus" data-tools="CapCut · IA · Edição" data-type="Campanha institucional · 9:16" data-description="Conteúdo de campanha com linguagem simples e sensível, conectando comunicação interna, RH e cuidado com pessoas.">
+          <span class="portfolio-media"><img src="assets/portfolio/poster-03.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" /><span class="portfolio-play" aria-hidden="true">▶</span><span class="portfolio-watch" aria-hidden="true"><em>Campanha</em><strong>▶ Assistir</strong></span></span>
+          <span class="portfolio-meta"><span class="portfolio-index">03</span><strong>Setembro Amarelo</strong><small>Marketing · RH</small><span class="portfolio-facts"><span><b>Cliente</b>Qualitas Humanus</span><span><b>Ferramentas</b>CapCut · IA</span></span></span>
         </button>
 
-        <button class="portfolio-card" type="button" data-video="assets/portfolio/video-04.mp4" data-poster="assets/portfolio/poster-04.webp.png" data-title="Complete seu cadastro em nossa plataforma">
-          <span class="portfolio-media">
-            <img src="assets/portfolio/poster-04.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" />
-            <span class="portfolio-play" aria-hidden="true">▶</span>
-          </span>
-          <span class="portfolio-meta">
-            <span class="portfolio-index">04</span>
-            <strong>Complete seu cadastro em nossa plataforma</strong>
-            <small>Vídeo vertical · 9:16</small>
-          </span>
+        <button class="portfolio-card" type="button" data-category="marketing rh" data-video="assets/portfolio/video-04.mp4" data-poster="assets/portfolio/poster-04.webp.png" data-title="Complete seu cadastro em nossa plataforma" data-client="Qualitas Humanus" data-tools="CapCut · Roteiro · Edição" data-type="Tutorial comercial · 9:16" data-description="Vídeo explicativo para reduzir fricção no cadastro de candidatos e transformar orientação técnica em conteúdo simples.">
+          <span class="portfolio-media"><img src="assets/portfolio/poster-04.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" /><span class="portfolio-play" aria-hidden="true">▶</span><span class="portfolio-watch" aria-hidden="true"><em>Tutorial</em><strong>▶ Assistir</strong></span></span>
+          <span class="portfolio-meta"><span class="portfolio-index">04</span><strong>Complete seu cadastro em nossa plataforma</strong><small>Marketing · RH</small><span class="portfolio-facts"><span><b>Cliente</b>Qualitas Humanus</span><span><b>Ferramentas</b>CapCut · Roteiro</span></span></span>
         </button>
 
-        <button class="portfolio-card" type="button" data-video="assets/portfolio/video-05.mp4" data-poster="assets/portfolio/poster-05.webp.png" data-title="Canal de vagas no WhatsApp">
-          <span class="portfolio-media">
-            <img src="assets/portfolio/poster-05.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" />
-            <span class="portfolio-play" aria-hidden="true">▶</span>
-          </span>
-          <span class="portfolio-meta">
-            <span class="portfolio-index">05</span>
-            <strong>Canal de vagas no WhatsApp</strong>
-            <small>Vídeo vertical · 9:16</small>
-          </span>
+        <button class="portfolio-card" type="button" data-category="marketing rh" data-video="assets/portfolio/video-05.mp4" data-poster="assets/portfolio/poster-05.webp.png" data-title="Canal de vagas no WhatsApp" data-client="Qualitas Humanus" data-tools="CapCut · Conteúdo · Edição" data-type="Conteúdo social · 9:16" data-description="Peça curta para divulgar o canal de vagas com uma abordagem direta, humana e fácil de entender.">
+          <span class="portfolio-media"><img src="assets/portfolio/poster-05.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" /><span class="portfolio-play" aria-hidden="true">▶</span><span class="portfolio-watch" aria-hidden="true"><em>Social</em><strong>▶ Assistir</strong></span></span>
+          <span class="portfolio-meta"><span class="portfolio-index">05</span><strong>Canal de vagas no WhatsApp</strong><small>Marketing · RH</small><span class="portfolio-facts"><span><b>Cliente</b>Qualitas Humanus</span><span><b>Ferramentas</b>CapCut · Conteúdo</span></span></span>
         </button>
 
-        <button class="portfolio-card" type="button" data-video="assets/portfolio/video-06.mp4" data-poster="assets/portfolio/poster-06.webp.png" data-title="Como conseguir entrar no mercado de RH?">
-          <span class="portfolio-media">
-            <img src="assets/portfolio/poster-06.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" />
-            <span class="portfolio-play" aria-hidden="true">▶</span>
-          </span>
-          <span class="portfolio-meta">
-            <span class="portfolio-index">06</span>
-            <strong>Como conseguir entrar no mercado de RH?</strong>
-            <small>Vídeo vertical · 9:16</small>
-          </span>
+        <button class="portfolio-card" type="button" data-category="rh marketing" data-video="assets/portfolio/video-06.mp4" data-poster="assets/portfolio/poster-06.webp.png" data-title="Como conseguir entrar no mercado de RH?" data-client="Qualitas Humanus" data-tools="CapCut · Roteiro · Conteúdo" data-type="Conteúdo educativo · 9:16" data-description="Conteúdo educativo para aproximar candidatos do universo de RH com uma pergunta clara e linguagem acessível.">
+          <span class="portfolio-media"><img src="assets/portfolio/poster-06.webp.png" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" /><span class="portfolio-play" aria-hidden="true">▶</span><span class="portfolio-watch" aria-hidden="true"><em>RH</em><strong>▶ Assistir</strong></span></span>
+          <span class="portfolio-meta"><span class="portfolio-index">06</span><strong>Como conseguir entrar no mercado de RH?</strong><small>RH · Educativo</small><span class="portfolio-facts"><span><b>Cliente</b>Qualitas Humanus</span><span><b>Ferramentas</b>CapCut · Roteiro</span></span></span>
         </button>
 
-        <button class="portfolio-card" type="button" data-video="assets/portfolio/video-07.mp4" data-poster="assets/portfolio/poster-07.webp" data-title="A armadilha da renda maior">
-          <span class="portfolio-media">
-            <img src="assets/portfolio/poster-07.webp" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" />
-            <span class="portfolio-play" aria-hidden="true">▶</span>
-          </span>
-          <span class="portfolio-meta">
-            <span class="portfolio-index">07</span>
-            <strong>A armadilha da renda maior</strong>
-            <small>Vídeo vertical · 9:16</small>
-          </span>
+        <button class="portfolio-card" type="button" data-category="ia storytelling" data-video="assets/portfolio/video-07.mp4" data-poster="assets/portfolio/poster-07.webp" data-title="A armadilha da renda maior" data-client="Projeto autoral" data-tools="IA · Roteiro · Edição" data-type="Narrativa vertical · 9:16" data-description="Um conteúdo com estética mais dramática, construído em cima de narrativa, tensão visual e tema de comportamento financeiro.">
+          <span class="portfolio-media"><img src="assets/portfolio/poster-07.webp" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" /><span class="portfolio-play" aria-hidden="true">▶</span><span class="portfolio-watch" aria-hidden="true"><em>IA</em><strong>▶ Assistir</strong></span></span>
+          <span class="portfolio-meta"><span class="portfolio-index">07</span><strong>A armadilha da renda maior</strong><small>IA · Storytelling</small><span class="portfolio-facts"><span><b>Cliente</b>Projeto autoral</span><span><b>Ferramentas</b>IA · Edição</span></span></span>
         </button>
 
-        <button class="portfolio-card" type="button" data-video="assets/portfolio/video-08.mp4" data-poster="assets/portfolio/poster-08.webp" data-title="Terras raras no Brasil">
-          <span class="portfolio-media">
-            <img src="assets/portfolio/poster-08.webp" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" />
-            <span class="portfolio-play" aria-hidden="true">▶</span>
-          </span>
-          <span class="portfolio-meta">
-            <span class="portfolio-index">08</span>
-            <strong>Terras raras no Brasil</strong>
-            <small>Vídeo vertical · 9:16</small>
-          </span>
+        <button class="portfolio-card" type="button" data-category="ia storytelling" data-video="assets/portfolio/video-08.mp4" data-poster="assets/portfolio/poster-08.webp" data-title="Terras raras no Brasil" data-client="Projeto autoral" data-tools="IA · Pesquisa · Edição" data-type="Conteúdo informativo · 9:16" data-description="Peça informativa com estética editorial, unindo assunto complexo, ritmo de vídeo curto e imagem de impacto.">
+          <span class="portfolio-media"><img src="assets/portfolio/poster-08.webp" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" /><span class="portfolio-play" aria-hidden="true">▶</span><span class="portfolio-watch" aria-hidden="true"><em>IA</em><strong>▶ Assistir</strong></span></span>
+          <span class="portfolio-meta"><span class="portfolio-index">08</span><strong>Terras raras no Brasil</strong><small>IA · Informativo</small><span class="portfolio-facts"><span><b>Cliente</b>Projeto autoral</span><span><b>Ferramentas</b>IA · Pesquisa</span></span></span>
         </button>
 
-        <button class="portfolio-card" type="button" data-video="assets/portfolio/video-09.mp4" data-poster="assets/portfolio/poster-09.webp" data-title="Summit BTG 2026">
-          <span class="portfolio-media">
-            <img src="assets/portfolio/poster-09.webp" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" />
-            <span class="portfolio-play" aria-hidden="true">▶</span>
-          </span>
-          <span class="portfolio-meta">
-            <span class="portfolio-index">09</span>
-            <strong>Summit BTG 2026</strong>
-            <small>Vídeo vertical · 9:16</small>
-          </span>
+        <button class="portfolio-card" type="button" data-category="marketing fotografia" data-video="assets/portfolio/video-09.mp4" data-poster="assets/portfolio/poster-09.webp" data-title="Summit BTG 2026" data-client="Evento / registro" data-tools="CapCut · Edição · Cobertura" data-type="Cobertura de evento · 9:16" data-description="Registro em vídeo com ritmo de evento, pensado para transmitir presença, ambiente e bastidores de forma rápida.">
+          <span class="portfolio-media"><img src="assets/portfolio/poster-09.webp" alt="" width="360" height="640" loading="lazy" decoding="async" fetchpriority="low" /><span class="portfolio-play" aria-hidden="true">▶</span><span class="portfolio-watch" aria-hidden="true"><em>Evento</em><strong>▶ Assistir</strong></span></span>
+          <span class="portfolio-meta"><span class="portfolio-index">09</span><strong>Summit BTG 2026</strong><small>Evento · Marketing</small><span class="portfolio-facts"><span><b>Cliente</b>Evento / registro</span><span><b>Ferramentas</b>CapCut · Cobertura</span></span></span>
         </button>
       </div>
     </section>
@@ -175,11 +141,19 @@
     <dialog class="portfolio-modal" id="portfolio-modal" aria-label="Reprodutor de vídeo">
       <div class="portfolio-modal-shell">
         <button class="portfolio-close" type="button" aria-label="Fechar vídeo">×</button>
-        <video class="portfolio-player" controls playsinline preload="none"></video>
-        <div class="portfolio-modal-meta">
-          <span class="portfolio-modal-kicker">Portfólio</span>
-          <strong class="portfolio-modal-title">Vídeo</strong>
+        <div class="portfolio-modal-info">
+          <div>
+            <span class="portfolio-modal-kicker">Vídeo</span>
+            <strong class="portfolio-modal-title">Vídeo</strong>
+            <p class="portfolio-modal-description">Uma peça selecionada do meu portfólio em vídeo.</p>
+          </div>
+          <dl class="portfolio-modal-facts">
+            <div><dt>Cliente / Projeto</dt><dd data-modal-client>Projeto autoral</dd></div>
+            <div><dt>Ferramentas</dt><dd data-modal-tools>CapCut · Edição · Storytelling</dd></div>
+            <div><dt>Formato</dt><dd data-modal-type>Vídeo vertical · 9:16</dd></div>
+          </dl>
         </div>
+        <video class="portfolio-player" controls playsinline preload="none"></video>
       </div>
     </dialog>
 
@@ -188,6 +162,6 @@
       <span>Matheus Migliorini</span>
     </footer>
   </main>
-  <script src="portfolio-v13.js" defer></script>
+  <script src="portfolio-v13-2.js" defer></script>
 </body>
 </html>
