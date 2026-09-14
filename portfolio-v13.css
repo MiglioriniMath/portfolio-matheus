@@ -1,0 +1,203 @@
+
+
+/* =========================================================
+   V13 — Portfolio em vídeo
+   ========================================================= */
+.portfolio-intro {
+  max-width: none;
+}
+
+.portfolio-section {
+  margin-top: 4px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.portfolio-card {
+  appearance: none;
+  -webkit-appearance: none;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  content-visibility: auto;
+  contain-intrinsic-size: 240px 470px;
+}
+
+.portfolio-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 16px;
+  background: rgba(255,255,255,.52);
+  box-shadow: 0 8px 28px rgba(45,54,60,.035), inset 0 1px 0 rgba(255,255,255,.9);
+  transform: translateZ(0);
+}
+
+.portfolio-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.92) contrast(.98);
+  transition: transform 140ms cubic-bezier(.2,.78,.2,1), filter 140ms ease;
+}
+
+.portfolio-play {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 50%;
+  background: rgba(255,255,255,.82);
+  color: #191919;
+  font-size: 10px;
+  box-shadow: 0 5px 18px rgba(0,0,0,.08);
+}
+
+.portfolio-meta {
+  display: grid;
+  grid-template-columns: 24px minmax(0,1fr);
+  gap: 2px 8px;
+  padding: 10px 2px 0;
+}
+
+.portfolio-index {
+  grid-row: 1 / span 2;
+  color: #96999b;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.portfolio-meta strong {
+  font-size: 10px;
+  font-weight: 680;
+  line-height: 1.35;
+}
+
+.portfolio-meta small {
+  color: #8c9093;
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  .portfolio-card:hover .portfolio-media img {
+    transform: scale(1.018);
+    filter: saturate(1) contrast(1);
+  }
+}
+
+.portfolio-modal {
+  width: min(94vw, 430px);
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 22px;
+  background: rgba(249,249,247,.98);
+  box-shadow: 0 24px 90px rgba(17,21,24,.24);
+  overflow: visible;
+}
+
+.portfolio-modal::backdrop {
+  background: rgba(24,27,29,.42);
+  backdrop-filter: blur(4px);
+}
+
+.portfolio-modal-shell {
+  position: relative;
+  padding: 10px;
+}
+
+.portfolio-player {
+  display: block;
+  width: 100%;
+  max-height: min(76vh, 760px);
+  aspect-ratio: 9 / 16;
+  border-radius: 15px;
+  background: #111;
+  object-fit: contain;
+}
+
+.portfolio-close {
+  position: absolute;
+  z-index: 2;
+  top: -14px;
+  right: -14px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 50%;
+  background: rgba(255,255,255,.96);
+  color: #222;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.12);
+}
+
+.portfolio-modal-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 4px 2px;
+}
+
+.portfolio-modal-kicker {
+  color: #9a9da0;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 7px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.portfolio-modal-title {
+  font-size: 10px;
+  font-weight: 680;
+}
+
+@media (max-width: 900px) {
+  .portfolio-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+
+@media (max-width: 700px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 13px 10px;
+  }
+
+  .portfolio-media { border-radius: 14px; }
+  .portfolio-play { width: 30px; height: 30px; right: 9px; bottom: 9px; }
+  .portfolio-meta { grid-template-columns: 18px minmax(0,1fr); gap: 2px 6px; padding-top: 8px; }
+  .portfolio-meta strong { font-size: 9.5px; }
+  .portfolio-meta small { font-size: 7.6px; }
+
+  .portfolio-modal {
+    width: min(calc(100vw - 24px), 410px);
+    border-radius: 19px;
+  }
+
+  .portfolio-modal::backdrop { backdrop-filter: none; }
+}
+
+@media (max-width: 360px) {
+  .portfolio-grid { gap: 11px 8px; }
+  .portfolio-meta small { display: none; }
+}
