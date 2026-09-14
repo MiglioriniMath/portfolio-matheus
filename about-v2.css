@@ -1,0 +1,484 @@
+/* =========================================================
+   About V2 — high-impact narrative page
+   ========================================================= */
+
+.about-impact-page {
+  gap: 0;
+}
+
+.about-impact-hero {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.about-impact-copy,
+.about-impact-visual,
+.about-manifesto,
+.about-offer-card,
+.about-principle-card,
+.about-project-card,
+.about-human-card,
+.about-close-card {
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.72), rgba(255,255,255,.46));
+  box-shadow:
+    0 18px 48px rgba(38,44,52,.065),
+    inset 0 1px 0 rgba(255,255,255,.86);
+}
+
+.about-impact-copy {
+  min-height: 520px;
+  padding: clamp(30px, 4vw, 54px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-impact-copy h1 {
+  max-width: 720px;
+  margin: 0 0 24px;
+  font-size: clamp(54px, 8vw, 108px);
+  line-height: .83;
+  letter-spacing: -.085em;
+  font-weight: 820;
+}
+
+.about-impact-lead {
+  max-width: 610px;
+  margin: 0;
+  color: #303437;
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.58;
+  letter-spacing: -.02em;
+}
+
+.about-impact-mini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.about-impact-mini span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 13px;
+  border: 1px solid rgba(22,24,26,.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,.58);
+  color: #4c5155;
+  font-size: 11px;
+  font-weight: 620;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 34px;
+}
+
+.about-action {
+  min-height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  border: 1px solid rgba(22,24,26,.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,.58);
+  color: #171a1c;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.86);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.about-action.primary {
+  background: #16191c;
+  color: #fff;
+  border-color: #16191c;
+}
+
+.about-action:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.82);
+}
+
+.about-action.primary:hover {
+  background: #0e1012;
+}
+
+.about-impact-visual {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 70% 8%, rgba(188,214,232,.32), transparent 34%),
+    radial-gradient(circle at 12% 95%, rgba(235,218,190,.28), transparent 32%),
+    rgba(255,255,255,.48);
+}
+
+.about-impact-visual img {
+  width: min(82%, 390px);
+  height: auto;
+  display: block;
+  filter: grayscale(1) contrast(1.03);
+  transform: translateY(12px);
+}
+
+.about-float-note {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  display: grid;
+  gap: 5px;
+  padding: 15px 16px;
+  border: 1px solid rgba(255,255,255,.84);
+  border-radius: 18px;
+  background: rgba(255,255,255,.62);
+  box-shadow: 0 16px 38px rgba(24,28,32,.08), inset 0 1px 0 rgba(255,255,255,.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.about-float-note b {
+  font-size: 13px;
+  letter-spacing: -.02em;
+}
+
+.about-float-note span {
+  color: #666c70;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.about-section {
+  margin-top: 20px;
+}
+
+.about-manifesto {
+  padding: clamp(26px, 4vw, 48px);
+}
+
+.about-manifesto p {
+  max-width: 920px;
+  margin: 0;
+  color: #17191b;
+  font-size: clamp(26px, 4.6vw, 58px);
+  line-height: .98;
+  letter-spacing: -.066em;
+  font-weight: 760;
+}
+
+.about-manifesto em {
+  color: #bd2e2a;
+  font-style: normal;
+}
+
+.about-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 42px 0 16px;
+}
+
+.about-section-head h2 {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1;
+  letter-spacing: -.055em;
+  font-weight: 760;
+}
+
+.about-section-head p {
+  max-width: 420px;
+  margin: 0;
+  color: #666b70;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.about-offer-grid,
+.about-principles-grid,
+.about-project-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.about-offer-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.about-principles-grid,
+.about-project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-offer-card,
+.about-principle-card,
+.about-project-card,
+.about-human-card,
+.about-close-card {
+  padding: 22px;
+}
+
+.about-offer-card span,
+.about-principle-card span,
+.about-project-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: rgba(18,20,22,.06);
+  color: #5e6468;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 10px;
+}
+
+.about-offer-card h3,
+.about-principle-card h3,
+.about-project-card h3 {
+  margin: 0 0 9px;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -.035em;
+  font-weight: 760;
+}
+
+.about-offer-card p,
+.about-principle-card p,
+.about-project-card p {
+  margin: 0;
+  color: #62676b;
+  font-size: 12px;
+  line-height: 1.58;
+}
+
+.about-principle-card {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-principle-card p {
+  margin-top: auto;
+}
+
+.about-project-card {
+  min-height: 205px;
+}
+
+.about-human-card {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: 26px;
+  align-items: center;
+  padding: clamp(26px, 4vw, 44px);
+}
+
+.about-human-card h2,
+.about-close-card h2 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 54px);
+  line-height: .94;
+  letter-spacing: -.065em;
+  font-weight: 780;
+}
+
+.about-human-card p,
+.about-close-card p {
+  margin: 0;
+  color: #42474b;
+  font-size: 14px;
+  line-height: 1.68;
+  letter-spacing: -.01em;
+}
+
+.about-close-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: clamp(30px, 4vw, 52px);
+  background:
+    radial-gradient(circle at 86% 18%, rgba(189,46,42,.10), transparent 24%),
+    linear-gradient(145deg, rgba(255,255,255,.74), rgba(255,255,255,.48));
+}
+
+.about-close-card h2 {
+  margin-bottom: 14px;
+}
+
+.about-close-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 190px;
+}
+
+.about-close-actions .about-action {
+  width: 100%;
+}
+
+.about-proof-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.about-proof-line span {
+  color: #71777c;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: .03em;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  .about-offer-card,
+  .about-principle-card,
+  .about-project-card,
+  .about-human-card,
+  .about-close-card,
+  .about-impact-copy,
+  .about-impact-visual {
+    transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  }
+
+  .about-offer-card:hover,
+  .about-principle-card:hover,
+  .about-project-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,.68);
+    box-shadow:
+      0 24px 58px rgba(38,44,52,.075),
+      inset 0 1px 0 rgba(255,255,255,.88);
+  }
+}
+
+@media (max-width: 960px) {
+  .about-impact-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about-impact-copy,
+  .about-impact-visual {
+    min-height: auto;
+  }
+
+  .about-impact-visual {
+    min-height: 430px;
+  }
+
+  .about-offer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .about-impact-hero {
+    margin-top: 26px;
+    gap: 14px;
+  }
+
+  .about-impact-copy,
+  .about-manifesto,
+  .about-offer-card,
+  .about-principle-card,
+  .about-project-card,
+  .about-human-card,
+  .about-close-card {
+    border-radius: 22px;
+  }
+
+  .about-impact-copy {
+    padding: 28px 22px;
+  }
+
+  .about-impact-copy h1 {
+    font-size: clamp(45px, 14vw, 68px);
+  }
+
+  .about-impact-lead {
+    font-size: 14px;
+  }
+
+  .about-impact-visual {
+    min-height: 360px;
+  }
+
+  .about-impact-visual img {
+    width: min(78%, 300px);
+  }
+
+  .about-section-head {
+    display: block;
+    margin-top: 34px;
+  }
+
+  .about-section-head p {
+    margin-top: 10px;
+  }
+
+  .about-principles-grid,
+  .about-project-grid,
+  .about-human-card,
+  .about-close-card {
+    grid-template-columns: 1fr;
+  }
+
+  .about-close-actions {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-impact-mini span {
+    font-size: 10px;
+  }
+
+  .about-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .about-action {
+    width: 100%;
+  }
+
+  .about-manifesto p {
+    font-size: clamp(28px, 10vw, 44px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-action,
+  .about-offer-card,
+  .about-principle-card,
+  .about-project-card {
+    transition: none !important;
+  }
+}
