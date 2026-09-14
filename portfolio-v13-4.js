@@ -1,4 +1,14 @@
 (() => {
+  const headerSpacer = document.querySelector(".site-header .header-spacer");
+  if (headerSpacer) {
+    const homeMark = document.createElement("a");
+    homeMark.className = "brand brand-mark";
+    homeMark.href = "index.html";
+    homeMark.setAttribute("aria-label", "Ir para a Home");
+    homeMark.textContent = "ML";
+    headerSpacer.replaceWith(homeMark);
+  }
+
   const modal = document.getElementById("portfolio-modal");
   const player = modal?.querySelector(".portfolio-player");
   const title = modal?.querySelector(".portfolio-modal-title");
