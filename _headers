@@ -13,6 +13,9 @@
 /blog-v1.css
   Cache-Control: no-cache
 
+/about-v2.css
+  Cache-Control: no-cache
+
 /pets-v12-5.js
   Cache-Control: public, max-age=31536000, immutable
 
