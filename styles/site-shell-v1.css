@@ -1,0 +1,82 @@
+/* Shared shell: header, navigation motion and safe performance helpers */
+
+.site-header .brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0 9px;
+  margin: -9px 0;
+  border-radius: 999px;
+  transition:
+    transform .2s ease,
+    background-color .2s ease,
+    box-shadow .2s ease,
+    opacity .2s ease;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.site-header .brand-mark:hover {
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 10px 26px rgba(35,42,50,.06);
+  transform: translateY(-1px) scale(1.045);
+}
+
+.site-header .brand-mark:active {
+  transform: translateY(0) scale(.98);
+}
+
+.site-header .nav a,
+.site-header .talk-button,
+.site-header .mobile-instagram-button {
+  transition:
+    transform .18s ease,
+    opacity .18s ease,
+    background-color .18s ease,
+    border-color .18s ease;
+  transform-origin: center;
+}
+
+.site-header .nav a:hover,
+.site-header .talk-button:hover,
+.site-header .mobile-instagram-button:hover {
+  transform: translateY(-1px) scale(1.025);
+}
+
+.site-header .nav a[aria-current="page"] {
+  opacity: .62;
+}
+
+.portfolio-grid,
+.blog-list-modern,
+.about-offer-grid,
+.about-principles-grid,
+.about-project-grid {
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
+}
+
+.portfolio-media img,
+.hero-portrait,
+.about-impact-visual img,
+.about-photo img {
+  content-visibility: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .brand-mark,
+  .site-header .nav a,
+  .site-header .talk-button,
+  .site-header .mobile-instagram-button {
+    transition: none;
+  }
+
+  .site-header .brand-mark:hover,
+  .site-header .nav a:hover,
+  .site-header .talk-button:hover,
+  .site-header .mobile-instagram-button:hover {
+    transform: none;
+  }
+}

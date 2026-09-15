@@ -1,53 +1,40 @@
 (() => {
-  const headerMotionStyle = document.createElement("style");
-  headerMotionStyle.textContent = `
-    .site-header .brand-mark {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 34px;
-      min-height: 34px;
-      padding: 0 9px;
-      margin: -9px 0;
-      border-radius: 999px;
-      transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
-      transform-origin: center;
-      will-change: transform;
-    }
+  function ensureShellStyles() {
+    const alreadyLoaded = [...document.querySelectorAll('link[rel="stylesheet"]')]
+      .some((link) => (link.getAttribute("href") || "").endsWith("styles/site-shell-v1.css"));
+    if (alreadyLoaded) return;
 
-    .site-header .brand-mark:hover {
-      background: rgba(255,255,255,.7);
-      transform: translateY(-1px) scale(1.045);
-    }
-
-    .site-header .brand-mark:active {
-      transform: translateY(0) scale(.98);
-    }
-  `;
-  document.head.appendChild(headerMotionStyle);
-
-  document.querySelectorAll('.site-header .nav a').forEach((link) => {
-    const href = link.getAttribute('href') || '';
-    if (
-      href === 'cv.html' ||
-      href === '../cv.html' ||
-      href === 'photos.html' ||
-      href === '../photos.html' ||
-      href.includes('avely.me/math')
-    ) {
-      link.remove();
-    }
-  });
-
-  const headerSpacer = document.querySelector(".site-header .header-spacer");
-  if (headerSpacer) {
-    const homeMark = document.createElement("a");
-    homeMark.className = "brand brand-mark";
-    homeMark.href = "index.html";
-    homeMark.setAttribute("aria-label", "Ir para a Home");
-    homeMark.textContent = "ML";
-    headerSpacer.replaceWith(homeMark);
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "styles/site-shell-v1.css";
+    document.head.appendChild(link);
   }
+
+  function mountPortfolioHeader() {
+    if (window.SiteShell?.mountHeader) {
+      window.SiteShell.mountHeader();
+      return;
+    }
+
+    ensureShellStyles();
+    const existing = document.querySelector(".site-header");
+    if (!existing) return;
+
+    existing.innerHTML = `
+      <a class="brand brand-mark" href="index.html" aria-label="Ir para a Home">ML</a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="work.html" aria-current="page">Portfólio Criativo</a>
+        <a href="notes.html">Anotações</a>
+        <a href="about.html">Sobre Mim</a>
+      </nav>
+      <a class="talk-button" href="https://wa.me/5515991878897" target="_blank" rel="noreferrer"><span>Fale comigo</span><span class="talk-arrow" aria-hidden="true">→</span></a>
+      <a class="mobile-instagram-button" href="https://www.instagram.com/migliorinimath/" target="_blank" rel="noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="15" rx="4.5"></rect><circle cx="12" cy="12" r="3.4"></circle><circle cx="17.2" cy="6.8" r=".8"></circle></svg>
+      </a>
+    `;
+  }
+
+  mountPortfolioHeader();
 
   const modal = document.getElementById("portfolio-modal");
   const player = modal?.querySelector(".portfolio-player");
@@ -67,99 +54,6 @@
 
   if (!modal || !player || !cards.length) return;
 
-  const desktopHover = window.matchMedia("(hover:hover) and (pointer:fine)");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-  const canPreview = () => desktopHover.matches && !reducedMotion.matches && !connection?.saveData && !/2g/.test(connection?.effectiveType || "");
-
-  let hoverCard = null;
-  let activeCard = null;
-  let previewVideo = null;
-  let hoverTimer = null;
-
-  function clearHoverTimer() {
-    if (hoverTimer) window.clearTimeout(hoverTimer);
-    hoverTimer = null;
-  }
-
-  function stopPreview() {
-    clearHoverTimer();
-
-    if (!activeCard || !previewVideo) {
-      activeCard = null;
-      previewVideo = null;
-      return;
-    }
-
-    const card = activeCard;
-    const video = previewVideo;
-
-    card.classList.remove("is-previewing");
-    activeCard = null;
-    previewVideo = null;
-
-    window.setTimeout(() => {
-      video.pause();
-      video.removeAttribute("src");
-      video.load();
-      video.remove();
-    }, 120);
-  }
-
-  function startPreview(card) {
-    if (!canPreview() || hoverCard !== card) return;
-    const src = card.dataset.video;
-    const media = card.querySelector(".portfolio-media");
-    if (!src || !media) return;
-
-    if (activeCard === card) return;
-    stopPreview();
-
-    const video = document.createElement("video");
-    video.className = "portfolio-preview";
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.preload = "metadata";
-    video.src = src;
-    media.appendChild(video);
-
-    activeCard = card;
-    previewVideo = video;
-
-    const play = () => {
-      if (hoverCard !== card || activeCard !== card) return;
-      card.classList.add("is-previewing");
-      const promise = video.play();
-      if (promise?.catch) promise.catch(() => card.classList.remove("is-previewing"));
-    };
-
-    if (video.readyState >= 2) play();
-    else video.addEventListener("loadeddata", play, { once: true });
-  }
-
-  function schedulePreview(card) {
-    if (!canPreview()) return;
-    clearHoverTimer();
-    hoverTimer = window.setTimeout(() => startPreview(card), 240);
-  }
-
-  function warmVideo(card) {
-    if (connection?.saveData || /2g/.test(connection?.effectiveType || "")) return;
-    const src = card.dataset.video;
-    if (!src) return;
-    const warm = document.createElement("video");
-    warm.preload = "metadata";
-    warm.muted = true;
-    warm.playsInline = true;
-    warm.src = src;
-    warm.load();
-    window.setTimeout(() => {
-      warm.removeAttribute("src");
-      warm.load();
-    }, 1800);
-  }
-
   function updateModal(card) {
     if (title) title.textContent = card.dataset.title || "Vídeo";
     if (description) description.textContent = card.dataset.description || "Uma peça selecionada do meu portfólio em vídeo.";
@@ -176,8 +70,7 @@
   }
 
   function openVideo(card) {
-    stopPreview();
-
+    player.pause();
     player.poster = card.dataset.poster || "";
     player.preload = "auto";
     player.src = card.dataset.video || "";
@@ -199,32 +92,14 @@
 
   cards.forEach((card) => {
     card.addEventListener("click", () => openVideo(card));
-
-    card.addEventListener("pointerenter", () => {
-      hoverCard = card;
-      schedulePreview(card);
-    }, { passive: true });
-
-    card.addEventListener("pointermove", () => {
-      if (hoverCard === card && !activeCard) schedulePreview(card);
-    }, { passive: true });
-
-    card.addEventListener("pointerleave", () => {
-      if (hoverCard === card) hoverCard = null;
-      stopPreview();
-    }, { passive: true });
-
-    card.addEventListener("focus", () => warmVideo(card));
-    card.addEventListener("touchstart", () => warmVideo(card), { once: true, passive: true });
-  });
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) stopPreview();
   });
 
   close?.addEventListener("click", () => modal.close());
   modal.addEventListener("close", resetVideo);
   modal.addEventListener("click", (event) => {
     if (event.target === modal) modal.close();
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && modal.open) resetVideo();
   });
 })();

@@ -1,29 +1,66 @@
-# Portfolio Matheus Migliorini — V12.5 Mobile Details
+# Portfólio — Matheus Migliorini
 
-Todas as mudanças abaixo são exclusivamente mobile.
+Site pessoal em HTML/CSS/JS, publicado pela Cloudflare Pages.
 
-## Porquinhos
-- Hamtaro e Totoro ficam travados no canto inferior direito;
-- ficam olhando para frente;
-- não existe mais auto-start no mobile;
-- somente toques feitos diretamente em Hamtaro ou Totoro contam;
-- após 3 toques rápidos, os dois acordam e voltam ao comportamento normal;
-- cliques/toques no restante do site não contam;
-- desktop mantém o auto-start e comportamento anterior intactos.
+## Estrutura ativa
 
-## Cabeçalho
-- adicionado botão circular do Instagram no canto direito;
-- link: `https://www.instagram.com/migliorinimath/`;
-- um espaço simétrico à esquerda mantém a navegação realmente centralizada;
-- botão `Fale comigo` continua intacto no desktop e oculto no mobile.
+```txt
+/
+├─ index.html
+├─ work.html
+├─ notes.html
+├─ about.html
+├─ 404.html
+├─ posts/
+├─ assets/
+│  └─ portfolio/
+├─ styles/
+│  └─ site-shell-v1.css
+├─ scripts/
+│  └─ site-shell-v1.js
+├─ style-v12-5.css
+├─ blog-v1.css
+├─ about-v2.css
+├─ portfolio-v13-3.css
+├─ portfolio-v13-4.css
+├─ portfolio-v13-4.js
+├─ pets-v12-5.js
+├─ mobile-ui-v12-4.js
+├─ _headers
+├─ _redirects
+├─ sitemap.xml
+└─ robots.txt
+```
 
-## Foto
-- no mobile, o botão `Anotações` passa a mostrar somente `Blog`;
-- subtítulo escondido apenas no mobile;
-- desktop permanece `Anotações` com o conteúdo anterior.
+## Páginas principais
 
-## Desktop
-Nenhuma mudança visual proposital.
+- Home: `index.html`
+- Portfólio Criativo: `work.html`
+- Blog / Anotações: `notes.html`
+- Sobre Mim: `about.html`
 
-## Commit sugerido
-`Refine mobile pets Instagram header and blog label`
+CV e Álbum foram removidos temporariamente do menu. Os caminhos antigos redirecionam para a Home por meio de `_redirects`.
+
+## Header compartilhado
+
+A base do header compartilhado está em `scripts/site-shell-v1.js`.
+Ele monta o menu padrão:
+
+- Portfólio Criativo
+- Anotações
+- Sobre Mim
+
+O CSS de microinterações do header está em `styles/site-shell-v1.css`.
+
+## Performance
+
+- HTML e páginas de post ficam com `no-cache` durante a fase de ajustes rápidos.
+- Assets estáveis usam cache forte quando possível.
+- Vídeos do portfólio carregam apenas quando o visitante clica para assistir.
+- Arquivos antigos de versões anteriores foram removidos após criação da branch de backup.
+
+## Backup
+
+Antes da limpeza, foi criada a branch:
+
+`backup-before-cleanup-2026-09-14`
