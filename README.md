@@ -52,6 +52,31 @@ Ele monta o menu padrão:
 
 O CSS de microinterações do header está em `styles/site-shell-v1.css`.
 
+## Identidade compartilhada
+
+A fase atual começou a consolidar uma identidade visual comum entre as páginas:
+
+- tokens de cor e sombra em `styles/site-shell-v1.css`;
+- microinterações padronizadas no header e em CTAs;
+- linguagem visual baseada em cards leves, vidro sutil, tipografia limpa e hierarquia editorial;
+- blocos comerciais reutilizáveis para a Home e próximas páginas.
+
+## SEO
+
+A Home foi reposicionada para termos mais comerciais:
+
+- marketing;
+- comunicação;
+- storytelling;
+- criação de conteúdo;
+- fotografia;
+- vídeo;
+- sites;
+- presença digital;
+- Sorocaba/SP.
+
+O `sitemap.xml` agora inclui `lastmod`, `changefreq` e `priority` nas URLs principais.
+
 ## Performance
 
 - HTML e páginas de post ficam com `no-cache` durante a fase de ajustes rápidos.
