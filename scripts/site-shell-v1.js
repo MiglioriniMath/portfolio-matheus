@@ -1,8 +1,11 @@
 (() => {
-  const HOME = "Matheus Migliorini";
-
   function isPostPage() {
     return window.location.pathname.includes("/posts/");
+  }
+
+  function isHomePage() {
+    const path = window.location.pathname;
+    return path === "/" || path.endsWith("/index.html");
   }
 
   function pathPrefix() {
@@ -34,9 +37,10 @@
   function headerTemplate() {
     const prefix = pathPrefix();
     const current = (section) => isActive(section) ? ' aria-current="page"' : "";
+    const homeClass = isHomePage() ? " mac-header" : "";
 
     return `
-      <header class="site-header" data-shell-header>
+      <header class="site-header${homeClass}" data-shell-header>
         <a class="brand brand-mark" href="${prefix}index.html" aria-label="Ir para a Home">ML</a>
         <nav class="nav" aria-label="Navegação principal">
           <a href="${prefix}work.html"${current("work")}>Portfólio Criativo</a>
