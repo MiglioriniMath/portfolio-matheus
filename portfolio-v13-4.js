@@ -1,4 +1,31 @@
 (() => {
+  const headerMotionStyle = document.createElement("style");
+  headerMotionStyle.textContent = `
+    .site-header .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      min-height: 34px;
+      padding: 0 9px;
+      margin: -9px 0;
+      border-radius: 999px;
+      transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
+      transform-origin: center;
+      will-change: transform;
+    }
+
+    .site-header .brand-mark:hover {
+      background: rgba(255,255,255,.7);
+      transform: translateY(-1px) scale(1.045);
+    }
+
+    .site-header .brand-mark:active {
+      transform: translateY(0) scale(.98);
+    }
+  `;
+  document.head.appendChild(headerMotionStyle);
+
   document.querySelectorAll('.site-header .nav a').forEach((link) => {
     const href = link.getAttribute('href') || '';
     if (
