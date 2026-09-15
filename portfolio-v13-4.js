@@ -1,4 +1,17 @@
 (() => {
+  document.querySelectorAll('.site-header .nav a').forEach((link) => {
+    const href = link.getAttribute('href') || '';
+    if (
+      href === 'cv.html' ||
+      href === '../cv.html' ||
+      href === 'photos.html' ||
+      href === '../photos.html' ||
+      href.includes('avely.me/math')
+    ) {
+      link.remove();
+    }
+  });
+
   const headerSpacer = document.querySelector(".site-header .header-spacer");
   if (headerSpacer) {
     const homeMark = document.createElement("a");
