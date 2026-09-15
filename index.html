@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Site pessoal de Matheus Migliorini sobre marketing, comunicação, fotografia, storytelling, trabalhos, fotos e anotações." />
-  <title>Matheus Migliorini — Marketing, Comunicação & Storytelling</title>
+  <meta name="description" content="Matheus Migliorini cria conteúdo, campanhas, vídeos, fotografias, sites e experiências digitais com marketing, comunicação e storytelling em Sorocaba/SP." />
+  <meta name="author" content="Matheus Migliorini" />
+  <meta name="keywords" content="Matheus Migliorini, marketing em Sorocaba, comunicação, storytelling, criação de conteúdo, social media, fotografia, sites, portfólio criativo" />
+  <title>Matheus Migliorini — Marketing, Conteúdo e Storytelling em Sorocaba</title>
   <meta name="theme-color" content="#f8f8f5" />
   <meta name="color-scheme" content="light" />
   <meta name="robots" content="index, follow" />
@@ -14,37 +16,80 @@
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Matheus Migliorini" />
-  <meta property="og:title" content="Matheus Migliorini — Marketing, Comunicação & Storytelling" />
-  <meta property="og:description" content="Site pessoal de Matheus Migliorini sobre marketing, comunicação, fotografia, storytelling, trabalhos, fotos e anotações." />
+  <meta property="og:title" content="Matheus Migliorini — Marketing, Conteúdo e Storytelling" />
+  <meta property="og:description" content="Conteúdo, campanhas, vídeos, fotografia, sites e experiências digitais para ideias que merecem ser lembradas." />
   <meta property="og:url" content="https://matheusmigliorini.com.br/" />
   <meta property="og:image" content="https://matheusmigliorini.com.br/assets/og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Matheus Migliorini — Marketing, Comunicação & Storytelling" />
-  <meta name="twitter:description" content="Site pessoal de Matheus Migliorini sobre marketing, comunicação, fotografia, storytelling, trabalhos, fotos e anotações." />
+  <meta name="twitter:title" content="Matheus Migliorini — Marketing, Conteúdo e Storytelling" />
+  <meta name="twitter:description" content="Conteúdo, campanhas, vídeos, fotografia, sites e experiências digitais para ideias que merecem ser lembradas." />
   <meta name="twitter:image" content="https://matheusmigliorini.com.br/assets/og-card.png" />
   <link rel="preload" as="image" href="assets/hero-photo-v11-4.avif" type="image/avif" fetchpriority="high" />
   <link rel="stylesheet" href="style-v12-5.css" />
+  <link rel="stylesheet" href="styles/site-shell-v1.css" />
   <script src="scripts/site-shell-v1.js" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Matheus Migliorini",
-  "url": "https://matheusmigliorini.com.br/",
-  "image": "https://matheusmigliorini.com.br/assets/avatar-v11.webp",
-  "sameAs": [
-    "https://www.instagram.com/migliorinimath/",
-    "https://www.linkedin.com/in/matheus-migliorini-776207158/"
-  ],
-  "jobTitle": "Marketing e Comunicação",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Sorocaba",
-    "addressRegion": "SP",
-    "addressCountry": "BR"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://matheusmigliorini.com.br/#person",
+      "name": "Matheus Migliorini",
+      "alternateName": "Math",
+      "url": "https://matheusmigliorini.com.br/",
+      "image": "https://matheusmigliorini.com.br/assets/avatar-v11.webp",
+      "sameAs": [
+        "https://www.instagram.com/migliorinimath/",
+        "https://www.linkedin.com/in/matheus-migliorini-776207158/"
+      ],
+      "jobTitle": "Marketing, comunicação e storytelling",
+      "description": "Profissional de marketing e comunicação que cria conteúdo, campanhas, vídeos, fotografias, sites e experiências digitais com foco em narrativa, estética e presença.",
+      "knowsAbout": [
+        "Marketing",
+        "Comunicação",
+        "Storytelling",
+        "Criação de conteúdo",
+        "Fotografia",
+        "Vídeo",
+        "Sites",
+        "Inteligência artificial aplicada à criação"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sorocaba",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://matheusmigliorini.com.br/#website",
+      "url": "https://matheusmigliorini.com.br/",
+      "name": "Matheus Migliorini",
+      "description": "Portfólio pessoal de marketing, comunicação, storytelling, fotografia, conteúdo, sites e anotações.",
+      "publisher": { "@id": "https://matheusmigliorini.com.br/#person" },
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://matheusmigliorini.com.br/#creative-services",
+      "name": "Marketing, comunicação e storytelling",
+      "provider": { "@id": "https://matheusmigliorini.com.br/#person" },
+      "areaServed": "Sorocaba, São Paulo, Brasil",
+      "serviceType": [
+        "Criação de conteúdo",
+        "Campanhas digitais",
+        "Roteiro e edição de vídeo",
+        "Fotografia",
+        "Criação de sites",
+        "Storytelling para marcas e projetos"
+      ],
+      "description": "Serviços criativos para transformar ideias em conteúdo, imagem, narrativa e presença digital."
+    }
+  ]
 }
   </script>
 </head>
@@ -78,7 +123,7 @@
           <picture>
             <source srcset="assets/hero-photo-v11-4.avif" type="image/avif" />
             <source srcset="assets/hero-photo-v11-4.webp" type="image/webp" />
-            <img class="hero-portrait" src="assets/hero-photo-v11-4.webp" alt="" width="900" height="828" decoding="async" fetchpriority="high" />
+            <img class="hero-portrait" src="assets/hero-photo-v11-4.webp" alt="Retrato em preto e branco de Matheus Migliorini" width="900" height="828" decoding="async" fetchpriority="high" />
           </picture>
         </div>
         <a class="idea-popover" href="notes.html">
@@ -87,12 +132,13 @@
               <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L8 18l-4 1 1-4Z"/>
             </svg>
           </span>
-          <span><strong>Anotações</strong><small>Um canto para eu<br>falar um pouco.</small></span>
+          <span><strong>Anotações</strong><small>Ideias sobre criação,<br>imagem e comunicação.</small></span>
         </a>
       </article>
 
       <article class="glass-card hero-copy-card">
         <div class="hero-copy-main">
+          <p class="home-role-line">Marketing · Conteúdo · Storytelling · Sites</p>
           <h1 id="name">
             Oi, eu sou o
             <span class="name-joke">
@@ -105,46 +151,63 @@
           </h1>
 
           <div class="bio mac-bio">
-            <p>Trabalho com marketing, comunicação, fotografia e storytelling — mas no fundo, fico tentando entender por que umas ideias grudam na cabeça e outras somem.</p>
-            <p>Gosto de criar coisas a partir disso.</p>
-            <p>Este é o meu canto na internet: onde guardo trabalhos, fotos, textos e o que mais encontro pelo caminho.</p>
+            <p>Crio conteúdo, campanhas, vídeos, fotografias e sites para marcas e projetos que precisam ser lembrados.</p>
+            <p>Meu trabalho une marketing, storytelling e direção visual para transformar ideias em presença digital — com clareza, estética e intenção.</p>
+            <p>Este é meu canto na internet: um portfólio vivo para mostrar trabalhos, textos, processos e experimentos criativos.</p>
+          </div>
+
+          <div class="home-hero-actions" aria-label="Ações principais">
+            <a class="home-action primary" href="work.html">Ver Portfólio Criativo <span aria-hidden="true">→</span></a>
+            <a class="home-action" href="https://wa.me/5515991878897" target="_blank" rel="noreferrer">Vamos conversar</a>
           </div>
         </div>
       </article>
     </section>
 
-    <section class="glass-card recent-panel" id="recent-work" aria-labelledby="work-title">
+    <section class="glass-card recent-panel home-services-panel" id="recent-work" aria-labelledby="work-title">
       <div class="panel-heading">
-        <h2 id="work-title">Meus últimos trabalhos:</h2>
-        <a href="work.html">Ver todos <span aria-hidden="true">→</span></a>
+        <h2 id="work-title">O que posso criar com você:</h2>
+        <a href="work.html">Ver trabalhos <span aria-hidden="true">→</span></a>
       </div>
 
-      <div class="mac-work-grid">
+      <div class="mac-work-grid home-service-grid">
         <a class="mac-work-item" href="work.html">
-          <span><strong>Qualitas Humanus</strong><small>Marketing, conteúdo e comunicação.</small></span><i aria-hidden="true">→</i>
+          <span><strong>Conteúdo & campanhas</strong><small>Ideias transformadas em peças claras, bonitas e publicáveis.</small></span><i aria-hidden="true">→</i>
         </a>
         <a class="mac-work-item" href="work.html">
-          <span><strong>O Contador de Histórias</strong><small>A causa de provar que todos têm uma história que merece ser contada.</small></span><i aria-hidden="true">→</i>
+          <span><strong>Vídeo & storytelling</strong><small>Roteiro, ritmo e edição para prender atenção sem perder verdade.</small></span><i aria-hidden="true">→</i>
+        </a>
+        <a class="mac-work-item" href="about.html">
+          <span><strong>Sites & presença digital</strong><small>Páginas leves, pessoais e comerciais para apresentar melhor uma marca.</small></span><i aria-hidden="true">→</i>
         </a>
         <a class="mac-work-item" href="work.html">
-          <span><strong>Santuário São Judas Tadeu</strong><small>Trazendo um novo olhar sobre a boa nova.</small></span><i aria-hidden="true">→</i>
+          <span><strong>Fotografia & memória</strong><small>Registros com olhar sensível para pessoas, eventos e bastidores.</small></span><i aria-hidden="true">→</i>
         </a>
         <a class="mac-work-item" href="work.html">
-          <span><strong>Projetos pessoais</strong><small>Ideias que não caberiam em briefing de ninguém.</small></span><i aria-hidden="true">→</i>
-        </a>
-        <a class="mac-work-item" href="work.html">
-          <span><strong>Fotografia</strong><small>Memórias boas o suficiente para guardar.</small></span><i aria-hidden="true">→</i>
+          <span><strong>IA aplicada à criação</strong><small>Uso de ferramentas generativas para acelerar ideias sem perder direção.</small></span><i aria-hidden="true">→</i>
         </a>
         <a class="mac-work-item" href="notes.html">
-          <span><strong>Arquivo</strong><small>O que merece ser lembrado.</small></span><i aria-hidden="true">→</i>
+          <span><strong>Comunicação com pensamento</strong><small>Estratégia, estética e narrativa para ideias que precisam ficar.</small></span><i aria-hidden="true">→</i>
         </a>
+      </div>
+    </section>
+
+    <section class="glass-card home-proof-panel" aria-labelledby="proof-title">
+      <div class="home-proof-copy">
+        <p class="section-eyebrow">Como eu trabalho</p>
+        <h2 id="proof-title">Clareza para entender. Estética para dar forma. Narrativa para fazer ficar.</h2>
+      </div>
+      <div class="home-proof-grid" aria-label="Pilares de entrega">
+        <span><b>01</b> Estratégia antes do efeito</span>
+        <span><b>02</b> Visual limpo e memorável</span>
+        <span><b>03</b> Conteúdo pensado para pessoas</span>
       </div>
     </section>
 
     <footer class="glass-card mac-footer">
       <div class="footer-copy">
-        <p>Onde me encontrar</p>
-        <span>Para conversas, projetos e boas histórias.</span>
+        <p>Vamos criar algo?</p>
+        <span>Conteúdo, campanha, vídeo, fotografia ou site — com intenção do começo ao fim.</span>
       </div>
 
       <div class="socials mac-socials">
