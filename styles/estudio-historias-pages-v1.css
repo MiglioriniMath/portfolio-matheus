@@ -1,0 +1,138 @@
+/* Estúdio de Histórias — ajustes para páginas separadas */
+
+.studio-home-grid,
+.studio-home-note,
+.studio-radar-workspace,
+.studio-radar-result {
+  overflow: hidden;
+}
+
+.studio-tool-links .reference-card {
+  text-align: left;
+}
+
+.studio-tool-links .reference-card[href] {
+  display: flex;
+  color: inherit;
+}
+
+.studio-home-note p,
+.studio-radar-result p,
+.studio-magazine p {
+  max-width: 720px;
+  margin: 12px 0 0;
+  color: #555c61;
+  font-size: 13px;
+  line-height: 1.62;
+}
+
+.studio-radar-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(320px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.studio-radar-workspace h2,
+.studio-radar-result h2,
+.studio-home-note h2,
+.studio-magazine h2,
+.studio-home-grid h2 {
+  margin: 10px 0 0;
+  color: #131517;
+  font-size: clamp(28px, 4vw, 52px);
+  line-height: .96;
+  letter-spacing: -.065em;
+  font-weight: 790;
+  text-wrap: balance;
+}
+
+.studio-radar-workspace p,
+.studio-home-grid p {
+  margin: 12px 0 0;
+  color: #555c61;
+  font-size: 12px;
+  line-height: 1.62;
+}
+
+.studio-form {
+  display: grid;
+  gap: 11px;
+}
+
+.studio-form label {
+  display: grid;
+  gap: 7px;
+}
+
+.studio-form label span {
+  color: #666d72;
+  font-family: var(--ml-mono, monospace);
+  font-size: 8.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.studio-form input,
+.studio-form select {
+  min-height: 43px;
+  width: 100%;
+  border: 1px solid rgba(22,24,26,.08);
+  border-radius: 16px;
+  background: rgba(255,255,255,.58);
+  color: #17191b;
+  font: inherit;
+  font-size: 12px;
+  padding: 0 13px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.78);
+  outline: none;
+  transition: border-color .16s ease, background-color .16s ease, box-shadow .16s ease;
+}
+
+.studio-form input:focus,
+.studio-form select:focus {
+  border-color: rgba(189,46,42,.30);
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 0 0 4px rgba(189,46,42,.07), inset 0 1px 0 rgba(255,255,255,.88);
+}
+
+.studio-radar-result {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .72fr);
+  gap: 24px;
+  align-items: end;
+}
+
+.studio-radar-result .studio-radar-mini {
+  margin-top: 0;
+}
+
+.studio-magazine-grid .reference-card {
+  min-height: 260px;
+}
+
+.reference-card[href] {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.reference-card[href]:hover {
+  color: inherit;
+}
+
+@media (max-width: 860px) {
+  .studio-radar-workspace,
+  .studio-radar-result {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .studio-radar-workspace h2,
+  .studio-radar-result h2,
+  .studio-home-note h2,
+  .studio-magazine h2,
+  .studio-home-grid h2 {
+    font-size: clamp(28px, 10vw, 42px);
+  }
+}
