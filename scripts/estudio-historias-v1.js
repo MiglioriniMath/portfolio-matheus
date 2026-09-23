@@ -2,32 +2,6 @@
   const year = document.querySelector('[data-studio-year]');
   if (year) year.textContent = String(new Date().getFullYear());
 
-  const sections = [...document.querySelectorAll('main [id]')];
-  const links = [...document.querySelectorAll('.studio-nav a[href^="#"]')];
-
-  const setCurrent = (id) => {
-    links.forEach((link) => {
-      const isCurrent = link.getAttribute('href') === `#${id}`;
-      if (isCurrent) link.setAttribute('aria-current', 'page');
-      else link.removeAttribute('aria-current');
-    });
-  };
-
-  if (sections.length && links.length && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-      if (visible?.target?.id) setCurrent(visible.target.id);
-    }, {
-      rootMargin: '-20% 0px -65% 0px',
-      threshold: [0.12, 0.3, 0.6]
-    });
-
-    sections.forEach((section) => observer.observe(section));
-  }
-
   const filterButtons = [...document.querySelectorAll('[data-filter]')];
   const cards = [...document.querySelectorAll('.reference-card')];
 
@@ -60,7 +34,7 @@
   };
 
   function openReference(card) {
-    if (!modal) return;
+    if (!modal || card.matches('a[href]')) return;
 
     if (fields.type) fields.type.textContent = card.dataset.type || 'Referência';
     if (fields.goal) fields.goal.textContent = card.dataset.goal || 'Referência';
@@ -80,5 +54,22 @@
   close?.addEventListener('click', () => modal?.close());
   modal?.addEventListener('click', (event) => {
     if (event.target === modal) modal.close();
+  });
+
+  const radarForm = document.querySelector('[data-radar-form]');
+  const radarSummary = document.querySelector('[data-radar-summary]');
+  const radarTitle = document.getElementById('radar-result-title');
+
+  radarForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(radarForm);
+    const business = String(data.get('business') || 'Este perfil').trim() || 'Este perfil';
+    const area = String(data.get('area') || 'segmento informado').trim() || 'segmento informado';
+    const goal = String(data.get('goal') || 'organizar conteúdo');
+
+    if (radarTitle) radarTitle.textContent = 'Boa base, oportunidade clara de direção.';
+    if (radarSummary) {
+      radarSummary.textContent = `${business} parece ter espaço para fortalecer presença no segmento de ${area}. O primeiro caminho é organizar a comunicação para ${goal}, com uma linha visual mais consistente e conteúdos que expliquem valor antes de pedir atenção.`;
+    }
   });
 })();
