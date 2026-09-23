@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Estúdio de Histórias — área privada para clientes de Matheus Migliorini acompanharem referências, curadorias e diagnósticos criativos." />
+  <meta name="description" content="Estúdio de Histórias — área privada para clientes acompanharem radar de marca, biblioteca de referências e revista semanal." />
   <title>Estúdio de Histórias — Clientes</title>
   <meta name="theme-color" content="#f8f8f5" />
   <meta name="color-scheme" content="light" />
@@ -18,122 +18,95 @@
   <a class="skip-link" href="#studio-main">Pular para o conteúdo</a>
 
   <aside class="studio-sidebar" aria-label="Navegação do Estúdio de Histórias">
-    <a class="studio-brand" href="../index.html" aria-label="Voltar para a Home">
+    <a class="studio-brand" href="#inicio" aria-label="Início do Estúdio de Histórias">
       <span>ML</span>
-      <strong>Estúdio<br>de Histórias</strong>
+      <strong>Estúdio de Histórias</strong>
     </a>
 
     <nav class="studio-nav">
-      <a href="#visao-geral" aria-current="page">Visão geral</a>
-      <a href="#radar-criativo">Radar Criativo</a>
-      <a href="#radar-perfil">Radar de Perfil</a>
-      <a href="#curadoria">Curadoria</a>
-      <a href="#proximos-passos">Próximos passos</a>
-    </nav>
-
-    <div class="studio-sidebar-footer">
-      <span>Área beta</span>
+      <a href="#inicio" aria-current="page">Início</a>
+      <a href="#radar-marca">Radar de marca</a>
+      <a href="#biblioteca">Biblioteca de referências</a>
+      <a href="#revista-semanal">Revista semanal</a>
+      <i aria-hidden="true"></i>
       <a href="../index.html">Voltar ao site</a>
-    </div>
+    </nav>
   </aside>
 
   <main id="studio-main" class="studio-main">
-    <section id="visao-geral" class="studio-hero studio-glass">
-      <div class="studio-hero-copy">
-        <p class="studio-kicker">Área de clientes / Fase 4</p>
-        <h1>Estúdio de Histórias.</h1>
-        <p>Um espaço privado para transformar referências, diagnósticos e curadorias em direção criativa para marcas, conteúdos e projetos.</p>
-        <div class="studio-hero-actions" aria-label="Ações do Estúdio de Histórias">
-          <a class="studio-button primary" href="#radar-criativo">Ver estrutura</a>
-          <a class="studio-button" href="#proximos-passos">Plano de construção</a>
+    <header id="inicio" class="studio-topline">
+      <p class="studio-kicker">Área de clientes / beta</p>
+      <h1>Estúdio de Histórias</h1>
+      <p>Um espaço privado para organizar referências, analisar marcas e transformar repertório em ideias práticas para conteúdo.</p>
+    </header>
+
+    <section id="radar-marca" class="studio-panel studio-radar-panel" aria-labelledby="radar-title">
+      <div>
+        <p class="studio-kicker">Radar de marca</p>
+        <h2 id="radar-title">Um diagnóstico simples para entender presença, clareza e oportunidades.</h2>
+      </div>
+      <div class="studio-radar-mini">
+        <span><b>01</b> Presença digital</span>
+        <span><b>02</b> Consistência visual</span>
+        <span><b>03</b> Potencial de conteúdo</span>
+      </div>
+    </section>
+
+    <section id="biblioteca" class="studio-panel studio-library" aria-labelledby="library-title">
+      <div class="studio-library-head">
+        <div>
+          <p class="studio-kicker">Biblioteca de referências</p>
+          <h2 id="library-title">Referências para aprender a copiar com intenção.</h2>
+          <p>Cada card abre uma análise com minhas considerações, como usar e quais técnicas a referência aplica.</p>
+        </div>
+
+        <div class="studio-filterbar" aria-label="Filtros da biblioteca">
+          <button type="button" class="is-active" data-filter="all">Todos</button>
+          <button type="button" data-filter="reel">Reels</button>
+          <button type="button" data-filter="carrossel">Carrosséis</button>
+          <button type="button" data-filter="foto">Fotos</button>
+          <button type="button" data-filter="vender">Vender</button>
+          <button type="button" data-filter="educar">Educar</button>
         </div>
       </div>
 
-      <div class="studio-hero-panel" aria-label="Resumo do estúdio">
-        <span>Agora em estruturação</span>
-        <strong>Dashboard premium</strong>
-        <p>Base visual pronta para receber biblioteca de referências, radar de perfil, curadorias semanais e futuramente acesso protegido.</p>
+      <div class="reference-grid" aria-label="Cards de referências">
+        <button class="reference-card reference-card-tall" type="button" data-tags="reel vender produto" data-type="Reel" data-goal="Vender" data-title="Gancho visual de produto" data-analysis="A referência funciona porque mostra desejo visual antes de explicar. O público entende o valor pelo olhar, não por uma promessa longa." data-use="Adapte mostrando o produto ou serviço nos primeiros 2 segundos. Depois entre com uma frase simples: o que é, por que importa e como a pessoa pode agir." data-techniques="Close inicial, corte rápido, texto curto na tela, CTA direto e ritmo de demonstração." data-link="Referência externa será adicionada aqui.">
+          <span class="reference-media"><em>Reel</em></span>
+          <span class="reference-copy"><strong>Gancho visual de produto</strong><small>Produto · Venda · Baixo esforço</small></span>
+        </button>
+
+        <button class="reference-card" type="button" data-tags="carrossel educar autoridade" data-type="Carrossel" data-goal="Educar" data-title="Carrossel de autoridade simples" data-analysis="A força está na promessa clara da primeira lâmina. A pessoa continua porque sabe exatamente o que vai aprender." data-use="Use para explicar um erro comum do cliente, uma dúvida frequente ou um antes/depois de pensamento." data-techniques="Título direto, sequência em passos, contraste entre problema e solução, fechamento com pergunta." data-link="Referência externa será adicionada aqui.">
+          <span class="reference-media"><em>Carrossel</em></span>
+          <span class="reference-copy"><strong>Carrossel de autoridade simples</strong><small>Educação · Conteúdo · Confiança</small></span>
+        </button>
+
+        <button class="reference-card" type="button" data-tags="foto posicionar bastidor" data-type="Foto" data-goal="Posicionar" data-title="Foto de bastidor com narrativa" data-analysis="A imagem gera proximidade porque mostra contexto. Não é só uma foto bonita: ela revela processo, presença e intenção." data-use="Use quando quiser humanizar uma marca, mostrar preparação ou registrar uma rotina que normalmente fica invisível." data-techniques="Composição limpa, legenda reflexiva, bastidor real e detalhe humano." data-link="Referência externa será adicionada aqui.">
+          <span class="reference-media"><em>Foto</em></span>
+          <span class="reference-copy"><strong>Foto de bastidor com narrativa</strong><small>Bastidor · Marca · Presença</small></span>
+        </button>
+
+        <button class="reference-card reference-card-wide" type="button" data-tags="reel educar storytelling" data-type="Reel" data-goal="Educar" data-title="Reel que começa pela dor" data-analysis="A referência prende porque começa no problema do público. Antes de vender, ela nomeia uma sensação que a pessoa já vive." data-use="Adapte começando com uma frase que o cliente pensaria, mas talvez não consiga formular. Depois mostre uma saída prática." data-techniques="Gancho emocional, fala direta, cortes limpos, solução em 3 etapas e CTA consultivo." data-link="Referência externa será adicionada aqui.">
+          <span class="reference-media"><em>Reel</em></span>
+          <span class="reference-copy"><strong>Reel que começa pela dor</strong><small>Storytelling · Educação · Atenção</small></span>
+        </button>
+
+        <button class="reference-card" type="button" data-tags="carrossel vender oferta" data-type="Carrossel" data-goal="Vender" data-title="Oferta explicada sem parecer panfleto" data-analysis="O conteúdo vende porque primeiro organiza o valor. O preço ou chamada aparece depois que a pessoa já entendeu o benefício." data-use="Use para apresentar pacote, serviço, produto sazonal ou condição especial com mais elegância." data-techniques="Contexto, benefício, prova, oferta e chamada final." data-link="Referência externa será adicionada aqui.">
+          <span class="reference-media"><em>Carrossel</em></span>
+          <span class="reference-copy"><strong>Oferta sem parecer panfleto</strong><small>Venda · Oferta · Clareza</small></span>
+        </button>
+
+        <button class="reference-card" type="button" data-tags="reel foto inspirar estetica" data-type="Reel / Foto" data-goal="Inspirar" data-title="Estética que vira memória" data-analysis="A referência não explica demais. Ela cria sensação. Esse tipo de conteúdo ajuda a marca a ser lembrada pelo clima, não só pela informação." data-use="Adapte para eventos, marcas pessoais, igrejas, cafés, lojas e projetos que precisam transmitir presença." data-techniques="Luz suave, ritmo contemplativo, texto mínimo, trilha emocional e silêncio visual." data-link="Referência externa será adicionada aqui.">
+          <span class="reference-media"><em>Imagem</em></span>
+          <span class="reference-copy"><strong>Estética que vira memória</strong><small>Inspiração · Fotografia · Atmosfera</small></span>
+        </button>
       </div>
     </section>
 
-    <section class="studio-section" aria-labelledby="tools-title">
-      <div class="studio-section-head">
-        <p class="studio-kicker">Ferramentas principais</p>
-        <h2 id="tools-title">O cliente entra para encontrar direção, repertório e próximos passos.</h2>
-      </div>
-
-      <div class="studio-tool-grid">
-        <article id="radar-criativo" class="studio-tool-card studio-glass">
-          <span>01</span>
-          <h3>Radar Criativo</h3>
-          <p>Biblioteca de referências selecionadas a dedo: reels, carrosséis, fotos, campanhas, sites e ideias com análise curta e aplicação prática.</p>
-          <ul>
-            <li>Filtros por formato, nicho e objetivo.</li>
-            <li>Análise feita por você.</li>
-            <li>Botão para adaptar a ideia com o cliente.</li>
-          </ul>
-        </article>
-
-        <article id="radar-perfil" class="studio-tool-card studio-glass">
-          <span>02</span>
-          <h3>Radar de Perfil</h3>
-          <p>Leitura inicial de presença digital para leads e clientes entenderem potencial, clareza, consistência visual e oportunidades rápidas.</p>
-          <ul>
-            <li>Entrada por Instagram, site e segmento.</li>
-            <li>Resultado elegante, sem nota fria.</li>
-            <li>CTA para conversar e avançar.</li>
-          </ul>
-        </article>
-
-        <article id="curadoria" class="studio-tool-card studio-glass">
-          <span>03</span>
-          <h3>Curadoria semanal</h3>
-          <p>Um resumo privado com referências da semana, por que funcionam e como podem ser adaptadas para cada tipo de negócio.</p>
-          <ul>
-            <li>5 a 10 referências por semana.</li>
-            <li>Ideias acionáveis, não só inspiração.</li>
-            <li>Possível envio por WhatsApp ou e-mail.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="studio-section studio-preview-grid" aria-label="Prévia de curadoria">
-      <article class="studio-curation-card studio-glass">
-        <p class="studio-kicker">Prévia / Referência</p>
-        <h3>Reel com gancho visual forte</h3>
-        <p>Funciona porque entrega desejo visual nos primeiros segundos e facilita uma adaptação simples para produto, bastidor ou serviço.</p>
-        <div class="studio-tags"><span>Reel</span><span>Vender</span><span>Baixo esforço</span></div>
-      </article>
-
-      <article class="studio-curation-card studio-glass">
-        <p class="studio-kicker">Prévia / Diagnóstico</p>
-        <h3>Perfil com boa base, pouca direção</h3>
-        <p>Categoria pensada para leads que já postam, mas ainda não têm clareza de linha editorial, estética e narrativa comercial.</p>
-        <div class="studio-tags"><span>Instagram</span><span>Clareza</span><span>Conteúdo</span></div>
-      </article>
-
-      <article class="studio-curation-card studio-glass">
-        <p class="studio-kicker">Prévia / Adaptação</p>
-        <h3>Como transformar referência em post</h3>
-        <p>O cliente não recebe só um link bonito: recebe leitura, intenção e uma sugestão de como aplicar aquilo no próprio negócio.</p>
-        <div class="studio-tags"><span>Estratégia</span><span>Roteiro</span><span>Aplicação</span></div>
-      </article>
-    </section>
-
-    <section id="proximos-passos" class="studio-section studio-roadmap studio-glass" aria-labelledby="roadmap-title">
-      <div>
-        <p class="studio-kicker">Plano de construção</p>
-        <h2 id="roadmap-title">Próximos passos para transformar esta área em uma ferramenta real.</h2>
-      </div>
-
-      <ol class="studio-steps">
-        <li><span>01</span><strong>Consolidar visual premium</strong><small>Sidebar, dashboard, cards e linguagem própria do Estúdio.</small></li>
-        <li><span>02</span><strong>Criar Radar Criativo</strong><small>JSON com referências, filtros e cards leves.</small></li>
-        <li><span>03</span><strong>Criar Radar de Perfil</strong><small>Formulário público para captar leads e gerar diagnóstico inicial.</small></li>
-        <li><span>04</span><strong>Definir mídia pesada</strong><small>Thumbs leves no site; vídeos fora do GitHub, idealmente Cloudflare Stream/R2.</small></li>
-        <li><span>05</span><strong>Proteger acesso</strong><small>Ativar proteção para /clientes/* quando a área estiver pronta para uso real.</small></li>
-      </ol>
+    <section id="revista-semanal" class="studio-panel studio-magazine" aria-labelledby="magazine-title">
+      <p class="studio-kicker">Revista semanal</p>
+      <h2 id="magazine-title">Uma curadoria fechada para transformar referências em repertório.</h2>
+      <p>A ideia é reunir toda semana uma seleção curta de referências, comentários e caminhos possíveis para aplicar em conteúdos reais.</p>
     </section>
 
     <footer class="studio-footer">
@@ -141,6 +114,23 @@
       <a href="../index.html">Voltar ao site público</a>
     </footer>
   </main>
+
+  <dialog class="reference-modal" id="reference-modal" aria-label="Análise da referência">
+    <div class="reference-modal-shell">
+      <button class="reference-close" type="button" aria-label="Fechar análise">×</button>
+      <div class="reference-modal-media" aria-hidden="true"><span data-modal-type>Referência</span></div>
+      <div class="reference-modal-content">
+        <p class="studio-kicker" data-modal-goal>Objetivo</p>
+        <h2 data-modal-title>Referência</h2>
+        <dl>
+          <div><dt>Minhas considerações</dt><dd data-modal-analysis></dd></div>
+          <div><dt>Como usar</dt><dd data-modal-use></dd></div>
+          <div><dt>Técnicas usadas</dt><dd data-modal-techniques></dd></div>
+        </dl>
+        <p class="reference-link-note" data-modal-link></p>
+      </div>
+    </div>
+  </dialog>
 
   <script src="../scripts/estudio-historias-v1.js" defer></script>
 </body>
