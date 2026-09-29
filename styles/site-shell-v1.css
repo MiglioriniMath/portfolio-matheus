@@ -92,6 +92,7 @@ select {
 }
 
 .site-header .nav a,
+.site-header .client-area-button,
 .site-header .talk-button,
 .site-header .mobile-instagram-button {
   transition:
@@ -104,6 +105,7 @@ select {
 }
 
 .site-header .nav a:hover,
+.site-header .client-area-button:hover,
 .site-header .talk-button:hover,
 .site-header .mobile-instagram-button:hover {
   transform: translateY(-1px) scale(1.025);
@@ -111,6 +113,31 @@ select {
 
 .site-header .nav a[aria-current="page"] {
   opacity: .62;
+}
+
+.site-header .client-area-button {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 13px;
+  border: 1px solid rgba(22,24,26,.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,.46);
+  color: #23272b;
+  font-family: var(--ml-mono);
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 720;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.78);
+}
+
+.site-header .client-area-button:hover {
+  background: #16191c;
+  color: #fff;
+  border-color: #16191c;
 }
 
 .site-header .talk-button,
@@ -349,9 +376,17 @@ select {
   .site-header .nav {
     gap: 12px;
   }
+
+  .site-header .client-area-button {
+    padding: 0 11px;
+  }
 }
 
 @media (max-width: 760px) {
+  .site-header .client-area-button {
+    display: none;
+  }
+
   .home-role-line {
     max-width: 100%;
     margin-left: auto;
@@ -388,6 +423,7 @@ select {
 @media (prefers-reduced-motion: reduce) {
   .site-header .brand-mark,
   .site-header .nav a,
+  .site-header .client-area-button,
   .site-header .talk-button,
   .site-header .mobile-instagram-button,
   .home-action,
@@ -410,6 +446,7 @@ select {
 
   .site-header .brand-mark:hover,
   .site-header .nav a:hover,
+  .site-header .client-area-button:hover,
   .site-header .talk-button:hover,
   .site-header .mobile-instagram-button:hover,
   .home-action:hover,
