@@ -47,7 +47,6 @@
           <a href="${prefix}notes.html"${current("notes")}>Anotações</a>
           <a href="${prefix}about.html"${current("about")}>Sobre Mim</a>
         </nav>
-        <a class="client-area-button" href="${prefix}clientes/login.html"><span>Clientes</span></a>
         <a class="talk-button" href="https://wa.me/5515991878897" target="_blank" rel="noreferrer"><span>Fale comigo</span><span class="talk-arrow" aria-hidden="true">→</span></a>
         <a class="mobile-instagram-button" href="https://www.instagram.com/migliorinimath/" target="_blank" rel="noreferrer" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true">
