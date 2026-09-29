@@ -13,6 +13,41 @@
   color: var(--ml-ink,#16191c);
 }
 
+.studio-button {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 1px solid rgba(22,24,26,.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,.58);
+  color: #17191b;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 760;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.82);
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.studio-button.primary {
+  border-color: #16191c;
+  background: #16191c;
+  color: #fff;
+}
+
+.studio-button:hover {
+  transform: translateY(-1px) scale(1.012);
+  background: rgba(255,255,255,.84);
+}
+
+.studio-button.primary:hover {
+  background: #0f1113;
+}
+
 .client-login-shell {
   width: min(100%, 1060px);
   display: grid;
