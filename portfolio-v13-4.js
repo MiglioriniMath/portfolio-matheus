@@ -27,6 +27,7 @@
         <a href="notes.html">Anotações</a>
         <a href="about.html">Sobre Mim</a>
       </nav>
+      <a class="client-area-button" href="clientes/login.html"><span>Clientes</span></a>
       <a class="talk-button" href="https://wa.me/5515991878897" target="_blank" rel="noreferrer"><span>Fale comigo</span><span class="talk-arrow" aria-hidden="true">→</span></a>
       <a class="mobile-instagram-button" href="https://www.instagram.com/migliorinimath/" target="_blank" rel="noreferrer" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="15" rx="4.5"></rect><circle cx="12" cy="12" r="3.4"></circle><circle cx="17.2" cy="6.8" r=".8"></circle></svg>
@@ -78,28 +79,25 @@
     updateModal(card);
     modal.showModal();
     player.load();
-    const promise = player.play();
-    if (promise?.catch) promise.catch(() => {});
   }
 
-  function resetVideo() {
+  function closeVideo() {
     player.pause();
     player.removeAttribute("src");
-    player.removeAttribute("poster");
-    player.preload = "none";
     player.load();
+    modal.close();
   }
 
   cards.forEach((card) => {
     card.addEventListener("click", () => openVideo(card));
   });
 
-  close?.addEventListener("click", () => modal.close());
-  modal.addEventListener("close", resetVideo);
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) modal.close();
+  close?.addEventListener("click", closeVideo);
+  modal?.addEventListener("click", (event) => {
+    if (event.target === modal) closeVideo();
   });
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden && modal.open) resetVideo();
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.open) closeVideo();
   });
 })();
