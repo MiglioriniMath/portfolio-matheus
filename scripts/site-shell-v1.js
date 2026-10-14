@@ -59,6 +59,10 @@
     `;
   }
 
+  function cleanupOldClientButton(root = document) {
+    root.querySelectorAll(".client-area-button").forEach((button) => button.remove());
+  }
+
   function mountHeader() {
     ensureShellStyles();
 
@@ -77,6 +81,7 @@
       main.prepend(header);
     }
 
+    cleanupOldClientButton();
     document.documentElement.classList.add("site-shell-ready");
   }
 
