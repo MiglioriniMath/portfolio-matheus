@@ -3,6 +3,12 @@
    Keeps the V13.3 layout and adds a lightweight results panel.
    ========================================================= */
 
+/* Segurança visual: remove qualquer botão antigo de clientes que venha de cache. */
+.site-header .client-area-button,
+.site-header a[href$="clientes/login.html"]:not(.mobile-instagram-button):not(.talk-button) {
+  display: none !important;
+}
+
 .portfolio-results {
   margin-top: 16px;
   border-top: 1px solid rgba(214,218,220,.58);
