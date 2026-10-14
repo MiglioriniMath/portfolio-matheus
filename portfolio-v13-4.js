@@ -13,6 +13,7 @@
   function mountPortfolioHeader() {
     if (window.SiteShell?.mountHeader) {
       window.SiteShell.mountHeader();
+      document.querySelectorAll(".site-header .client-area-button").forEach((button) => button.remove());
       return;
     }
 
@@ -27,7 +28,6 @@
         <a href="notes.html">Anotações</a>
         <a href="about.html">Sobre Mim</a>
       </nav>
-      <a class="client-area-button" href="clientes/login.html"><span>Clientes</span></a>
       <a class="talk-button" href="https://wa.me/5515991878897" target="_blank" rel="noreferrer"><span>Fale comigo</span><span class="talk-arrow" aria-hidden="true">→</span></a>
       <a class="mobile-instagram-button" href="https://www.instagram.com/migliorinimath/" target="_blank" rel="noreferrer" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="15" rx="4.5"></rect><circle cx="12" cy="12" r="3.4"></circle><circle cx="17.2" cy="6.8" r=".8"></circle></svg>
