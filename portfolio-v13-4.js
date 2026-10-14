@@ -35,7 +35,39 @@
     `;
   }
 
+  function reorderPortfolioGrid() {
+    const grid = document.getElementById("portfolio-grid");
+    if (!grid) return;
+
+    const desiredOrder = [
+      "Imóvel decorado com Monique Camargo",
+      "Summit BTG 2026",
+      "Ao meu futuro amor.",
+      "Canal de vagas no WhatsApp",
+      "Terras raras no Brasil",
+      "Complete seu cadastro em nossa plataforma",
+      "Setembro Amarelo",
+      "A armadilha da renda maior",
+      "Como conseguir entrar no mercado de RH?"
+    ];
+
+    const cards = [...grid.querySelectorAll(".portfolio-card")];
+    const byTitle = new Map(cards.map((card) => [card.dataset.title, card]));
+    const orderedCards = [
+      ...desiredOrder.map((title) => byTitle.get(title)).filter(Boolean),
+      ...cards.filter((card) => !desiredOrder.includes(card.dataset.title || ""))
+    ];
+
+    orderedCards.forEach((card, index) => {
+      const number = String(index + 2).padStart(2, "0");
+      const indexEl = card.querySelector(".portfolio-index");
+      if (indexEl) indexEl.textContent = number;
+      grid.appendChild(card);
+    });
+  }
+
   mountPortfolioHeader();
+  reorderPortfolioGrid();
 
   const modal = document.getElementById("portfolio-modal");
   const player = modal?.querySelector(".portfolio-player");
