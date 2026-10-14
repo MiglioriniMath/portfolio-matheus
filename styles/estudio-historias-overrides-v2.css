@@ -1,0 +1,82 @@
+/* Estúdio de Histórias — ajustes de UX temporários */
+
+.studio-page-actions,
+.client-login-home,
+.client-login-shortcuts {
+  display: none !important;
+}
+
+.studio-nav span,
+.studio-disabled,
+.reference-card.is-disabled {
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 11px;
+  border: 1px solid rgba(22,24,26,.06);
+  border-radius: 999px;
+  color: rgba(77,83,88,.44);
+  background: rgba(255,255,255,.28);
+  font-size: 10.5px;
+  line-height: 1.1;
+  font-weight: 690;
+  cursor: not-allowed;
+}
+
+.studio-nav span::after {
+  content: "em breve";
+  margin-left: auto;
+  color: rgba(189,46,42,.48);
+  font-family: var(--ml-mono, monospace);
+  font-size: 7px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.reference-card.is-disabled {
+  min-height: 270px;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  opacity: .62;
+  pointer-events: none;
+}
+
+.reference-card.is-disabled .reference-media {
+  filter: grayscale(.25);
+}
+
+.reference-card.is-disabled .reference-copy small::after {
+  content: " · em breve";
+  color: rgba(189,46,42,.72);
+  font-weight: 800;
+}
+
+.client-login-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+
+.client-login-actions .studio-button {
+  width: 100%;
+}
+
+.client-login-back {
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: 1px solid rgba(22,24,26,.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,.52);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.78);
+}
+
+.studio-library-tip strong {
+  color: #17191b;
+}
+
+@media (max-width: 760px) {
+  .studio-nav span::after { display: none; }
+}
