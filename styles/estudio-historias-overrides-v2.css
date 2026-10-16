@@ -115,3 +115,22 @@
 @media (max-width: 760px) {
   .studio-nav span::after { display: none; }
 }
+
+/* Biblioteca: fonte original clicável no pop-up */
+.reference-link-note[href] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 15px;
+  border-radius: 999px;
+  text-decoration: none;
+  background: #16191c;
+  color: #fff;
+  transition: background .2s ease, transform .2s ease;
+}
+.reference-link-note[href]:hover { background: #34383d; transform: translateY(-1px); }
+.reference-link-note[hidden] { display: none !important; }
+.reference-card.is-first-reference .reference-media {
+  background: linear-gradient(135deg, rgba(189,46,42,.11), rgba(196,214,226,.4)), #ecece9;
+}
+.reference-card.is-first-reference .reference-copy small { color: #6b6f71; }
