@@ -42,7 +42,18 @@
     if (fields.analysis) fields.analysis.textContent = card.dataset.analysis || '';
     if (fields.use) fields.use.textContent = card.dataset.use || '';
     if (fields.techniques) fields.techniques.textContent = card.dataset.techniques || '';
-    if (fields.link) fields.link.textContent = card.dataset.link || '';
+    if (fields.link) {
+      const url = card.dataset.link || '';
+      let trusted = false;
+      try {
+        const parsed = new URL(url);
+        trusted = parsed.protocol === 'https:' || parsed.protocol === 'http:';
+      } catch (_) { /* Sem link válido cadastrado. */ }
+      fields.link.hidden = !trusted;
+      if (trusted) fields.link.href = url;
+      else fields.link.removeAttribute('href');
+      fields.link.textContent = trusted ? 'Ver publicação original ↗' : '';
+    }
 
     modal.showModal();
   }
